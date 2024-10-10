@@ -36,6 +36,7 @@ export default class AcervoHisPiso1A4 extends Component {
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
               </TouchableOpacity>
+              
             </View>
           </ImageBackground>
         ) : (

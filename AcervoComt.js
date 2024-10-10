@@ -20,6 +20,7 @@ const App = () => {
         onPress={() => navigation.navigate('Acp1')} 
         imageSource={require('./fotos/Libreria11.jpeg')}
       />
+      
       <MenuButton 
         title="Piso 2. Acervo General Contemporaneo" 
         onPress={() => navigation.navigate('Acp2')} 

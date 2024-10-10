@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "858095421237",
+    "project_id": "bibiotecaudg",
+    "storage_bucket": "bibiotecaudg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858095421237:android:ec0e45cd1b0af14726ae7c",
+        "android_client_info": {
+          "package_name": "mx.udg.cucei.cuceimobile.app.inicio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44hmh3DvbwdZR_vdtNmUofzGIQHv99jY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

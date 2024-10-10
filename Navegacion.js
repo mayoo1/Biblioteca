@@ -28,7 +28,7 @@ import P2UDG from './PISO2UDG'; import P2UDG2 from './PISO2UDG2'; import P2UDG3 
 import BD from './BaseDatos'; import EVNTS from './Eventos'; import GH from './GaleriaHis'; import NTAS from './Noticias'; import ico6 from './fotos/ico6.png'; import ico9 from './fotos/ico9.png';
 import AHP1A2D1 from './AcervoHisPiso1A2D1'; import AHP1A2D2 from './AcervoHisPiso1A2D2'; import AHP1A2D3 from './AcervoHisPiso1A2D3'; import AHP1A2D4 from './AcervoHisPiso1A2D4'; import AHP1A2D5 from './AcervoHisPiso1A2D5'; 
 
-
+//prueba
 function ImageDrawerContent(navigation ) {
   return (
     <DrawerContentScrollView {...navigation}>

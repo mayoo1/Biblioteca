@@ -25,13 +25,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')} 
+            source={require('./fotos/persona1.jpg')} 
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/persona1.jpg')} 
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -43,7 +43,7 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/persona1.jpg')} 
                 style={styles.infoImage} 
               />
               
@@ -53,7 +53,7 @@ export default class QuienesSom extends Component {
             </View>
             
 
-        <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 20, marginLeft: 20, marginTop: 10, width: '90%' }}>Archivo Sonoro. Radio Univerdiad de Guadalajara. Piso 4</Text>
+        <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 20, marginLeft: 20, marginTop: 10, width: '90%' }}>Archivo Sonoro. Radio Universidad de Guadalajara. Piso 4</Text>
         <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 17, marginLeft: 20, marginTop: 10 }}>Jaime Sabines</Text>
 
         <ScrollView style={{ marginTop: 10 }}>
@@ -61,7 +61,7 @@ export default class QuienesSom extends Component {
         <Text style={{fontSize: 15, marginLeft: 20, lineHeight: 25,borderWidth: 0, width:'86%' }}>
           <Image source={require('./fotos/ico3.png')} style={{ height: 20, width: 20, marginTop: 10}} />
           <Text style={{fontWeight: 'bold', color: 'black', marginTop: -20}}>Titulo de la obra: </Text>
-          <Text style={{color: 'black', marginTop: -20 }}>Antalogía poética de Jaime Sabines </Text>
+          <Text style={{color: 'black', marginTop: -20 }}>Antología poética de Jaime Sabines </Text>
         </Text>
 
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
@@ -71,7 +71,7 @@ export default class QuienesSom extends Component {
               {'\n'}Lectura a cargo de: Jaime Sabines
               {'\n'}Estudio de grabación: Estudio 19
               {'\n'}Dirección: Mauricio Molina / Lizbeth Suárez / Margarita Heredia.
-              {'\n'}Operacion y postproducción: Rodolfo Sánchez Alvarado / Mauricio Molina / David Bojorges.
+              {'\n'}Operación y postproducción: Rodolfo Sánchez Alvarado / Mauricio Molina / David Bojorges.
               {'\n'}Año de grabación: 1964
             </Text>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '45%',
     borderRadius: 10,
   },
   viewButton: {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     marginTop: -10,
   },
 });

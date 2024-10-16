@@ -24,13 +24,13 @@ export default class AcervoHisPiso1A4 extends Component {
       <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/Antiguo13.jpg')}
+            source={require('./fotos/Antiguo15.jpg')}
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
             blurRadius={10}
           >
             <View style={{ alignItems: 'center' }}>
               <Image 
-                source={require('./fotos/Antiguo13.jpg')} 
+                source={require('./fotos/Antiguo15.jpg')} 
                 style={{ height: 450, width: 300, borderRadius: 10 }}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -42,7 +42,7 @@ export default class AcervoHisPiso1A4 extends Component {
           <View style={{ flex: 1 }}>
             <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: 20, marginTop: 10 }}>
               <Image 
-                source={require('./fotos/Antiguo13.jpg')} 
+                source={require('./fotos/Antiguo15.jpg')} 
                 style={{ height: '70%', width: '60%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
               />
               <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>
@@ -56,7 +56,7 @@ export default class AcervoHisPiso1A4 extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>

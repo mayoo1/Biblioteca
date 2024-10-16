@@ -116,7 +116,7 @@ export default class QuienesSom extends Component {
               <View style={{ height: 1, backgroundColor: 'gray', marginTop: 20, marginHorizontal: -1 }}></View>
 
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify'}}>
-              {'\n'} Archivo de la Vicaría de San Miguel el Alto, perteneciente a la Parroquia de Jalostotitlán</Text>
+              {'\n'} Archivo de la Vicaria de San Miguel el Alto, perteneciente a la Parroquia de Jalostotitlán</Text>
               <Text>
               {'\n'}• Bautismos y entierros  1773-1779
               </Text>
@@ -124,7 +124,7 @@ export default class QuienesSom extends Component {
               <View style={{ height: 1, backgroundColor: 'gray', marginTop: 20, marginHorizontal: -1 }}></View>
 
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify'}}>
-              {'\n'}Archivo de la Vicaría de Ciénega de Mata. Parroquia de Ojuelos, Jalisco. Diócesis de Aguascalientes (72 Rollos)</Text>
+              {'\n'}Archivo de la Vicaria de Ciénega de Mata. Parroquia de Ojeos, Jalisco. Diócesis de Aguascalientes (72 Rollos)</Text>
               <Text>
               {'\n'}• Bautismos de hijos legítimos 1670-1916
               {'\n'}• Bautismos de hijos naturales 1865-1891

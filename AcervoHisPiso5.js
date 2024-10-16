@@ -16,33 +16,33 @@ const App = () => {
   return (
     <View style={styles.container}>
       <MenuButton 
-        title="5.1 Obras Bibliograficas editadas entre los Siglos XVII y XX" 
-        onPress={() => navigation.navigate('Ahp1')} 
+        title="5.1 Obras Bibliográficas editadas entre los Siglos XVII y XX" 
+        onPress={() => navigation.navigate('Ahp5o')} 
         imageSource={require('./fotos/Antiguo2.jpg')}
       />
       <MenuButton 
         title="5.2 Fondo de Impresos Europeos Siglos XVII y XVIII" 
-        onPress={() => navigation.navigate('Ahp2')} 
+        onPress={() => navigation.navigate('Ahp5f')} 
         imageSource={require('./fotos/Libreria4.jpg')}
       />
       <MenuButton 
-        title="5.3 Fondo Historico Siglo XX" 
-        onPress={() => navigation.navigate('Ahp3')} 
+        title="5.3 Fondo Histórico Siglo XX" 
+        onPress={() => navigation.navigate('Ahp5fh')} 
         imageSource={require('./fotos/Antiguo1.jpg')}
       />
       <MenuButton 
         title="5.4 Fondos Particulares" 
-        onPress={() => navigation.navigate('Ahp4')} 
+        onPress={() => navigation.navigate('Ahp5fp')} 
         imageSource={require('./fotos/Libreria.jpg')}
       />
       <MenuButton 
-        title="5.5 Cinemateca" 
-        onPress={() => navigation.navigate('Ahp5')} 
+        title="5.5 Cinemática" 
+        onPress={() => navigation.navigate('Ahp5c')} 
         imageSource={require('./fotos/Libros3.jpg')}
       />
       <MenuButton 
         title="5.6 Fototeca de Jalisco" 
-        onPress={() => navigation.navigate('Ahp6')} 
+        onPress={() => navigation.navigate('Ahp5fo')} 
         imageSource={require('./fotos/Libreria5.jpg')}
       />
     </View>

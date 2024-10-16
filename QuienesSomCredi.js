@@ -5,32 +5,32 @@ const resources = [
   {
     section: 'Dirección',
     items: [
-      { Nombre: 'DR. JUAN MANUEL DURÁN JUÁREZ', Puesto: 'Director', Direccion: 'Periferico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
+      { Nombre: 'DR. JUAN MANUEL DURÁN JUÁREZ', Puesto: 'Director', Direccion: 'Periférico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
         Telefono: '38364530', Correo: 'bpej@redudg.udg.mx' }
     ],
   },
   {
-    section: 'Coordinacion de la Biblioteca Histórica',
+    section: 'Coordinación de la Biblioteca Histórica',
     items: [
-      { Nombre: 'MA.GUADALUPE MARTÍNEZ CORONA', Puesto: 'Coordinador', Direccion: 'Periferico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
+      { Nombre: 'MA.GUADALUPE MARTÍNEZ CORONA', Puesto: 'Coordinador', Direccion: 'Periférico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
         Telefono: '38364530', Correo: 'lupitamar61@redudg.udg.mx' }
     ],
   },
   {
-    section: 'Coordinacion de la Biblioteca Contemporánea',
+    section: 'Coordinación de la Biblioteca Contemporánea',
     items: [
-      { Nombre: 'MTRA. MARIA DE LOURDES ARIAS LOPEZ', Puesto: 'Coordinador', Direccion: 'Periferico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100',
+      { Nombre: 'MTRA. MARIA DE LOURDES ARIAS LOPEZ', Puesto: 'Coordinador', Direccion: 'Periférico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100',
         Telefono: '38364536', Correo: 'ariasl@redudg.udg.mx' },
     ],
   },
   {
-    section: 'Coordinacion del Centro de Competencias en Digitalizacion',
+    section: 'Coordinación del Centro de Competencias en Digitalización',
     items: [
-      { Nombre: 'MTRO. JUAN CARLOS CASTELLANOS ROSALES', Puesto: 'Coordinador', Direccion: 'Periferico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
+      { Nombre: 'MTRO. JUAN CARLOS CASTELLANOS ROSALES', Puesto: 'Coordinador', Direccion: 'Periférico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
         Telefono: '38364550', Correo: 'juancarlos@redudg.udg.mx' },
-      { Nombre: 'LIC. YADIRA DEL CARMEN CEA PACHECO', Puesto: 'Encargada de Digitalización', Direccion: 'Periferico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
+      { Nombre: 'LIC. YADIRA DEL CARMEN CEA PACHECO', Puesto: 'Encargada de Digitalización', Direccion: 'Periférico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
         Telefono: '38364550', Correo: 'Yadira.cea@redudg.udg.mx' },
-      { Nombre: 'MTRO. VICTOR HUGO RAMIREZ SALAZAR', Puesto: 'Encargado', Direccion: 'Periferico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
+      { Nombre: 'MTRO. VICTOR HUGO RAMIREZ SALAZAR', Puesto: 'Encargado', Direccion: 'Periférico Norte, Manuel Gómez Morin no. 1695, Colonia Belenes C.P. 45100', 
         Telefono: '38364550', Correo: 'Victorh.ramirez@redudg.udg.mx' },
     ],
   },

@@ -16,23 +16,23 @@ const App = () => {
   return (
     <View style={styles.container}>
       <MenuButton 
-        title="6.1 Tesoros Bibliograficos" 
-        onPress={() => navigation.navigate('Ahp1')} 
+        title="6.1 Tesoros Bibliográficos" 
+        onPress={() => navigation.navigate('Ahp6Te')} 
         imageSource={require('./fotos/Antiguo2.jpg')}
       />
       <MenuButton 
         title="6.2 Acervo Especial" 
-        onPress={() => navigation.navigate('Ahp2')} 
+        onPress={() => navigation.navigate('Ahp6Ac')} 
         imageSource={require('./fotos/Libreria4.jpg')}
       />
       <MenuButton 
-        title="6.3 Obras Bibliograficas editadas entre los Siglos XVII y XX" 
-        onPress={() => navigation.navigate('Ahp3')} 
+        title="6.3 Obras Bibliográficas editadas entre los Siglos XVII y XX" 
+        onPress={() => navigation.navigate('Ahp6Obr')} 
         imageSource={require('./fotos/Antiguo1.jpg')}
       />
       <MenuButton 
-        title="6.4 Sala Jaliscience" 
-        onPress={() => navigation.navigate('Ahp4')} 
+        title="6.4 Sala Jalisciense" 
+        onPress={() => navigation.navigate('Ahp6Sal')} 
         imageSource={require('./fotos/Libreria.jpg')}
       />
     </View>

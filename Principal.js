@@ -21,13 +21,12 @@ const App = () => {
     { title: 'Piso 1.1 Archivo...', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/piso1.1.jpg'), route: 'Piso1' },
     { title: 'Piso 3 Hemeroteca...', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/Antiguo3.jpg'), route: 'Piso3' },
     { title: 'Piso 2.3 Tesoro...', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/Libreria.jpg'), route: 'Piso2' },
-    { title: 'ACERVO CONTEMPORÁNEO', color: 'white', bgColor: '#FF5800', icon: require('./fotos/ico1.png'), route: 'Ac' },
+    { title: 'ACERVO CONTEMPORÁNEO', color: 'darkred', bgColor: 'white', icon: require('./fotos/ico1.png'), route: 'Ac' },
     { title: 'Piso 2.2 Novedades', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/Libreria5.jpg'), route: 'Piso2nove' },
     { title: 'Piso 4.1 Fondo...', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/Libreria2.jpg'), route: 'Piso4' },
-    { title: 'Piso 5.4 Ventana...', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/Coleccion.jpg'), route: 'Piso5' },
-    { title: 'BASE DE DATOS', color: 'darkred', bgColor: 'white', icon: require('./fotos/ico1.png'), route: 'Bd' },
+    { title: 'Piso 5.4 Ventana...', color: 'darkred', bgColor: 'gainsboro', icon: require('./fotos/Coleccion.jpg'), route: 'Piso5' }, 
     { title: 'EVENTOS', color: 'white', bgColor: '#FF5800', icon: require('./fotos/ico1.png'), route: 'Evnts' },
-    { title: 'GALERIA HISTORICA', color: 'darkred', bgColor: 'White', icon: require('./fotos/ico1.png'), route: 'Gh' },
+    { title: 'GALERÍA HISTÓRICA', color: 'darkred', bgColor: 'White', icon: require('./fotos/ico1.png'), route: 'Gh' },
     { title: 'NOTICIAS', color: 'white', bgColor: '#FF5800', icon: require('./fotos/ico1.png'), route: 'Ntas' },
   ];
 

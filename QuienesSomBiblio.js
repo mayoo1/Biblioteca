@@ -114,7 +114,7 @@ const resources = [
       { Titulo: 'Colecciones Internacionales' },
       { Titulo: 'Biblioteca Paul Rivet del CCC-IFAL' },
       { Titulo: 'Biblioteca Benjamin Franklin' },
-      { Titulo: 'Biblioteca Josep M. Murià i Romaní' },
+      { Titulo: 'Biblioteca Josep M. Muirá i Romaní' },
       { Titulo: 'Window of Shanghai' },
       { Titulo: 'Salones de Usos Múltiples' }
     ],

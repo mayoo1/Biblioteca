@@ -43,13 +43,13 @@ const resources = [
   {
     section: 'Difusión y Comunicación Cultural',
     items: [
-      { Nombre: 'Josué Eleazar Nolasco Hernández', Puesto: 'Coordinador de Difusión y Comunicación Cultural', Telefono: '33 3836 4532', Correo: 'josue.nolasco@udg.mx' }
+      { Nombre: 'Josue Eleazar Nolasco Hernández', Puesto: 'Coordinador de Difusión y Comunicación Cultural', Telefono: '33 3836 4532', Correo: 'josue.nolasco@udg.mx' }
     ],
   },
   {
     section: 'Vinculación Institucional',
     items: [
-      { Nombre: 'Martha Patricia Blanco Nuñez', Puesto: 'Responsable de Vinculación Institucional', Telefono: '33 3836 4530', Correo: 'patricia.blanco@udg.mx' }
+      { Nombre: 'Martha Patricia Blanco Núñez', Puesto: 'Responsable de Vinculación Institucional', Telefono: '33 3836 4530', Correo: 'patricia.blanco@udg.mx' }
     ],
   },
   {
@@ -68,7 +68,7 @@ const resources = [
   {
     section: 'Conservación y Restauración',
     items: [
-      { Nombre: 'Juan Pedro Hernandez Cebreros', Puesto: 'Coordinador de Conservación y Restauración', Telefono: '33 3836 4539', Correo: 'juanpedro.hernandez@udg.mx' },
+      { Nombre: 'Juan Pedro Hernandez Cabreros', Puesto: 'Coordinador de Conservación y Restauración', Telefono: '33 3836 4539', Correo: 'juanpedro.hernandez@udg.mx' },
       { Nombre: 'Jorge Arturo María Pérez', Puesto: 'Responsable Laboratorio de Microbiología', Telefono: '33 3836 4532', Correo: 'jorge.maria@udg.mx' }
     ],
   },
@@ -83,14 +83,14 @@ const resources = [
       { Nombre: 'Rosa Muro Castro', Puesto: 'Responsable Desarrollo de Colecciones', Telefono: '33 3836 4530', Correo: 'rosa.muro@udg.mx' },
       { Nombre: 'Gema Perez Hermosillo', Puesto: 'Responsable de Tiflotecnia', Telefono: '33 3836 4530', Correo: 'gema.perez@udg.mx' },
       { Nombre: 'Maria del Pilar García de Alba Zepeda', Puesto: 'Responsable del Área Infantil y Juvenil', Telefono: '3836 4530', Correo: 'pilar.garciadealba@udg.mx' },
-      { Nombre: 'Jocelyne Aldonza Hernández Hernández', Puesto: 'Responsable de Fomento a la Lectura', Telefono: '33 3836 4530', Correo: 'jocelyn.hernandez@udg.mx' }
+      { Nombre: 'Jocelyn Aldonza Hernández Hernández', Puesto: 'Responsable de Fomento a la Lectura', Telefono: '33 3836 4530', Correo: 'jocelyn.hernandez@udg.mx' }
     ],
   },
   {
     section: 'Coordinación de la Biblioteca Histórica',
     items: [
       { Nombre: 'María Guadalupe Martínez Corona', Puesto: 'Responsable de la Biblioteca Histórica', Telefono: '33 3836 4530', Correo: 'guadalupe.martinez@udg.mx' },
-      { Nombre: 'Laura Benitez Barba', Puesto: 'Responsable de Archivos', Telefono: '33 3836 4530', Correo: 'laura.benitez@udg.mx' },
+      { Nombre: 'Laura Benítez Barba', Puesto: 'Responsable de Archivos', Telefono: '33 3836 4530', Correo: 'laura.benitez@udg.mx' },
       { Nombre: 'Pendiente', Puesto: 'Responsable de Fondos Especiales y Tesoro Bibliográfico', Telefono: '33 3836 4530', Correo: '' },
       { Nombre: 'María Eugenia Barrios Hernández', Puesto: 'Responsable de Acervos General y Colecciones Particulares', Telefono: '33 3836 4530', Correo: 'eugenia.barrios@udg.mx' },
       { Nombre: 'Rafael Sánchez Villegas', Puesto: 'Responsable de Archivos Visuales y Sonoros', Telefono: '33 3836 4530', Correo: 'rafael.villegas@udg.mx' },

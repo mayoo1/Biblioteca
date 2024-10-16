@@ -36,7 +36,7 @@ const App = () => {
         imageSource={require('./fotos/Libreria7.jpg')}
       />
       <MenuButton 
-        title="Piso 5. Acervo General, Fondos Particulares, Cinemateca y Fototeca de Jalisco" 
+        title="Piso 5. Acervo General, Fondos Particulares, Cinemáteca y Fototeca de Jalisco" 
         onPress={() => navigation.navigate('Ahp5')} 
         imageSource={require('./fotos/Libros1.jpg')}
       />

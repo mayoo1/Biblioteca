@@ -22,7 +22,7 @@ const App = () => {
       />
       <MenuButton 
         title="Colección Arturo Xavier González Santana" 
-        onPress={() => navigation.navigate('')} 
+        onPress={() => navigation.navigate('Ahcaxg')} 
         imageSource={require('./fotos/persona4.jpg')}
       />
      

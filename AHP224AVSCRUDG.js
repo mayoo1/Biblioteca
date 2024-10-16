@@ -30,7 +30,7 @@ const App = () => {
         onPress={() => navigation.navigate('P2udg3')} 
       />
       <MenuButton 
-        title="Crísalida" 
+        title="Crisálida" 
         onPress={() => navigation.navigate('P2udg4')} 
         imageSource={require('./fotos/persona3.jpg')}
       />

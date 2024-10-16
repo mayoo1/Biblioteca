@@ -10,7 +10,7 @@ export default class Piso2nove extends Component {
         <Image source={require('./fotos/Libreria10.jpg')} style={styles.image} />
 
         <TouchableOpacity style={styles.button} activeOpacity={1}>
-          <Text style={styles.buttonText}>Busqueda en base de datos</Text>
+          <Text style={styles.buttonText}>Búsqueda en base de datos</Text>
           <Image
             source={require('./fotos/ico2.png')}
             style={{ height: 25, width: 25, marginTop: -25, marginLeft:'-10%'}}

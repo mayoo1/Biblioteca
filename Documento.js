@@ -57,14 +57,14 @@ export default class QuienesSom extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify' }}>
-                Documentos referentes a cuasas civiles que conocian oidores, pleitos sobre tierras, aguas o minas; propiedad de esclavos, cobranzas de dinero, concursos de bienes sobre deudas, testamentos e inventarios de intestados, etc.
+                Documentos referentes a causas civiles que conocían oidores, pleitos sobre tierras, aguas o minas; propiedad de esclavos, cobranzas de dinero, concursos de bienes sobre deudas, testamentos e inventarios de intestados, etc.
               </Text>
             </ScrollView>
 

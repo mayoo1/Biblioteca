@@ -26,7 +26,7 @@ const App = () => {
         imageSource={require('./fotos/Antiguo3.jpg')}
       />
       <MenuButton 
-        title="1.3 Direccion General de Instruccion Publica" 
+        title="1.3 Dirección General de Instrucción Publica" 
         onPress={() => navigation.navigate('Ahp1A3')} 
         imageSource={require('./fotos/Antiguo4.jpg')}
       />

@@ -41,19 +41,14 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={styles.infoContainer}>
-              <Image 
-                source={require('./fotos/seriadas.png')} 
-                style={styles.infoImage} 
-              />
-              
-              <TouchableOpacity style={{width: '90%', marginTop: 25, marginLeft: -10 }} onPress={this.handleImagePress}>
+            
+              <TouchableOpacity style={{width: '90%', marginTop: 25, marginLeft: 20, height: '2%' }} onPress={this.handleImagePress}>
               <Text style={styles.viewButtonText}>Escuchar: "Lo que le pasó a joe y a su chica"</Text>
             </TouchableOpacity>
-            </View>
+       
             
 
-        <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 20, marginLeft: 20, marginTop: 10, width: '90%' }}>Archivo Sonoro. Radio Univerdiad de Guadalajara. Piso 4</Text>
+        <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 20, marginLeft: 20, marginTop: 10, width: '90%' }}>Archivo Sonoro. Radio Universidad de Guadalajara. Piso 4</Text>
         <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 17, marginLeft: 20, marginTop: 10 }}>Joe y a su chica</Text>
 
         <ScrollView style={{ marginTop: 10 }}>
@@ -67,9 +62,9 @@ export default class QuienesSom extends Component {
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>
             {'\n'}Género: Radio cuento
-              {'\n'}Daptación a radio: David Guerrero Lemus
+              {'\n'}Datación a radio: David Guerrero Lemus
               {'\n'}Intérpretes: David Guerrero, Álvaro José Gómez, Mario Franco, Javier Vizcaíno.
-              {'\n'}Productor: Radio Univerdiad de Guadalajara
+              {'\n'}Productor: Radio Universidad de Guadalajara
               {'\n'}Año: 1996
             </Text>
           </View>
@@ -127,7 +122,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderColor: 'white',
     width: '30%',
-    height: '7%',
+    height: '9%',
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,

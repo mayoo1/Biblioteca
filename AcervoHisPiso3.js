@@ -49,21 +49,21 @@ export default class QuienesSom extends Component {
                 <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>Piso 3. Hemeroteca Historica</Text>
+            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>Piso 3. Hemeroteca Histórica</Text>
 
             <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
               <Image 
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify' }}>
-              De la prensa local, regionaly nacional existen diferentes titulos, que abordan temas de política, jurisprudencia, literatura, arte, variedades, educación, medicina y religion. Se resguradan titulos publicados desde 1809 hasta el año 2011.
+              De la prensa local, regional nacional existen diferentes títulos, que abordan temas de política, jurisprudencia, literatura, arte, variedades, educación, medicina y religion. Se resguardan títulos publicados desde 1809 hasta el año 2011.
               </Text>
             </ScrollView>
 

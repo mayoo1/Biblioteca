@@ -5,20 +5,20 @@ export default class QuienesSom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showImage: false, // Estado para mostrar la imagen
+      showImage: false,
     };
   }
 
   handleImagePress = () => {
-    this.setState({ showImage: true }); // Mostrar la imagen al presionar
+    this.setState({ showImage: true });
   };
 
   handleCloseImage = () => {
-    this.setState({ showImage: false }); // Cerrar la imagen
+    this.setState({ showImage: false });
   };
 
   render() {
-    const { showImage } = this.state; // Obtener el estado de la imagen
+    const { showImage } = this.state;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
@@ -31,7 +31,7 @@ export default class QuienesSom extends Component {
             <View style={{ alignItems: 'center' }}>
               <Image 
                 source={require('./fotos/Antiguo2.jpg')} 
-                style={{ height: 450, width: 300, borderRadius: 10 }} // Mostrar imagen grande
+                style={{ height: 450, width: 300, borderRadius: 10 }}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -57,14 +57,14 @@ export default class QuienesSom extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify' }}>
-                Documentos referentes a cuasas criminales o hechos de sangre y violencia que eran presentados ante la Audiencia y sus Alcaldes del Crimen.
+                Documentos referentes a causas criminales o hechos de sangre y violencia que eran presentados ante la Audiencia y sus Alcaldes del Crimen.
               </Text>
             </ScrollView>
 

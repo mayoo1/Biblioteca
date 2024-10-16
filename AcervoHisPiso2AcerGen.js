@@ -25,13 +25,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')} 
+            source={require('./fotos/Libreria13.png')} 
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Libreria13.png')} 
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -43,7 +43,7 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Libreria13.png')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
@@ -52,13 +52,13 @@ export default class QuienesSom extends Component {
             </View>
             
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10 }}>Piso 2 Biblioteca Álvarez</Text>
+        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10, width: '86.5%'}}>Piso 2 Biblioteca Álvarez del Castillo</Text>
         <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: 20, marginTop: 10 }}>2.1 Acervo General.</Text>
 
         <ScrollView style={{ marginTop: 10 }}>
         <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
           <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentacion</Text>
+          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
 
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>

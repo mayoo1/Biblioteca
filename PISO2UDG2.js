@@ -25,13 +25,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')} 
+            source={require('./fotos/persona2.jpg')} 
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/persona2.jpg')} 
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -43,17 +43,17 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/persona2.jpg')} 
                 style={styles.infoImage} 
               />
               
               <TouchableOpacity style={{width: '90%', marginTop: 25, marginLeft: -10 }} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Escuchar: "Manuel Rodriguez Latinoamerica"</Text>
+              <Text style={styles.viewButtonText}>Escuchar: "Manuel Rodriguez Latinoamérica"</Text>
             </TouchableOpacity>
             </View>
             
 
-        <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 20, marginLeft: 20, marginTop: 10, width: '90%' }}>Archivo Sonoro. Radio Univerdiad de Guadalajara. Piso 4</Text>
+        <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 20, marginLeft: 20, marginTop: 10, width: '90%' }}>Archivo Sonoro. Radio Universidad de Guadalajara. Piso 4</Text>
         <Text style={{ fontWeight: 'bold', color: '#515151', fontSize: 17, marginLeft: 20, marginTop: 10 }}>Manuel R. Lapuente</Text>
 
         <ScrollView style={{ marginTop: 10 }}>
@@ -73,7 +73,7 @@ export default class QuienesSom extends Component {
               {'\n'}Breve sinopsis:
               {'\n'}Serie radiofónica producida y conducida por el Dr. Manuel Rodríguez Lapuente. Reproducimos la emisión del sábado 14 de marzo de 1989, en el que el doctor hace un análisis del 
               Encuentro de cancilleres del grupo de los ocho, en Guayana, Puerto Ordaz, Venezuela. El Dr. Manuel Rodríguez Lapuente fue un reconocido humanista, politico, autor de libros, maestro, director
-              de la Revista de la Univerdiad de Guadalajara y director de Estudios Sociales y de la Facultad de Filosofía y Letras.
+              de la Revista de la Universidad de Guadalajara y director de Estudios Sociales y de la Facultad de Filosofía y Letras.
               {'\n'}Año de grabación: 1964
             </Text>
           </View>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     marginTop: -10,
   },
 });

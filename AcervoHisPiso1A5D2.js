@@ -56,14 +56,14 @@ export default class AcervoHisPiso1A4 extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify', lineHeight: 25}}>
-              Contiene documentacion con las cuentas mensuales de las oficina general de los ferrocarriles. (18 registros) Son las cuentas mensuales de la oficina general de los Ferrocarriles de Jalisco, 1897-1927.
+              Contiene documentación con las cuentas mensuales de las oficina general de los ferrocarriles. (18 registros) Son las cuentas mensuales de la oficina general de los Ferrocarriles de Jalisco, 1897-1927.
               </Text>
             </ScrollView>
 

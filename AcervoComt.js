@@ -20,9 +20,8 @@ const App = () => {
         onPress={() => navigation.navigate('Acp1')} 
         imageSource={require('./fotos/Libreria11.jpeg')}
       />
-      
       <MenuButton 
-        title="Piso 2. Acervo General Contemporaneo" 
+        title="Piso 2. Acervo General Contemporáneo" 
         onPress={() => navigation.navigate('Acp2')} 
         imageSource={require('./fotos/Libreria4.jpg')}
       />
@@ -42,7 +41,7 @@ const App = () => {
         imageSource={require('./fotos/Coleccion3.jpg')}
       />
       <MenuButton 
-        title="Recursos Electronicos" 
+        title="Recursos Electrónicos" 
         onPress={() => navigation.navigate('Acre')} 
         imageSource={require('./fotos/RE.png')}
       />

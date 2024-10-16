@@ -99,7 +99,7 @@ export default class Piso2nove extends Component {
         <Image source={require('./fotos/Coleccion2.jpg')} style={styles.logo} />
         
         <TouchableOpacity activeOpacity={1} onPress={() => Linking.openURL('https://google.com')}>
-          <Text style={styles.button}>Busqueda en base de datos</Text>
+          <Text style={styles.button}>Búsqueda en base de datos</Text>
           <Image source={require('./fotos/ico2.png')} style={styles.buttonIcon} />
         </TouchableOpacity>
 

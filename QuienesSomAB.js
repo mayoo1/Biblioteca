@@ -25,7 +25,7 @@ export default class QuienesSom extends Component {
         </TouchableOpacity>
 
         <Image source={require('./fotos/ico3.png')} style={{ borderColor: 'red', borderWidth: 0, height: 25, width: 25, marginLeft: 40, marginTop: 30 }}></Image>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 80, borderColor: 'red', borderWidth: 0, width: 120, height: 20, marginTop: -20 }}>Presentacion</Text>
+        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 80, borderColor: 'red', borderWidth: 0, width: 120, height: 20, marginTop: -20 }}>Presentación</Text>
 
         <View style={{ borderWidth: 1, borderColor: 'gray', flexDirection: 'row', alignItems: 'center', flex: 0.0001, width: 340, marginLeft: 20, marginTop: 20 }}></View>
         

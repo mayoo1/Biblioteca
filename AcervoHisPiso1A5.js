@@ -18,22 +18,22 @@ const App = () => {
       <MenuButton 
         title="1.5.1 Dirección General de Rentas" 
         onPress={() => navigation.navigate('Ahp1A5d1')} 
-        imageSource={require('./fotos/Antiguo13.jpg')}
+        imageSource={require('./fotos/Antiguo18.jpg')}
       />
       <MenuButton 
         title="1.5.2 Ferrocarriles de Jalisco" 
         onPress={() => navigation.navigate('Ahp1A5d2')} 
-        imageSource={require('./fotos/Antiguo14.jpg')}
+        imageSource={require('./fotos/ferrocarriles.jpg')}
       />
       <MenuButton 
         title="1.5.3 Jesús Camarena Archivos Particulares" 
         onPress={() => navigation.navigate('Ahp1A5d3')} 
-        imageSource={require('./fotos/Antiguo6.jpg')}
+        imageSource={require('./fotos/jesus.jpg')}
       />
       <MenuButton 
-        title="1.5.4 Capitán de Fragata de la Armada Méxicana Juan José Matute" 
+        title="1.5.4 Capitán de Fragata de la Armada Mexicana Juan José" 
         onPress={() => navigation.navigate('Ahp1A5d4')} 
-        imageSource={require('./fotos/Antiguo9.jpg')}
+        imageSource={require('./fotos/juanjose.jpg')}
       />
     </View>
   );

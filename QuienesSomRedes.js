@@ -23,7 +23,7 @@ const sections = [
     link: 'https://www.instagram.com/biblio_jalisco/?hl=es-la'
   },
   {
-    title: 'Youtube',
+    title: 'YouTube',
     icon: require('./fotos/YT.png'),
     link: 'https://www.youtube.com/@bibliotecapublicadelestado384'
   },

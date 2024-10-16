@@ -56,14 +56,14 @@ export default class AcervoHisPiso1A4 extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify', lineHeight: 25}}>
-              Correspondencia personal y asuntos varios de su ejercicio en los cargos de Diputado del Congreso de la Unión, Gobernador Iterino del Estado de Jalsico y Presidente del supremo Tribunal de Justicia del Estado de Jaslico, entre los años de 1840 y 1878.
+              Correspondencia personal y asuntos varios de su ejercicio en los cargos de Diputado del Congreso de la Unión, Gobernador Interino del Estado de Jalisco y Presidente del supremo Tribunal de Justicia del Estado de Jaleco, entre los años de 1840 y 1878.
               </Text>
             </ScrollView>
 

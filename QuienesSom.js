@@ -46,7 +46,7 @@ const App = () => {
         imageSource={require('./fotos/Redes.png')}
       />
       <MenuButton 
-        title="Creditos de la Aplicacion" 
+        title="Créditos de la Aplicación" 
         onPress={() => navigation.navigate('Qsc')} 
         imageSource={require('./fotos/Biblioteca2.jpg')}
       />

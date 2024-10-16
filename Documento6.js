@@ -56,14 +56,14 @@ export default class QuienesSom extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify' }}>
-              Este acervo se compone de las revistas y folletos publicados de manera periodica en el estado y en otras regiones del país. Se resguardan ediciones de diversas áreas del conocimiento publicadas durante los siglos XIX y XX.
+              Este acervo se compone de las revistas y folletos publicados de manera periódica en el estado y en otras regiones del país. Se resguardan ediciones de diversas áreas del conocimiento publicadas durante los siglos XIX y XX.
               </Text>
             </ScrollView>
 

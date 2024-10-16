@@ -58,7 +58,7 @@ export default class QuienesSom extends Component {
         <ScrollView style={{ marginTop: 10 }}>
         <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
           <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentacion</Text>
+          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
 
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>

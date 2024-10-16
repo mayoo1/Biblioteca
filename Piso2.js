@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, ScrollView, Linking } from 'react-
 
 const sections = [
   {
-    title: 'Busqueda en base de datos',
+    title: 'Búsqueda en base de datos',
     icon: require('./fotos/ico2.png'),
     link: 'https://www.ejemplo.com'
   },

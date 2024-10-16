@@ -21,7 +21,7 @@ export default class Piso5 extends Component {
         />
 
         <TouchableOpacity onPress={() => link && Linking.openURL(link)}>
-          <Text style={styles.button}>Visita el website de Shangai E-books</Text>
+          <Text style={styles.button}>Visita el website de Shanghai E-books</Text>
           <Image source={require('./fotos/ico2.png')} style={styles.icon} />
         </TouchableOpacity>
 
@@ -37,7 +37,7 @@ export default class Piso5 extends Component {
         <ScrollView style={styles.textContainer}>
           <Text style={styles.textContent}>
             <Text style={styles.title}>Historia</Text>
-            {'\n'}Este importante acervo llegó al resguardo de la biblioteca a través de un proyecto llamado “Libro Internacional de China” impulsado por la Biblioteca de Shangai. 
+            {'\n'}Este importante acervo llegó al resguardo de la biblioteca a través de un proyecto llamado “Libro Internacional de China” impulsado por la Biblioteca de Shanghai. 
             El proyecto tiene como objetivo hacer más visible la cultura y la historia China en otros países a través de la lectura. En la ceremonia celebrada el día 12 de Abril de 2011 
             y en presencia de las autoridades de ambas instituciones, se hizo la donación de 571 títulos a esta biblioteca.
             {'\n'}{'\n'}
@@ -45,7 +45,7 @@ export default class Piso5 extends Component {
             {'\n'}La colección “Window of Shanghai” ofrece una variedad de temas para acercar al público a la cultura china, tales como la historia, tradiciones, lengua, gastronomía, indumentaria de algunos pueblos y etnias que conforman a la actual China. Gran parte de estos títulos se encuentran disponibles en ediciones bilingües en inglés-mandarín y en caracteres chinos.
             {'\n'}{'\n'}
             <Text style={styles.title}>Programa académico-cultural</Text>
-            {'\n'}El programa académico-cultural "WINDOWS OF SHANGHAI" ayuda a introducir la historia y cultura china a la población Jalisciense por medio del intercambio de acervo literario. Se ha llevado a cabo este convenio entre la Biblioteca Pública del Estado de Jalisco “Juan José Arreola” y la Biblioteca de Shanghái desde el año 2011 y promueve el entendimiento entre los pueblos y las culturas mediante el intercambio de libros entre bibliotecas.
+            {'\n'}El programa académico-cultural "WINDOWS OF SHANGHAI" ayuda a introducir la historia y cultura china a la población Jalisciense por medio del intercambio de acervo literario. Se ha llevado a cabo este convenio entre la Biblioteca Pública del Estado de Jalisco “Juan José Arreola” y la Biblioteca de Shanghai desde el año 2011 y promueve el entendimiento entre los pueblos y las culturas mediante el intercambio de libros entre bibliotecas.
           </Text>
         </ScrollView>
         <Image source={require('./fotos/Logo5.png')} style={styles.logo} />

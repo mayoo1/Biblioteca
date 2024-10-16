@@ -21,7 +21,7 @@ const App = () => {
         imageSource={require('./fotos/Antiguo2.jpg')}
       />
       <MenuButton 
-        title="Coleccion Francisco Navarro" 
+        title="Colección Francisco Navarro" 
         onPress={() => navigation.navigate('Ahcfn')} 
         imageSource={require('./fotos/Libreria4.jpg')}
       />

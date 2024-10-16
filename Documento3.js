@@ -5,20 +5,20 @@ export default class QuienesSom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showImage: false, // Estado para mostrar la imagen
+      showImage: false,
     };
   }
 
   handleImagePress = () => {
-    this.setState({ showImage: true }); // Mostrar la imagen al presionar
+    this.setState({ showImage: true });
   };
 
   handleCloseImage = () => {
-    this.setState({ showImage: false }); // Cerrar la imagen
+    this.setState({ showImage: false });
   };
 
   render() {
-    const { showImage } = this.state; // Obtener el estado de la imagen
+    const { showImage } = this.state;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
@@ -26,12 +26,12 @@ export default class QuienesSom extends Component {
           <ImageBackground
             source={require('./fotos/GaleriaHis3.png')}
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-            blurRadius={10} // Difuminar el fondo
+            blurRadius={10}
           >
             <View style={{ alignItems: 'center' }}>
               <Image 
                 source={require('./fotos/GaleriaHis3.png')} 
-                style={{ height: 450, width: 300, borderRadius: 10 }} // Mostrar imagen grande
+                style={{ height: 450, width: 300, borderRadius: 10 }}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -56,7 +56,7 @@ export default class QuienesSom extends Component {
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentacion</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>

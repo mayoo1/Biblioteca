@@ -53,7 +53,7 @@ export default class QuienesSom extends Component {
             
 
         <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.10 Antonio Peñafiel
+        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.11 Antonio Peñafiel
         </Text>
 
         <ScrollView style={{ marginTop: 10 }}>
@@ -64,8 +64,8 @@ export default class QuienesSom extends Component {
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
               Uno de lo más grandes polígrafos de México y tal vez el más ilustre hidalguense de finales del siglo XIX y principios del XX, participa en la acciones militares, al lado del General Ignacio Zaragoza, en su carácter de médico militar, promovió la edición de numerosas obras relativas a la historia antigua de México, se le considera como uno de los primeros y más completos estadígrafos de México, dirigió el Primer Censo General de la República.
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
+              </Text>
+            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
           </View>
         
           
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '45%',
     borderRadius: 10,
   },
   viewButton: {
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     marginTop: -10
   },
 });

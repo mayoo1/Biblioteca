@@ -65,9 +65,9 @@ export default class QuienesSom extends Component {
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
               Con fuertes tendencias liberales fue Ministro Público en Teocaltiche, Jalisco y posteriormente Juez en Aguascalientes, fundó el periódico "Revista
               del Centro". En 1906 regresó a Jalisco y ganó las elecciones municipales de Guadalajara. Desempeñó diversos cargos en la Secretaria de Hacienda y fue 
-              Ministro de la Suprema Corte de Justicia. Dió clases de Derecho Constitucional en la UNAM y publicó diversas obras.{'\n'}
+              Ministro de la Suprema Corte de Justicia. Dió clases de Derecho Constitucional en la UNAM y publicó diversas obras.
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
+            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
           </View>
         
           
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '45%',
     borderRadius: 10,
   },
   viewButton: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     marginTop: -10
   },
 });

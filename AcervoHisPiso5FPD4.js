@@ -67,7 +67,7 @@ export default class QuienesSom extends Component {
               parroquias, abrió escuelas y fomentó los estudios en el Seminario Murió el 12 de noviembre de 1866 en México, diez años mas tarde,
               sus restos mortales fueron trasladados a la Capilla de la Purísima Concepción de la Catedral de Guadalajara.
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
+            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
           </View>
         
           
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '30%',
     borderRadius: 10,
   },
   viewButton: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#353535',
+    backgroundColor: 'black',
     marginTop: -10
   },
 });

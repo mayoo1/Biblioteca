@@ -1,9 +1,10 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, ImageBackground, StyleSheet } from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const App = () => {
   const navigation = useNavigation();
+
   useFocusEffect(
     React.useCallback(() => {
       const timer = setTimeout(() => {
@@ -14,50 +15,26 @@ const App = () => {
   );
 
   return (
-    <View>
-      <Text>
-
-      </Text>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require('./fotos/Inicio.png')}
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+      </ImageBackground>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   backgroundImage: {
-    height: '100%',
+    flex: 1,
     width: '100%',
-    borderColor: 'red',
-    borderWidth: 0,
+    height: '100%',
   },
-  imag1: {
-    height:'5%',
-    width:'100%'
-  },
-  imag2: {
-    width:'100%',
-    height:'7%',
-  },
-  title: {
-    fontSize: 19,
-    fontWeight: 'thin',
-    fontStyle:'italic',
-    fontWeight:'bold',
-    color: 'white',
-    marginTop:'-32%',
-    marginLeft:'20%',
-    borderColor:'white', 
-    borderWidth:0,
-    width:'80%'
-  },
-  carouselImage: {
-    borderColor: 'white',
-    borderWidth: 0,
-    margin:'auto',
-    marginTop: 50,
-    width: 300,
-    height: 400,
-    borderRadius: 30,
-  }
 });
 
 export default App;

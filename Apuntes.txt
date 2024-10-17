@@ -1,6 +1,0 @@
-import AHP5C from "./AcervoHisPiso5Cine"; 
-import AHP5F from "./AcervoHisPiso5Fondo"; 
-import AHP5FH from "./AcervoHisPiso5FondoHis"; 
-import AHP5FP from "./AcervoHisPiso5FP";
-import AHP5Fo from "./AcervoHisPiso5Foto"; 
-import AHP5O from "./AcervoHisPiso5Obra";

@@ -4,6 +4,7 @@ import { createDrawerNavigator, DrawerToggleButton, DrawerContentScrollView, Dra
 import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import PORTADA from './Portada';
 import PRINCIPAL from './Principal'; 
 import QS from './QuienesSom'; 
 import QSAB from './QuienesSomAB'; 
@@ -98,12 +99,10 @@ import AC from './AcervoComt';
 import ACP1 from './AcervoComtPiso1';
 import ACP2 from './AcervoComtPiso2';
 import ACP3 from './AcervoComtPiso3';
-
 import ACP3D1 from './AcervoComtPiso3D1';
 import ACP3D2 from './AcervoComtPiso3D2';
 import ACP3D3 from './AcervoComtPiso3D3';
 import ACP3D4 from './AcervoComtPiso3D4';
-
 import ACP4 from './AcervoComtPiso4';
 import ACP4D1 from './AcervoComtPiso4D1';
 import ACP4D2 from './AcervoComtPiso4D2';
@@ -263,6 +262,7 @@ const Navegacion = () => {
           ),
         })}
       >
+      <Drawer.Screen name="Portada" component={PORTADA} options={{...defaultScreenOptions('Portada'), headerShown: false, drawerLabelStyle: { color: 'darkred', fontWeight: 'normal' }, drawerItemStyle: { borderBottomWidth: 1, borderBottomColor: '#FF5800', display: 'none'}}}/>
         <Drawer.Screen name="INICIO" component={PRINCIPAL} options={{ headerBackground: () => <LogoHeader/>, headerTitle: '', headerTitleAlign: 'center', headerTintColor: '#FF5800', headerTitleStyle: { fontWeight: 'normal', fontSize: 15 }, headerStyle: {backgroundColor: 'white'}, drawerLabelStyle: { color: 'darkred', fontWeight: 'normal' }, drawerItemStyle: { borderBottomWidth: 1, borderBottomColor: '#FF5800' } }}/>
         <Drawer.Screen name="Qs" component={QS} options={{ ...defaultScreenOptions('QUIENES SOMOS'), drawerLabelStyle: { color: 'darkred', fontWeight: 'normal' }, drawerItemStyle: { borderBottomWidth: 1, borderBottomColor: '#FF5800' }}} />
         <Drawer.Screen name="Qsab" component={QSAB} options={{ ...defaultScreenOptions('Acerca de la Biblioteca'), drawerItemStyle: { display: 'none' } }} />

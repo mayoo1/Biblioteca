@@ -87,7 +87,7 @@ export default class Noticias extends Component {
             keyExtractor={(item, index) => index.toString()}
           />
         ) : (
-          <Text>CARGANDO EVENTOS...</Text>
+          <Text style={{color:'black'}}>CARGANDO EVENTOS...</Text>
         )}
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={this.handleAnterior} style={styles.navButton} disabled={pagina === 0}>

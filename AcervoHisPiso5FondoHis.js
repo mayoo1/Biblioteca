@@ -25,13 +25,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')} 
+            source={require('./fotos/Antiguo20.png')} 
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Antiguo20.png')} 
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -43,7 +43,7 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Antiguo20.png')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
@@ -53,7 +53,7 @@ export default class QuienesSom extends Component {
             
 
         <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10 }}>Piso 5. Acervo General, Fondos Particulares y Fototeca</Text>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.3 Fondo Histórico Siglo XX.
+        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 16, marginLeft: 20, marginTop: 10 }}>5.3 Fondo Histórico Siglo XX.
         </Text>
 
         <ScrollView style={{ marginTop: 10 }}>
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '65%',
     borderRadius: 10,
   },
   viewButton: {
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     marginTop: -10
   },
 });

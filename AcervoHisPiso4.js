@@ -18,12 +18,12 @@ const App = () => {
       <MenuButton 
         title="4.1 Publicaciones Seriadas de Jalisco (Del S.XIX hasta 1982)" 
         onPress={() => navigation.navigate('Ahp41')} 
-        imageSource={require('./fotos/Antiguo2.jpg')}
+        imageSource={require('./fotos/Libreria10.jpg')}
       />
       <MenuButton 
         title="Colección Francisco Navarro" 
         onPress={() => navigation.navigate('Ahcfn')} 
-        imageSource={require('./fotos/Libreria4.jpg')}
+        imageSource={require('./fotos/cpi.png')}
       />
     </View>
   );

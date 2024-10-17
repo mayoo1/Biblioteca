@@ -17,10 +17,10 @@ const App = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={{height:'100%', width:'100%', marginLeft:20}}>
-      <MenuButton title="6.4.1 Impresos Mexicanos desde el siglo XVII hasta 1930" onPress={() => navigation.navigate('Ahp6Sald1')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.4.2 Misceláneas" onPress={() => navigation.navigate('Ahp6Sald2')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.4.3 Impresos en Guadalajara siglos XVII al XX" onPress={() => navigation.navigate('Ahp6Sald3')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.4.4 Fondo Jalisco Histórico" onPress={() => navigation.navigate('Ahp6Sald4')} imageSource={require('./fotos/Antiguo2.jpg')}/>
+      <MenuButton title="6.4.1 Impresos Mexicanos desde el siglo XVII hasta 1930" onPress={() => navigation.navigate('Ahp6Sald1')} imageSource={require('./fotos/gdlp.jpg')}/>
+      <MenuButton title="6.4.2 Misceláneas" onPress={() => navigation.navigate('Ahp6Sald2')} imageSource={require('./fotos/Libro1.jpg')}/>
+      <MenuButton title="6.4.3 Impresos en Guadalajara siglos XVII al XX" onPress={() => navigation.navigate('Ahp6Sald3')} imageSource={require('./fotos/Libros5.jpg')}/>
+      <MenuButton title="6.4.4 Fondo Jalisco Histórico" onPress={() => navigation.navigate('Ahp6Sald4')} imageSource={require('./fotos/Antiguo5.jpg')}/>
      </ScrollView>
     </View>
   );

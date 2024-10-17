@@ -17,12 +17,12 @@ const App = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={{height:'100%', width:'100%', marginLeft:20}}>
-      <MenuButton title="6.2.1 Colección de Biblias" onPress={() => navigation.navigate('Ahp6Acd1')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.2.2 Colección de Thesaurus" onPress={() => navigation.navigate('Ahp6Acd2')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.2.3 Colección de leyes de Indias" onPress={() => navigation.navigate('Ahp6Acd3')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.2.4 Colección de Medicina" onPress={() => navigation.navigate('Ahp6Acd4')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.2.5 Colección de Música" onPress={() => navigation.navigate('Ahp6Acd5')} imageSource={require('./fotos/Antiguo2.jpg')}/>
-      <MenuButton title="6.2.6 Colección de Testigos" onPress={() => navigation.navigate('Ahp6Acd6')} imageSource={require('./fotos/Antiguo2.jpg')}/>
+      <MenuButton title="6.2.1 Colección de Biblias" onPress={() => navigation.navigate('Ahp6Acd1')} imageSource={require('./fotos/Libro4.jpg')}/>
+      <MenuButton title="6.2.2 Colección de Thesaurus" onPress={() => navigation.navigate('Ahp6Acd2')} imageSource={require('./fotos/Libro3.jpg')}/>
+      <MenuButton title="6.2.3 Colección de leyes de Indias" onPress={() => navigation.navigate('Ahp6Acd3')} imageSource={require('./fotos/Libro5.jpg')}/>
+      <MenuButton title="6.2.4 Colección de Medicina" onPress={() => navigation.navigate('Ahp6Acd4')} imageSource={require('./fotos/craneo.jpg')}/>
+      <MenuButton title="6.2.5 Colección de Música" onPress={() => navigation.navigate('Ahp6Acd5')} imageSource={require('./fotos/musica.jpg')}/>
+      <MenuButton title="6.2.6 Colección de Testigos" onPress={() => navigation.navigate('Ahp6Acd6')} imageSource={require('./fotos/Antiguo21.png')}/>
       </ScrollView>
     </View>
   );

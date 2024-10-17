@@ -54,8 +54,8 @@ export default class QuienesSom extends Component {
             
 
         <ScrollView style={{ marginTop: 10 }}>
-        <Image source={require('./fotos/Logo42.png')} style={{ height: 20, width: 100, marginTop: 10, marginLeft: 20}} />
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 360, marginLeft: 20, marginTop: 10 }} />
+        <Image source={require('./fotos/Logo42.png')} style={{ height: 40, width: 150, marginTop: 10, marginLeft: 20}} />
+        <View style={{ borderWidth: 1, borderColor: 'gray', width: 315, marginLeft: 20, marginTop: 10 }} />
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>
             {'\n'}La colección del reconocido chelista y director de orquesta Arturo Xavier González fue donada por su hija,
@@ -72,11 +72,11 @@ export default class QuienesSom extends Component {
 
             {'\n'}En la Escuela Normal de Música de Guadalajara, con el maestro Ignacio Camarena, aprendió a tocar el Cello, instrumento con el que consiguió gran fama
             y grandes triunfos. En 1953, se le nombro director de la Banda del Estado de Jalisco y en 1958 se le reconoció con el Premio Jalisco y la medalla
-            José Clemente Orozco. Por mucho tiempo hizo dúo con la pianista Leonor Montijo.
+            José Clemente Orozco. Por mucho tiempo hizo dúo con la pianista Leonor Montijo.{'\n'}
 
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 355, marginLeft: 20, marginTop: 10 }} />
+            <View style={{ borderWidth: 1, borderColor: 'gray', width: 315, marginLeft: 20, marginTop: 10 }} />
             </Text>
-            <Text style={{ color: 'black', fontSize: 22, lineHeight: 25, textAlign: 'justify', fontWeight: 'bold'}}>
+            <Text style={{ color: 'black', fontSize: 22, lineHeight: 25, textAlign: 'justify', fontWeight: 'bold', marginTop: -10}}>
             {'\n'}{'\t'}{'\t'}Música Formal 
             </Text>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 15, marginLeft: 20 }}>
@@ -89,7 +89,7 @@ export default class QuienesSom extends Component {
             {'\n'}{'\t'}{'\t'}• Ópera 
             {'\n'}{'\t'}{'\t'}• Romanticismo
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 355, marginLeft: 0, marginTop: 10 }} />
+            <View style={{ borderWidth: 1, borderColor: 'gray', width: 315, marginLeft: 0, marginTop: 10 }} />
             <Text style={{ color: 'black', fontSize: 22, lineHeight: 25, textAlign: 'justify', fontWeight: 'bold'}}>
             {'\n'}{'\t'}{'\t'}Música Variada 
             </Text>
@@ -101,7 +101,7 @@ export default class QuienesSom extends Component {
             {'\n'}{'\t'}{'\t'}• Fonógrafo
             {'\n'}{'\t'}{'\t'}• Fox Trot 
             {'\n'}{'\t'}{'\t'}• Jazz
-            {'\n'}{'\t'}{'\t'}• Tango
+            {'\n'}{'\t'}{'\t'}• Tango{'\n'}
             </Text>
           </View>
         </ScrollView>

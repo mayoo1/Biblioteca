@@ -18,17 +18,17 @@ const App = () => {
       <MenuButton 
         title="6.1 Tesoros Bibliográficos" 
         onPress={() => navigation.navigate('Ahp6Te')} 
-        imageSource={require('./fotos/Antiguo2.jpg')}
+        imageSource={require('./fotos/GaleriaHis4.png')}
       />
       <MenuButton 
         title="6.2 Acervo Especial" 
         onPress={() => navigation.navigate('Ahp6Ac')} 
-        imageSource={require('./fotos/Libreria4.jpg')}
+        imageSource={require('./fotos/craneo.jpg')}
       />
       <MenuButton 
         title="6.3 Obras Bibliográficas editadas entre los Siglos XVII y XX" 
         onPress={() => navigation.navigate('Ahp6Obr')} 
-        imageSource={require('./fotos/Antiguo1.jpg')}
+        imageSource={require('./fotos/Libros1.jpg')}
       />
       <MenuButton 
         title="6.4 Sala Jalisciense" 

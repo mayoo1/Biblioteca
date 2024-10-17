@@ -24,13 +24,13 @@ export default class QuienesSom extends Component {
       <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')}
+            source={require('./fotos/Libreria10.jpg')}
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
             blurRadius={10}
           >
             <View style={{ alignItems: 'center' }}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Libreria10.jpg')} 
                 style={{ height: 400, width: 300, borderRadius: 10 }}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -42,7 +42,7 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: 20, marginTop: 10 }}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Libreria10.jpg')} 
                 style={{ height: '70%', width: '80%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
               />
               <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>

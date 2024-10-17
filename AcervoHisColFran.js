@@ -25,13 +25,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')} 
+            source={require('./fotos/cpi.png')} 
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/cpi.png')} 
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -43,7 +43,7 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/cpi.png')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: 'darkred',
+    backgroundColor: '#454545',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'darkred',
+    backgroundColor: '#454545',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: '#454545',
     marginTop: -10
   },
 });

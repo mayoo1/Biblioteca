@@ -37,8 +37,8 @@ const resources = [
   {
     section: 'Equipo de desarrollo',
     items: [
-      { Nombre: 'Esau Mendoza', Puesto: 'El mero mero, CEO de GOOGLE/ INTEL/ IBM'},
-      { Nombre: 'Andrea Cortes', Puesto: 'La mas Basada, CEO de CANDYCRUSH/ FACEBOOK/ TIKTOK.' },  
+      { Nombre: 'Joaquin Esau Mendoza Fajardo', Puesto: ''},
+      { Nombre: 'Andrea Elizabeth Cortes Garcia', Puesto: '' },  
     ],
   }
 ];

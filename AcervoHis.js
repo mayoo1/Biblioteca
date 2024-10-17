@@ -28,7 +28,7 @@ const App = () => {
       <MenuButton 
         title="Piso 3. Periódicos de Jalisco" 
         onPress={() => navigation.navigate('Ahp3')} 
-        imageSource={require('./fotos/Antiguo13.jpg')}
+        imageSource={require('./fotos/Antiguo1.jpg')}
       />
       <MenuButton 
         title="Piso 4. Publicaciones seriadas de Jalisco (Del S.XIX hasta 1982) y Fonoteca" 

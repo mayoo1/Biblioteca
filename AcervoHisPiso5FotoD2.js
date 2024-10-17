@@ -25,13 +25,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/seriadas.png')} 
+            source={require('./fotos/Libro2.jpg')} 
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Libro2.jpg')} 
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -43,7 +43,7 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
               <Image 
-                source={require('./fotos/seriadas.png')} 
+                source={require('./fotos/Libro2.jpg')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
@@ -58,7 +58,7 @@ export default class QuienesSom extends Component {
 
         <ScrollView style={{ marginTop: 10 }}>
         <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
+          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 20 }} />
           <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
 
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
@@ -66,20 +66,17 @@ export default class QuienesSom extends Component {
               La sección fotográfica de la Colación Emilio Garcia Riera se resguarda en 9 archiveros con alrededor de 22,000 fotografías en blanco y negro, a color de películas, directores, actores y actrices del cine mexicano e Internacional.
               {'\n'}
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-            <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 10 }} />
+            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 10 }} />
+            <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 20 }} />
           <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20 }}>Acervo</Text>
 
           
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
               Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser consultada en el piso 5 de la Biblioteca Histórica (adicionalmente,
-              parte de los acervos audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
+              parte de los acervos audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).{'\n'}
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
           </View>
         
-
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
         </ScrollView>
       </View>
         )}
@@ -119,7 +116,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -138,7 +135,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -146,7 +143,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     marginTop: -10
   },
 });

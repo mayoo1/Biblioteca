@@ -18,7 +18,7 @@ const App = () => {
       <MenuButton 
         title="5.1 Obras Bibliográficas editadas entre los Siglos XVII y XX" 
         onPress={() => navigation.navigate('Ahp5o')} 
-        imageSource={require('./fotos/Antiguo2.jpg')}
+        imageSource={require('./fotos/Antiguo19.png')}
       />
       <MenuButton 
         title="5.2 Fondo de Impresos Europeos Siglos XVII y XVIII" 
@@ -28,7 +28,7 @@ const App = () => {
       <MenuButton 
         title="5.3 Fondo Histórico Siglo XX" 
         onPress={() => navigation.navigate('Ahp5fh')} 
-        imageSource={require('./fotos/Antiguo1.jpg')}
+        imageSource={require('./fotos/Antiguo20.png')}
       />
       <MenuButton 
         title="5.4 Fondos Particulares" 
@@ -38,7 +38,7 @@ const App = () => {
       <MenuButton 
         title="5.5 Cinemática" 
         onPress={() => navigation.navigate('Ahp5c')} 
-        imageSource={require('./fotos/Libros3.jpg')}
+        imageSource={require('./fotos/persona7.jpg')}
       />
       <MenuButton 
         title="5.6 Fototeca de Jalisco" 

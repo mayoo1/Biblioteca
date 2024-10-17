@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import { View, Text, Image, TouchableOpacity, FlatList, Dimensions, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const imageRef = useRef(null);
+  const screenWidth = Dimensions.get('window').width;
+  const flatListRef = useRef(null);
+
   const images = [
     require('./fotos/carrusel1.png'),
     require('./fotos/carrusel2.png'),
@@ -31,12 +33,6 @@ const App = () => {
   ];
 
   const navigation = useNavigation();
-  useEffect(() => {
-    imageRef.current = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(imageRef.current);
-  }, []);
 
   const renderButton = ({ item }) => (
     <TouchableOpacity
@@ -54,21 +50,51 @@ const App = () => {
         paddingHorizontal: 10,
       }}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Image source={item.icon} style={{ height: 30, width: 30, marginRight: 10, borderRadius: 5 }}/>
+        <Image source={item.icon} style={{ height: 40, width: 40, marginRight: 10, borderRadius: 5 }} />
         <Text style={{ color: item.color, fontSize: 16, fontWeight: 'bold' }}>{item.title}</Text>
       </View>
       <Text style={{ color: item.color, fontSize: 10 }}>VER +</Text>
     </TouchableOpacity>
   );
 
+  const handleScroll = (event) => {
+    const contentOffsetX = event.nativeEvent.contentOffset.x;
+    const index = Math.floor(contentOffsetX / screenWidth);
+    setCurrentImageIndex(index);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (currentImageIndex + 1) % images.length;
+      setCurrentImageIndex(nextIndex);
+
+      flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentImageIndex]);
+
   return (
-    <View style={{borderColor: 'red', borderWidth:0, width:'100%', height: '100%',}}>
-        <Image source={images[currentImageIndex]} style={{ width: '100%', height: 200, borderWidth: 1, borderColor: 'gray' }}/>
-        <FlatList data={buttons} renderItem={renderButton} keyExtractor={(item) => item.route}/>
+    <View style={{ borderColor: 'red', borderWidth: 0, width: '100%', height: '100%' }}>
+      <FlatList
+        ref={flatListRef}
+        data={images}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={handleScroll}
+        renderItem={({ item }) => (
+          <Image source={item} style={{ width: screenWidth, height:250}} />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
+      <FlatList
+        data={buttons}
+        renderItem={renderButton}
+        keyExtractor={(item) => item.route}
+      />
     </View>
   );
 };
 
 export default App;
-
-//adb reverse tcp:8081 tcp:8081

@@ -8,20 +8,16 @@ const App = () => {
     React.useCallback(() => {
       const timer = setTimeout(() => {
         navigation.navigate('INICIO');
-      }, 2500); 
+      }, 1000); 
       return () => clearTimeout(timer);
     }, [navigation])
   );
 
   return (
-    <View style={{backgroundColor:'#7C2422', width:'100%', height:'100%'}}>
-      <View style={{backgroundColor:'#003865', width:'100%', height:'15%', borderColor:'white', borderWidth:0}}>
-        <Image style={{width:'20%', height:'100%', borderColor:'white', borderWidth:0}} source={require('./fotos/Logoudg.png')} />
-        <Text style={styles.title}>
-          UNIVERSIDAD DE GUADALAJARA
-        </Text>
-        <View style={{ borderWidth: 1, borderColor: 'white', width: '70%', marginTop: 40, marginLeft:'25%' }} />
-      </View>
+    <View>
+      <Text>
+
+      </Text>
     </View>
   );
 };

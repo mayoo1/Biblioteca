@@ -18,12 +18,12 @@ const App = () => {
       <MenuButton 
         title="Colección Alberto Gómez Barbosa" 
         onPress={() => navigation.navigate('Ahp5fod1')} 
-        imageSource={require('./fotos/Antiguo2.jpg')}
+        imageSource={require('./fotos/persona9.jpg')}
       />
       <MenuButton 
         title="Colección Emilio Garcia Riera (Sección Fotográfica)" 
         onPress={() => navigation.navigate('Ahp5fod2')} 
-        imageSource={require('./fotos/Libreria4.jpg')}
+        imageSource={require('./fotos/Libro2.jpg')}
       />
     </View>
   );

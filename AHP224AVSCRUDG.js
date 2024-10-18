@@ -28,6 +28,7 @@ const App = () => {
       <MenuButton 
         title="Joe y a su chica" 
         onPress={() => navigation.navigate('P2udg3')} 
+        imageSource={require('./fotos/anonimo.jpg')}
       />
       <MenuButton 
         title="Crisálida" 

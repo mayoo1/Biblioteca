@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     height: '35%',
     width: '95%',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '70%',
     borderRadius: 10,
   },
   viewButton: {
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     borderRadius: 5,
   },
   viewButtonText: {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
+    backgroundColor: 'black',
     marginTop: -10,
   },
 });

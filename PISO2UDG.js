@@ -47,7 +47,7 @@ export default class QuienesSom extends Component {
                 style={styles.infoImage} 
               />
               
-              <TouchableOpacity style={{width: '90%', marginTop: 25, marginLeft: -10 }} onPress={this.handleImagePress}>
+              <TouchableOpacity style={{width: '90%', marginTop: 25, marginLeft: -10 }}>
               <Text style={styles.viewButtonText}>Escuchar: "Yo no lo se de cierto"</Text>
             </TouchableOpacity>
             </View>

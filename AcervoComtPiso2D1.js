@@ -185,14 +185,14 @@ export default class ServRecur extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: '3%',
     backgroundColor: '#f5f5f5',
   },
   sectionContainer: {
     backgroundColor: '#fff',
     borderRadius: 8,
-    padding: 5,
-    marginBottom: 10,
+    padding: '1%',
+    marginBottom: '4%',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -204,13 +204,13 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: 'column',
     alignItems: 'flex-start',
-    marginBottom: 10,
+    marginBottom: '3%',
   },
   header: {
     fontSize: 19,
     fontWeight: 'bold',
     color: '#db3210',
-    marginBottom: 10,
+    marginBottom: '3%',
   },
   titulo: {
     fontSize: 15,

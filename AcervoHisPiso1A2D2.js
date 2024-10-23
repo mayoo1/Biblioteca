@@ -49,14 +49,14 @@ export default class AcervoHisPiso1A4 extends Component {
                 <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>1.2.2 Ramo Criminal</Text>
+            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: '5%', marginHorizontal: 20, textAlign:'center' }}>1.2.2 Ramo Criminal</Text>
 
-            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
+            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: '5%', marginLeft: '5%' }}>
               <Image 
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '30%' }}>Presentación</Text>
             </View>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
@@ -81,11 +81,11 @@ const styles = {
   logo: {
     height: '10%',
     width: '40%',
-    marginLeft: 20,
-    marginTop: 10,
+    marginLeft: '5%',
+    marginTop: '5%',
   },
   closeButton: {
-    marginTop: 20,
+    marginTop: '10%',
     padding: 10,
     backgroundColor: '#444',
     borderRadius: 5,

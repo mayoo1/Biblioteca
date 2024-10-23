@@ -40,34 +40,34 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: 20, marginTop: 10 }}>
+            <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: '6%', marginTop: '3%' }}>
               <Image 
                 source={require('./fotos/Antiguo1.jpg')} 
                 style={{ height: '70%', width: '60%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
               />
               <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:'6%', height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>Piso 3. Hemeroteca Histórica</Text>
+            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: '3%', marginHorizontal: '6%', textAlign:'center' }}>Piso 3. Hemeroteca Histórica</Text>
 
-            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
+            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: '3%', marginLeft: '6%' }}>
               <Image 
                 source={require('./fotos/ico3.png')} 
-                style={{ height: 25, width: 25, marginRight: -30 }}
+                style={{ height: '95%', width: '15%', marginRight: '-25%' }}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
+              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '30%' }}>Presentación</Text>
             </View>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={{ height: 2, backgroundColor: 'gray', marginTop: '3%', marginHorizontal: '6%' }}></View>
 
-            <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
-              <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify' }}>
+            <ScrollView style={{ borderWidth: 0, width: '95%', marginLeft: '2%' }} contentContainerStyle={{ paddingHorizontal: '6%', paddingTop: '3%' }}>
+              <Text style={{ color: 'black', fontSize: 16, lineHeight: 20, textAlign: 'justify' }}>
               De la prensa local, regional nacional existen diferentes títulos, que abordan temas de política, jurisprudencia, literatura, arte, variedades, educación, medicina y religion. Se resguardan títulos publicados desde 1809 hasta el año 2011.
               </Text>
             </ScrollView>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={{ height: 2, backgroundColor: 'gray', marginTop: '3%', marginHorizontal: '6%' }}></View>
 
             <Image source={require('./fotos/Logo8.png')} style={styles.logo} />
           </View>
@@ -81,12 +81,12 @@ const styles = {
   logo: {
     height: '10%',
     width: '40%',
-    marginLeft: 20,
-    marginTop: 10,
+    marginLeft: '6%',
+    marginTop: '3%',
   },
   closeButton: {
-    marginTop: 20,
-    padding: 10,
+    marginTop: '6%',
+    padding: '3%',
     backgroundColor: '#444',
     borderRadius: 5,
   },

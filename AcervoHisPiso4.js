@@ -35,24 +35,24 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'gainsboro',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: '3%',
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '95%',
-    height: 70,
+    height: '10%',
     backgroundColor: 'white',
-    marginVertical: 10,
+    marginVertical: '3%',
     borderRadius: 5,
     borderColor: 'gray',
     borderWidth: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: '2%',
   },
   buttonImage: {
-    height: 50,
-    width: 50,
+    height: '78%',
+    width: '15%',
     borderRadius: 7,
   },
   buttonText: {
@@ -60,12 +60,13 @@ const styles = StyleSheet.create({
     color: 'darkred',
     fontSize: 12.5,
     fontWeight: 'bold',
-    marginLeft: 20,
+    marginLeft: '3%',
     textAlign: 'left',
+    borderRight: '3%'
   },
   iconImage: {
-    width: 30,
-    height: 30,
+    width: '5%',
+    height: '50%',
   },
 });
 

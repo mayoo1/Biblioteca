@@ -43,15 +43,15 @@ const styles = StyleSheet.create({
     width: '95%',
     height: 70,
     backgroundColor: 'white',
-    marginVertical: 10,
+    marginVertical: '3%',
     borderRadius: 5,
     borderColor: 'gray',
     borderWidth: 1,
     paddingHorizontal: 10,
   },
   buttonImage: {
-    height: 50,
-    width: 50,
+    height: '70%',
+    width: '15%',
     borderRadius: 7,
   },
   buttonText: {
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   iconImage: {
-    width: 30,
-    height: 30,
+    width: '10%',
+    height: '40%',
   },
 });
 

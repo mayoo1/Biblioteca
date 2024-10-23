@@ -52,25 +52,25 @@ export default class QuienesSom extends Component {
             </View>
             
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.3 José Cornejo Franco
+        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: '6%', marginTop: '3%' }}>Piso 5. Fondos Particulares</Text>
+        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: '6%', marginTop: '3%' }}>5.4.3 José Cornejo Franco
         </Text>
 
         <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+        <View style={{ borderWidth: 1, borderColor: 'gray', width: '90%', marginLeft: '5%', marginTop: '3%' }} />
+          <Image source={require('./fotos/ico3.png')} style={{ height: '8%', width: '6%', marginLeft: '6%', marginTop: '4%' }} />
+          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '14%', marginTop: '-6%' }}>Presentación</Text>
 
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
+            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: '3%' }}>
               Escritor, historiador, bibliotecólogo, bibliógrafo, catedrático, investigador y académico mexicano, se especializó en la historia del estado de Jalisco. 
               Director de la biblioteca Pública del Estado de Jalisco de 1930 a 1931, repitiendo nuevamente el cargo en 1949 hasta su muerte.
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
+            
           </View>
-        
+          <View style={{ borderWidth: 1, borderColor: 'gray', width: '90%', marginLeft: '5%', marginTop: '6%' }} />
           
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
+          <Image source={require('./fotos/Logo.png')} style={{height: '20%', width: '80%', marginLeft: '6%', marginTop: '3%',borderWidth: 0, borderColor: 'gray' }} />
          
         </ScrollView>
       </View>
@@ -99,9 +99,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   closeButton: {
-    marginTop: 20,
+    marginTop: '6%',
     backgroundColor: 'white',
-    padding: 10,
+    padding: '3%',
     borderRadius: 5,
   },
   closeButtonText: {
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     height: '35%',
     width: '95%',
     backgroundColor: 'black',
-    margin: 10,
+    margin: '3%',
     borderRadius: 10,
     justifyContent: 'center', 
     alignItems: 'center', 
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     height: '7%',
     alignSelf: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: '6%',
     backgroundColor: 'black',
     borderRadius: 5,
   },
@@ -139,6 +139,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     backgroundColor: 'black',
-    marginTop: -10
+    marginTop: '-2%'
   },
 });

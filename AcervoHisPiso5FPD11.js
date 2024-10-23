@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,20 +18,19 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/persona20.jpg')} 
+            source={require('./fotos/persona20.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('./fotos/persona20.jpg')} 
+              <Image
+                source={require('./fotos/persona20.jpg')}
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -42,39 +41,35 @@ export default class QuienesSom extends Component {
         ) : (
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
-              <Image 
-                source={require('./fotos/persona20.jpg')} 
-                style={styles.infoImage} 
+              <Image
+                source={require('./fotos/persona20.jpg')}
+                style={styles.infoImage}
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.11 Antonio Peñafiel
-        </Text>
+            <Text style={styles.sectionTitle}>Piso 5. Fondos Particulares</Text>
+            <Text style={styles.sectionSubtitle}>5.4.11 Antonio Peñafiel</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationTitle}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Uno de lo más grandes polígrafos de México y tal vez el más ilustre hidalguense de finales del siglo XIX y principios del XX, participa en la acciones militares, al lado del General Ignacio Zaragoza, en su carácter de médico militar, promovió la edición de numerosas obras relativas a la historia antigua de México, se le considera como uno de los primeros y más completos estadígrafos de México, dirigió el Primer Censo General de la República.
-              </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Uno de lo más grandes polígrafos de México y tal vez el más ilustre hidalguense de finales del siglo XIX y principios del XX, participa en la acciones militares, al lado del General Ignacio Zaragoza, en su carácter de médico militar, promovió la edición de numerosas obras relativas a la historia antigua de México, se le considera como uno de los primeros y más completos estadígrafos de México, dirigió el Primer Censo General de la República.
+                </Text>
+              </View>
+              <View style={styles.separator} />
+
+              <Image source={require('./fotos/Logo.png')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-          
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
-         
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -94,7 +89,7 @@ const styles = StyleSheet.create({
   },
   fullImage: {
     height: 400,
-    width: 300,
+    width: 250, 
     borderRadius: 10,
   },
   closeButton: {
@@ -113,11 +108,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
+    height: '65%',
     width: '45%',
     borderRadius: 10,
   },
@@ -137,7 +132,59 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  sectionSubtitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%', // Cambiar a porcentaje para mayor responsividad
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentationTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logo: {
+    height: 60,
+    width: '80%',
+    marginLeft: '10%', 
+    marginTop: 20,
   },
 });

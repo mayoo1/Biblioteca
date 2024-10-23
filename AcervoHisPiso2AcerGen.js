@@ -52,22 +52,23 @@ export default class QuienesSom extends Component {
             </View>
             
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10, width: '86.5%'}}>Piso 2 Biblioteca Álvarez del Castillo</Text>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: 20, marginTop: 10 }}>2.1 Acervo General.</Text>
+        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: '6%', marginTop: '3%', width: '86.5%'}}>Piso 2 Biblioteca Álvarez del Castillo</Text>
+        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: '6%', marginTop: '3%' }}>2.1 Acervo General.</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+        <ScrollView style={{ marginTop: '3%' }}>
+        <View style={{ borderWidth: 1, borderColor: 'gray', width: '88%', marginLeft: '5%', marginTop: '3%' }} />
+          <Image source={require('./fotos/ico3.png')} style={{ height: '8%', width: '5%', marginLeft: '6%', marginTop: '3%' }} />
+          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '13%', marginTop: '-5%' }}>Presentación</Text>
 
           <View style={{ width: '86.5%', marginLeft: '5%' }}>
             <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>
               Resguarda libro impresos durante los Siglos XIX y XX, se compone por más de 80,000 volúmenes.
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 20 }} />
+            
           </View>
+          <View style={{ borderWidth: 1, borderColor: 'gray', width: '88%',  marginTop: '3%',marginLeft: '5%' }} />
 
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
+          <Image source={require('./fotos/Logo3.jpg')} style={{height: '50%', width: '40%', marginLeft: '6%', marginTop: '6%'}} />
         </ScrollView>
       </View>
         )}
@@ -95,9 +96,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   closeButton: {
-    marginTop: 20,
+    marginTop: '6%',
     backgroundColor: 'white',
-    padding: 10,
+    padding: '3%',
     borderRadius: 5,
   },
   closeButtonText: {
@@ -108,8 +109,8 @@ const styles = StyleSheet.create({
     height: '35%',
     width: '95%',
     backgroundColor: 'darkred',
-    margin: 10,
-    borderRadius: 10,
+    margin: '3%',
+    borderRadius: '3%',
     justifyContent: 'center', 
     alignItems: 'center', 
   },
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     height: '7%',
     alignSelf: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: '6%',
     backgroundColor: 'darkred',
     borderRadius: 5,
   },
@@ -135,6 +136,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     backgroundColor: 'darkred',
-    marginTop: -10
+    marginTop: '-2%'
   },
 });

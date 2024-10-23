@@ -49,7 +49,7 @@ export default class AcervoHisPiso1A4 extends Component {
                 <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>1.2.5 Exámenes de Abogados</Text>
+            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: '5%', marginHorizontal: '5%', textAlign:'center' }}>1.2.5 Exámenes de Abogados</Text>
 
             <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
               <Image 
@@ -59,9 +59,9 @@ export default class AcervoHisPiso1A4 extends Component {
               <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={{ height: 1, backgroundColor: 'gray', marginTop: '5%', marginHorizontal: 20 }}></View>
 
-            <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
+            <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: '5%' }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify', lineHeight: 25}}>
               Contiene las solicitudes de los estudiantes de Jurisprudencia para que se les aplique el examen correspondiente y obtener así el titulo de abogado o notario, desde 1720 hasta principios del siglo XX. 
               </Text>
@@ -81,8 +81,8 @@ const styles = {
   logo: {
     height: '10%',
     width: '40%',
-    marginLeft: 20,
-    marginTop: 10,
+    marginLeft: '5%',
+    marginTop: '5%',
   },
   closeButton: {
     marginTop: 20,

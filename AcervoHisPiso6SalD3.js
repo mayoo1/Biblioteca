@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+// Obtener dimensiones de la pantalla para hacer el diseño responsivo
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -24,13 +27,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/Libros5.jpg')} 
+            source={require('./fotos/Libros5.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('./fotos/Libros5.jpg')} 
+              <Image
+                source={require('./fotos/Libros5.jpg')}
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -41,37 +44,37 @@ export default class QuienesSom extends Component {
         ) : (
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
-              <Image 
-                source={require('./fotos/Libros5.jpg')} 
-                style={styles.infoImage} 
+              <Image
+                source={require('./fotos/Libros5.jpg')}
+                style={styles.infoImage}
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 24, marginLeft: 20, marginTop: 10 }}>6.4.1 Sala jalisciense. Piso 6</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>6.4.3. impresos en Guadalajara Siglos XVII al XX.
-        </Text>
-
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
-
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Esta colección contiene los primeros impresos que se generan con la llegada de la imprenta a Guadalajara que se otorgo a Mariano Valdés Téllez Girón, el 10 de agosto de 1793, por medio de una cédula real con un privilegio exclusivo por 10 años. Esta colección se compone de 1,823 volúmenes.
+            <Text style={styles.title}>6.4.1 Sala jalisciense. Piso 6</Text>
+            <Text style={styles.subtitle}>
+              6.4.3. Impresos en Guadalajara Siglos{'\n'}XVII al XX.
             </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
-          </View>
 
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
-        </ScrollView>
-      </View>
+            <ScrollView style={styles.scrollContainer}>
+              <View style={styles.divider} />
+              <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+              <Text style={styles.presentationText}>Presentación</Text>
+
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Esta colección contiene los primeros impresos que se generan con la llegada de la imprenta a Guadalajara que se otorgó a Mariano Valdés Téllez Girón, el 10 de agosto de 1793, por medio de una cédula real con un privilegio exclusivo por 10 años. Esta colección se compone de 1,823 volúmenes.
+                </Text>
+              </View>
+              <View style={styles.divider} />
+
+              <Image source={require('./fotos/Logo3.jpg')} style={styles.logoImage} />
+            </ScrollView>
+          </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -90,8 +93,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.5, 
+    width: width * 0.9,
     borderRadius: 10,
   },
   closeButton: {
@@ -101,20 +104,20 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   closeButtonText: {
-    fontSize: 16,
+    fontSize: width * 0.04,
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
+    height: height * 0.35,
     width: '95%',
     backgroundColor: '#353535',
     margin: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
+    height: '70%',
     width: '85%',
     borderRadius: 10,
   },
@@ -132,9 +135,61 @@ const styles = StyleSheet.create({
   viewButtonText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: width * 0.04,
     textAlign: 'center',
-    backgroundColor: '#353535',
-    marginTop: -10
+  },
+  title: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: width * 0.06,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.045,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  scrollContainer: {
+    marginTop: 10,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    marginLeft: '5%',
+    marginTop: 10,
+  },
+  iconImage: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.04, // Ajuste de fuente relativo
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '90%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: width * 0.045, // Ajuste de fuente relativo
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logoImage: {
+    height: height * 0.1, // Ajuste de altura de la imagen
+    width: width * 0.4, // Ajuste de ancho de la imagen
+    marginLeft: 20,
+    marginTop: 20,
   },
 });

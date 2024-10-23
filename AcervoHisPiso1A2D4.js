@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
 
 export default class AcervoHisPiso1A4 extends Component {
@@ -46,12 +46,12 @@ export default class AcervoHisPiso1A4 extends Component {
                 style={{ height: '70%', width: '60%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
               />
               <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:'30%', height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>1.2.4 Libros de Jueces y magistrados</Text>
+            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: '5%', marginHorizontal: '5%', textAlign:'center' }}>1.2.4 Libros de Jueces y magistrados</Text>
 
-            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
+            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: '5%', marginLeft: 20 }}>
               <Image 
                 source={require('./fotos/ico3.png')} 
                 style={{ height: 25, width: 25, marginRight: -30 }}
@@ -59,7 +59,7 @@ export default class AcervoHisPiso1A4 extends Component {
               <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
             </View>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={{ height: 1, backgroundColor: 'gray', marginTop: '5%', marginHorizontal: '5%' }}></View>
 
             <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
               <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify', lineHeight: 25}}>
@@ -81,8 +81,8 @@ const styles = {
   logo: {
     height: '10%',
     width: '40%',
-    marginLeft: 20,
-    marginTop: 10,
+    marginLeft: '5%',
+    marginTop: '5%',
   },
   closeButton: {
     marginTop: 20,

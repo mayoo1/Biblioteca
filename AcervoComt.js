@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
+const { width, height } = Dimensions.get('window');
 
 const MenuButton = ({ title, onPress, imageSource }) => (
   <TouchableOpacity onPress={onPress} activeOpacity={1} style={styles.button}>
@@ -55,24 +57,24 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'gainsboro',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: '3%',
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: '95%',
-    height: 70,
+    width: width * 0.95,
+    height: height * 0.1,
     backgroundColor: 'white',
-    marginVertical: 10,
+    marginVertical: height * 0.01,
     borderRadius: 5,
     borderColor: 'gray',
     borderWidth: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: '3%',
   },
   buttonImage: {
-    height: 50,
-    width: 50,
+    height: '70%',
+    width: '16%',
     borderRadius: 7,
   },
   buttonText: {
@@ -80,13 +82,14 @@ const styles = StyleSheet.create({
     color: 'darkred',
     fontSize: 12.5,
     fontWeight: 'bold',
-    marginLeft: 20,
+    marginLeft: '5%',
     textAlign: 'left',
   },
   iconImage: {
-    width: 30,
-    height: 30,
+    width: '10%',
+    height: '50%',
   },
 });
 
 export default App;
+

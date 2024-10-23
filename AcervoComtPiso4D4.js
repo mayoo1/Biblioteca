@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -24,13 +26,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/persona5.jpg')} 
+            source={require('./fotos/persona5.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('./fotos/persona5.jpg')} 
+              <Image
+                source={require('./fotos/persona5.jpg')}
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -41,38 +43,36 @@ export default class QuienesSom extends Component {
         ) : (
           <View style={{ flex: 1 }}>
             <View style={styles.infoContainer}>
-              <Image 
-                source={require('./fotos/persona5.jpg')} 
-                style={styles.infoImage} 
+              <Image
+                source={require('./fotos/persona5.jpg')}
+                style={styles.infoImage}
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10, width: '86.5%' }}>Piso 4. Colecciones Especiales Nacionales</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 19, marginLeft: 20, marginTop: 10 }}>4.4 Fondo Enrique Estrada Faudón
-        </Text>
+            <Text style={styles.titleText}>Piso 4. Colecciones Especiales Nacionales</Text>
+            <Text style={styles.subtitleText}>4.4 Fondo Enrique Estrada Faudón</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={{ marginTop: 10 }}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+              <Text style={styles.presentacionText}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Biblioteca particular de un distinguido jalisciense, medico, especializado en psiquiatra, amante de las ciencias naturales y uno de los fundadores de la sociedad de ciencias naturales de Jalisco. Dirigió la Benemérita sociedad de Geografía y Estadística del Estado de Jalisco, A.C.; perteneció también a la sociedad Mexicana de Geografía y estadística, ademas, estuvo a cargo de la dirección de ecología y vegetación urbana, asi como un amplio estudio sobre recursos naturales de la costa de Jalisco. Es considerado como el investigador mas importante del occidente de México por sus aportaciones a las ciencias naturales. Su Biblioteca particular consta de 8,500 volúmenes, publicaciones periódicas, asi como su archivo personal de documentos.  
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Biblioteca particular de un distinguido jalisciense, médico, especializado en psiquiatría, amante de las ciencias naturales y uno de los fundadores de la sociedad de ciencias naturales de Jalisco. Dirigió la Benemérita sociedad de Geografía y Estadística del Estado de Jalisco, A.C.; perteneció también a la sociedad Mexicana de Geografía y estadística, además, estuvo a cargo de la dirección de ecología y vegetación urbana, así como un amplio estudio sobre recursos naturales de la costa de Jalisco. Es considerado como el investigador más importante del occidente de México por sus aportaciones a las ciencias naturales. Su Biblioteca particular consta de 8,500 volúmenes, publicaciones periódicas, así como su archivo personal de documentos.
+                </Text>
+              </View>
+              <View style={styles.separator} />
+
+              <Image source={require('./fotos/Logo22.png')} style={styles.logoImage} />
+              <Image source={require('./fotos/Logo23.png')} style={styles.logoImage} />
+            </ScrollView>
           </View>
-
-          <Image source={require('./fotos/Logo22.png')} style={{height: 70, width: 200, marginLeft: 20, marginTop: 20}} />
-          <Image source={require('./fotos/Logo23.png')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 10}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.5, // Adjusted for responsiveness
+    width: width * 0.8,   // Adjusted for responsiveness
     borderRadius: 10,
   },
   closeButton: {
@@ -106,16 +106,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
+    height: height * 0.35, // Adjusted for responsiveness
     width: '95%',
     backgroundColor: '#353535',
     margin: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
+    height: '65%',
     width: '45%',
     borderRadius: 10,
   },
@@ -135,7 +135,58 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#353535',
-    marginTop: -10
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: 22,
+    marginLeft: 20,
+    marginTop: 10,
+    width: '86.5%',
+  },
+  subtitleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 19,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '86.5%',
+    marginLeft: '5%',
+    marginTop: 10,
+  },
+  iconImage: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentacionText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logoImage: {
+    height: 70,
+    width: 150,
+    marginLeft: 20,
+    marginTop: 20,
   },
 });
+

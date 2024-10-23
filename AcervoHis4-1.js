@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -16,6 +16,11 @@ export default class QuienesSom extends Component {
   handleCloseImage = () => {
     this.setState({ showImage: false });
   };
+
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
+
 
   render() {
     const { showImage } = this.state;
@@ -39,39 +44,44 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
-            <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: 20, marginTop: 10 }}>
+          <View style={{ flex: 1, padding: '5%' }}>
+            <View style={{ height: '40%', backgroundColor: '#454545', borderRadius: 5, marginBottom: '5%' }}>
               <Image 
                 source={require('./fotos/Libreria10.jpg')} 
-                style={{ height: '70%', width: '80%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
+                style={{ height: '70%', width: '80%', borderRadius: 5, alignSelf: 'center', marginTop: '8%' }}
               />
-              <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
+              <TouchableOpacity 
+                style={styles.button} 
+                onPress={this.handleImagePress}
+              >
+                <Text style={styles.buttonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'darkred', fontSize:22,fontWeight: 'bold', borderRadius: 5, backgroundColor: '#eeeeee', marginTop: 10, marginLeft: 30, textAlign:'left' }}>Piso 4. Publicaciones Seriadas</Text>
-            <Text style={{color:'gray', fontWeight: 'bold', fontSize:16, borderRadius: 5, backgroundColor: '#eeeeee', marginTop: 10,marginLeft: 30, textAlign:'left' }}>4.1. Publicaciones Seriadas.</Text>
 
-            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
+            <Text style={styles.title}>Piso 4. Publicaciones Seriadas</Text>
+            <Text style={styles.subtitle}>4.1. Publicaciones Seriadas.</Text>
+
+            <View style={styles.presentationContainer}>
               <Image 
                 source={require('./fotos/ico3.png')} 
-                style={{ height: 25, width: 25, marginRight: -30 }}
+                style={styles.icon}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
+              <Text style={styles.presentationText}>Presentación</Text>
             </View>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={styles.separator} />
 
-            <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
-              <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify' }}>
-              Este acervo se compone de las revistas y folletos publicados de manera periódica en el estado y en otras regiones del país.
-              Se resguardan ediciones de diversas areas del conocimiento publicadas durante los siglos XIX y XX.
+            <ScrollView style={styles.scrollView}>
+              <Text style={styles.scrollText}>
+                Este acervo se compone de las revistas y folletos publicados de manera periódica en el estado y en otras regiones del país.
+                Se resguardan ediciones de diversas áreas del conocimiento publicadas durante los siglos XIX y XX.
               </Text>
             </ScrollView>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
-
+            <View style={styles.separator} />
+            <TouchableOpacity onPress={() => this.openURL('https://idej.edu.mx/')}>
             <Image source={require('./fotos/Logo8.png')} style={styles.logo} />
+            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -81,10 +91,10 @@ export default class QuienesSom extends Component {
 
 const styles = {
   logo: {
-    height: '10%',
-    width: '40%',
-    marginLeft: 20,
-    marginTop: 10,
+    height: 80,
+    width: 150,
+    alignSelf: 'center',
+    marginTop: '2%',
   },
   closeButton: {
     marginTop: 20,
@@ -97,5 +107,66 @@ const styles = {
     fontSize: 16,
     fontWeight: 'bold',
   },
+  button: {
+    borderWidth: 0,
+    width: '30%',
+    height: '7%',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    marginTop: 1,
+    backgroundColor: 'transparent', // Cambié a transparente para mantener el diseño original
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 15,
+    textAlign: 'center',
+    height: '100%',
+    marginTop: '30%'
+  },
+  title: {
+    color: 'darkred',
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+  subtitle: {
+    color: 'gray',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginTop: 10,
+  },
+  presentationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginRight: 10,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: 'gray',
+    marginVertical: 10,
+  },
+  scrollView: {
+    borderWidth: 0,
+    width: '90%',
+    alignSelf: 'center',
+  },
+  scrollText: {
+    color: 'black',
+    fontSize: 15,
+    lineHeight: 20,
+    textAlign: 'justify',
+  },
 };
+
 

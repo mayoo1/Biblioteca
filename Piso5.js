@@ -9,7 +9,7 @@ const sections = [
 
 export default class Piso5 extends Component {
   render() {
-    const { link } = sections[0]; // Obtener el enlace del array de secciones
+    const { link } = sections[0];
 
     return (
       <View style={styles.container}>

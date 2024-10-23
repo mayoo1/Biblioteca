@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,20 +18,19 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/anonima.jpg')} 
+            source={require('./fotos/anonima.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('./fotos/anonima.jpg')} 
+              <Image
+                source={require('./fotos/anonima.jpg')}
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -41,40 +40,37 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
+            {/* Info Section */}
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/anonima.jpg')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.12 Araceli Ibarra Bellon
-        </Text>
+            <Text style={styles.subtitle}>Piso 5. Fondos Particulares</Text>
+            <Text style={styles.title}>5.4.12 Araceli Ibarra Bellon</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={{ marginTop: 10 }}>
+              <View style={styles.divider} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationTitle}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Historiadora, catedrática de la Facultad de filosofía y letras de la Universidad de Guadalajara, e investigadora asidua de tiempo completo. Su colección es rica em estudios de filosofía, literatura e historia del comercio en México y en el extranjero, como feminista no podrían faltar varios trabajos sobre género.  
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: -15 }} />
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Historiadora, catedrática de la Facultad de filosofía y letras de la Universidad de Guadalajara, e investigadora asidua de tiempo completo. Su colección es rica en estudios de filosofía, literatura e historia del comercio en México y en el extranjero, como feminista no podrían faltar varios trabajos sobre género.
+                </Text>
+              </View>
+                              <View style={styles.divider} />
+
+              <Image source={require('./fotos/Logo.png')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-          
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
-         
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -113,11 +109,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
+    height: '65%',
     width: '55%',
     borderRadius: 10,
   },
@@ -137,7 +133,56 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  subtitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  title: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: 320,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentationTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  text: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logo: {
+    height: 60,
+    width: 300,
+    marginLeft: 20,
+    marginTop: 20,
   },
 });

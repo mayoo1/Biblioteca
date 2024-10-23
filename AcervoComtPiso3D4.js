@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -17,9 +17,14 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
+  handleLogoPress = () => {
+    const url = 'https://www.inegi.org.mx/';
+    Linking.openURL(url).catch(err => console.error("Error al abrir la URL: ", err));
+  };
+
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
+    const screenWidth = Dimensions.get('window').width;
 
     return (
       <View style={styles.container}>
@@ -32,7 +37,7 @@ export default class QuienesSom extends Component {
             <View style={styles.imageView}>
               <Image 
                 source={require('./fotos/inegi.png')} 
-                style={styles.fullImage}
+                style={[styles.fullImage, { width: screenWidth * 0.8 }]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -47,29 +52,30 @@ export default class QuienesSom extends Component {
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
             
+            <ScrollView style={{ marginTop: 10 }}>
+              <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+              <Text style={styles.titleText}>Presentación</Text>
+              <View style={styles.separator} />
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Es una red de consulta externa que cuenta con información estadística y geográfica generada por INEGI como los censos económicos, mapas interactivos, unidades de información,
-              Asesores de consulta y un espacio equipado para consulta y capacitación sobre sus diversos productos.{'\n'}
-              </Text>
+              <View style={[styles.textContainer, { width: screenWidth * 0.9 }]}>
+                <Text style={styles.bodyText}>
+                  Es una red de consulta externa que cuenta con información estadística y geográfica generada por INEGI como los censos económicos, mapas interactivos, unidades de información,
+                  Asesores de consulta y un espacio equipado para consulta y capacitación sobre sus diversos productos.{'\n'}
+                </Text>
+              </View>
+              
+              <View style={styles.separator} />
+              <TouchableOpacity onPress={this.handleLogoPress}>
+                <Image source={require('./fotos/Logo16.png')} style={styles.logoImage} />
+              </TouchableOpacity>
+            </ScrollView>
           </View>
-          
-          <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0, marginLeft:20 }} />
-          <Image source={require('./fotos/Logo16.png')} style={{height: 90, width: 150, marginLeft: 20, marginTop: 20}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -89,7 +95,6 @@ const styles = StyleSheet.create({
   },
   fullImage: {
     height: 400,
-    width: 300,
     borderRadius: 10,
   },
   closeButton: {
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   infoImage: {
     height: '65%', 
@@ -118,7 +123,6 @@ const styles = StyleSheet.create({
   },
   viewButton: {
     borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
     alignSelf: 'center',
@@ -132,7 +136,41 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'darkred',
-    marginTop: -10
+  },
+  iconImage: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  textContainer: {
+    marginLeft: '5%',
+    marginTop: 10,
+  },
+  bodyText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+  },
+  logoImage: {
+    height: 90,
+    width: 150,
+    marginLeft: 20,
+    marginTop: 20,
   },
 });

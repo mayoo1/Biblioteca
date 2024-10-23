@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
@@ -40,57 +41,54 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.contentContainer}>
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/persona9.jpg')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10 }}>Piso 5. Acervo General, Fondos Particulares, Archivos Visuales y Sonoros: Cinemáteca y Fototeca</Text>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 16, marginLeft: 20, marginTop: 10 }}>Colección Alberto Gómez Barbosa.
-        </Text>
+            <Text style={styles.title}>Piso 5. Acervo General, Fondos Particulares, Archivos Visuales y Sonoros: Cinemáteca y Fototeca</Text>
+            <Text style={styles.subtitle}>Colección Alberto Gómez Barbosa.</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationText}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Esta colección llego a la biblioteca publica del estado de Jalisco en marzo de 2014. Consta aproximadamente de 75,000 negativos en blanco y negro, a color, asi como de 1,143 fotografías (126 enmarcadas, 22 litografías, 32 paquetes de fotografía sin enmarcar). Ademas incluye la biblioteca personal del fotógrafo Alberto Gomez Barbosa
-            
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 0 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 20 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20 }}>Historia</Text>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Alberto Gomez Barbosa nació en Yurecuaro, Michoacan, en 1963. Reside en Guadalajara desde 1940. En su trayectoria como fotógrafo, se registran mas de cincuenta exposiciones individuales, destacando las realizadas en la ciudad de Mexico, en nueva York, La habana, Kioto, San Jose (Costa Rica) y Miami, asi como la ilustración de mas de treinta libros y la autoría de algunos mas. Su mas reciente libro fotográfico "Luz y sombra" es una muestra mayor de su trabajo en blanco y negro.
-            </Text>
-            
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
-            <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 20 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20 }}>Acervo</Text>
+              <View style={styles.descriptionContainer}>
+                <Text style={styles.descriptionText}>
+                  Esta colección llegó a la biblioteca pública del estado de Jalisco en marzo de 2014. Consta aproximadamente de 75,000 negativos en blanco y negro, a color, así como de 1,143 fotografías (126 enmarcadas, 22 litografías, 32 paquetes de fotografía sin enmarcar). Además, incluye la biblioteca personal del fotógrafo Alberto Gómez Barbosa.
+                </Text>
+              </View>
+                
+              <View style={styles.separator} />
+              <View style={styles.descriptionContainer}>
+                <Image source={require('./fotos/ico3.png')} style={{height: 25, width: 25, marginLeft: 0, marginTop: 10,}} />
+                <Text style={{fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20,}}>Historia</Text>
+                <Text style={styles.descriptionText}>
+                  Alberto Gómez Barbosa nació en Yurécuaro, Michoacán, en 1963. Reside en Guadalajara desde 1940. En su trayectoria como fotógrafo, se registran más de cincuenta exposiciones individuales, destacando las realizadas en la Ciudad de México, Nueva York, La Habana, Kioto, San José (Costa Rica) y Miami, así como la ilustración de más de treinta libros y la autoría de algunos más. Su más reciente libro fotográfico "Luz y sombra" es una muestra mayor de su trabajo en blanco y negro.
+                </Text>
+              </View>
+                
+                <View style={styles.separator} />
+                <View style={styles.descriptionContainer}>
+                <Image source={require('./fotos/ico3.png')} style={{height: 25, width: 25, marginLeft: 0, marginTop: 10,}} />
+                <Text style={{fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20,}}>Acervo</Text>
+                <Text style={styles.descriptionText}>
+                  Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser consultada en el piso 5 de la Biblioteca Histórica (adicionalmente, parte de los acervos audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
+                </Text>
+              </View>
 
-          
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser consultada en el piso 5 de la Biblioteca Histórica (adicionalmente,
-              parte de los acervos audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+              <Image source={require('./fotos/Logo3.jpg')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -109,8 +107,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.4, // 40% de la altura de la pantalla
+    width: width * 0.8, // 80% del ancho de la pantalla
     borderRadius: 10,
   },
   closeButton: {
@@ -123,8 +121,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  contentContainer: {
+    flex: 1,
+  },
   infoContainer: {
-    height: '35%',
+    height: height * 0.35, // 35% de la altura de la pantalla
     width: '95%',
     backgroundColor: 'black',
     margin: 10,
@@ -138,8 +139,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
     alignSelf: 'center',
@@ -153,8 +152,75 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  title: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: 22,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 16,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%', // Usar un porcentaje para que sea responsivo
+    alignSelf: 'center',
+    marginTop: 20,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.04,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  descriptionContainer: {
+    width: '90%',
+    alignSelf: 'center',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  historyText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.04,
+    marginLeft: 30,
+    marginTop: -20,
+  },
+  acervoText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.04,
+    marginLeft: 30,
+    marginTop: -20,
+  },
+  logo: {
+    height: height * 0.1, // 10% de la altura de la pantalla
+    width: width * 0.4, // 40% del ancho de la pantalla
+    marginLeft: 20,
+    marginTop: 20,
   },
 });
+
  

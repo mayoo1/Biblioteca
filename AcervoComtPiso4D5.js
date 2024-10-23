@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window'); // Obtener las dimensiones de la ventana
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -50,24 +52,23 @@ export default class QuienesSom extends Component {
             </TouchableOpacity>
             </View>
             
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10, width: '86.5%' }}>Piso 4. Colecciones Especiales Nacionales</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10, width: '86.5%' }}>4.5 Fondo Biodiversidad Dr. Enrique Beltrán
-        </Text>
+        <Text style={styles.titleText}>Piso 4. Colecciones Especiales Nacionales</Text>
+        <Text style={styles.subtitleText}>4.5 Fondo Biodiversidad Dr. Enrique Beltrán</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.separator} />
+          <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+          <Text style={styles.sectionTitle}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Ese fondo debe su nombre al doctor Enrique Beltrán, uno de los primeros biólogos mexicanos predecesor del movimiento conservacionista en México y en el mundo. Sus trabajos han sido de gran importancia para el medio de las ciencias naturales, por lo que biólogos mexicanos y extranjeros han clasificado con su apellido a 16 especies. Además, fue fundador del Instituto Mexicano de Recursos Naturales Renovables (IMERNAR).Esta área se especializa en ciencias naturales, biología, biodiversidad y temas relacionados. El fondo se compone de 16 mil libros y 25 mil publicaciones periódicas en alrededor de 1 100 títulos; el archivo personal del doctor Beltrán, la correspondencia entre investigadores científicos; una importante colección de misceláneas y archivos del IMERNAR.
-            {'\n'}</Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+          <View style={styles.textContainer}>
+            <Text style={styles.paragraph}>
+              Ese fondo debe su nombre al doctor Enrique Beltrán, uno de los primeros biólogos mexicanos predecesor del movimiento conservacionista en México y en el mundo. Sus trabajos han sido de gran importancia para el medio de las ciencias naturales, por lo que biólogos mexicanos y extranjeros han clasificado con su apellido a 16 especies. Además, fue fundador del Instituto Mexicano de Recursos Naturales Renovables (IMERNAR).Esta área se especializa en ciencias naturales, biología, biodiversidad y temas relacionados. El fondo se compone de 16 mil libros y 25 mil publicaciones periódicas en alrededor de 1 100 títulos; el archivo personal del doctor Beltrán, la correspondencia entre investigadores científicos; una importante colección de misceláneas y archivos del IMERNAR.
+            </Text>
+            
           </View>
-
-          <Image source={require('./fotos/Logo22.png')} style={{height: 60, width: 150, marginLeft: 20, marginTop: 20}} />
-          <Image source={require('./fotos/Logo24.png')} style={{height: 80, width: 100, marginLeft: 20, marginTop: 10}} />
+          <View style={styles.separator} />
+          <Image source={require('./fotos/Logo22.png')} style={styles.logoImage} />
+          <Image source={require('./fotos/Logo24.png')} style={styles.logoImageSmall} />
         </ScrollView>
       </View>
         )}
@@ -90,8 +91,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.5, // Altura responsiva
+    width: width * 0.8, // Ancho responsivo
     borderRadius: 10,
   },
   closeButton: {
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
+    height: height * 0.35,
     width: '95%',
     backgroundColor: '#353535',
     margin: 10,
@@ -119,11 +120,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
-    width: '30%',
-    height: '7%',
-    alignSelf: 'center',
+    width: '40%',
+    height: '20%',
     justifyContent: 'center',
     marginTop: 20,
     backgroundColor: '#353535',
@@ -134,7 +132,67 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#353535',
-    marginTop: -10
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: width * 0.05, // Tamaño de texto responsivo
+    marginLeft: 20,
+    marginTop: 10,
+    width: '86.5%',
+  },
+  subtitleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.04,
+    marginLeft: 20,
+    marginTop: 10,
+    width: '86.5%',
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: width * 0.9,
+    marginLeft: '5%',
+    marginTop: 10,
+  },
+  iconImage: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.045,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  paragraph: {
+    color: 'black',
+    fontSize: width * 0.045,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logoImage: {
+    height: height * 0.1,
+    width: width * 0.4,
+    marginLeft: 20,
+    marginTop: 20,
+  },
+  logoImageSmall: {
+    height: height * 0.1,
+    width: width * 0.25,
+    marginLeft: 20,
+    marginTop: 10,
   },
 });

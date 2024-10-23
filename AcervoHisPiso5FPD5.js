@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,20 +18,19 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/persona14.jpg')} 
+            source={require('./fotos/persona14.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('./fotos/persona14.jpg')} 
+              <Image
+                source={require('./fotos/persona14.jpg')}
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -40,43 +39,37 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.innerContainer}>
             <View style={styles.infoContainer}>
-              <Image 
-                source={require('./fotos/persona14.jpg')} 
-                style={styles.infoImage} 
+              <Image
+                source={require('./fotos/persona14.jpg')}
+                style={styles.infoImage}
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.5 Paulino Machorro Narváez
-        </Text>
+            <Text style={styles.infoText}>Piso 5. Fondos Particulares</Text>
+            <Text style={styles.titleText}>5.4.5 Paulino Machorro Narváez</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.divider} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationText}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Con fuertes tendencias liberales fue Ministro Público en Teocaltiche, Jalisco y posteriormente Juez en Aguascalientes, fundó el periódico "Revista
-              del Centro". En 1906 regresó a Jalisco y ganó las elecciones municipales de Guadalajara. Desempeñó diversos cargos en la Secretaria de Hacienda y fue 
-              Ministro de la Suprema Corte de Justicia. Dió clases de Derecho Constitucional en la UNAM y publicó diversas obras.
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
+              <View style={styles.descriptionContainer}>
+                <Text style={styles.descriptionText}>
+                  Con fuertes tendencias liberales fue Ministro Público en Teocaltiche, Jalisco y posteriormente Juez en Aguascalientes, fundó el periódico "Revista del Centro". En 1906 regresó a Jalisco y ganó las elecciones municipales de Guadalajara. Desempeñó diversos cargos en la Secretaria de Hacienda y fue Ministro de la Suprema Corte de Justicia. Dió clases de Derecho Constitucional en la UNAM y publicó diversas obras.
+                </Text>
+              </View>
+              <View style={styles.divider} />
+
+              <Image source={require('./fotos/Logo.png')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-          
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
-         
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -85,6 +78,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eeeeee',
+  },
+  innerContainer: {
+    flex: 1,
+    padding: 10,
   },
   imageBackground: {
     flex: 1,
@@ -113,22 +110,19 @@ const styles = StyleSheet.create({
     height: '35%',
     width: '95%',
     backgroundColor: 'black',
-    margin: 10,
+    marginBottom: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
-    width: '45%',
+    height: '75%',
+    width: '60%',
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
-    alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
     backgroundColor: 'black',
@@ -139,7 +133,58 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  infoText: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginTop: 10,
+    marginLeft: 20,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginTop: 10,
+    marginLeft: 20,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '100%',
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  descriptionContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logo: {
+    height: 60,
+    width: '100%',
+    marginTop: 20,
+    alignSelf: 'center',
   },
 });

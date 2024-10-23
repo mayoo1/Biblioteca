@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -46,25 +48,24 @@ export default class QuienesSom extends Component {
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-
-        <ScrollView style={{ marginTop: 10 }}>
-        <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Introducción</Text>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Archivos Visuales y Sonoros se conforma de tres áreas: Fototeca, Cinemáteca y Fonoteca. Sus acervos se resguardan y pueden ser consultados en los pisos 2, 4 y 5 del Acervo Histórico (adicionalmente, los acervos sonoros y audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
-            {'\n'}</Text>
+            <ScrollView style={styles.scrollView}>
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.introductionText}>Introducción</Text>
+              <View style={styles.divider} />
+              <View style={styles.textContainer}>
+                <Text style={styles.description}>
+                  Archivos Visuales y Sonoros se conforma de tres áreas: Fototeca, Cinemáteca y Fonoteca. Sus acervos se resguardan y pueden ser consultados en los pisos 2, 4 y 5 del Acervo Histórico (adicionalmente, los acervos sonoros y audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
+                  {'\n'}
+                </Text>
+              </View>
+            </ScrollView>
           </View>
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -83,8 +84,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.5,
+    width: width * 0.8,
     borderRadius: 10,
   },
   closeButton: {
@@ -98,17 +99,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
+    height: '30%',
     width: '95%',
     backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
-    width: '35%',
+    height: '70%', 
+    width: '40%',
     borderRadius: 10,
   },
   viewButton: {
@@ -128,6 +129,40 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     backgroundColor: 'black',
-    marginTop: -10
+    marginTop: -10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  introductionText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    marginLeft: '5%',
+    marginTop: 10,
+  },
+  textContainer: {
+    width: '90%',
+    marginLeft: '5%',
+  },
+  description: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
   },
 });

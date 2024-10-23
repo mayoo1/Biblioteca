@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import React, { Component } from 'react'; 
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -17,8 +17,13 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
+  handleLogoPress = (url) => {
+    Linking.openURL(url);
+  };
+
   render() {
     const { showImage } = this.state;
+    const { width, height } = Dimensions.get('window');
 
     return (
       <View style={styles.container}>
@@ -31,7 +36,7 @@ export default class QuienesSom extends Component {
             <View style={styles.imageView}>
               <Image 
                 source={require('./fotos/fj.png')} 
-                style={styles.fullImage}
+                style={[styles.fullImage, { height: height * 0.5, width: width * 0.8 }]} // Imagen responsiva
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -43,35 +48,39 @@ export default class QuienesSom extends Component {
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/fj.png')} 
-                style={styles.infoImage} 
+                style={[styles.infoImage, { height: height * 0.2, width: width * 0.7 }]} // Imagen responsiva
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
             
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10 }}>4.1 Fondo de Jalisco</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>Colecciones Especiales Nacionales.
-        </Text>
+            <Text style={[styles.titleText, { fontSize: width * 0.05 }]}>4.1 Fondo de Jalisco</Text>
+            <Text style={[styles.subtitleText, { fontSize: width * 0.04 }]}>Colecciones Especiales Nacionales.</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={{ marginTop: 10 }}>
+              <View style={styles.divider} />
+              <Image source={require('./fotos/ico3.png')} style={[styles.icon, { height: height * 0.03, width: width * 0.07 }]} />
+              <Text style={[styles.sectionTitle, { fontSize: width * 0.04 }]}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Área especializada en la que se puede acceder a conocimientos acerca de la cultura, el desarrollo económico, los aspectos educativos y otras temáticas del estado de Jalisco (Sus municipios, autores, monumentos históricos, economía, urbanismo, estadísticas, etcetera). En el edificio del contemporáneo se cuenta con aproximadamente 13,893 mil volúmenes y varias revistas editadas en Jalisco de 1961 a la fecha.
-            {'\n'}</Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+              <View style={{ width: '90%', marginLeft: '5%' }}>
+                <Text style={[styles.descriptionText, { fontSize: width * 0.045 }]}>
+                  Área especializada en la que se puede acceder a conocimientos acerca de la cultura, el desarrollo económico, los aspectos educativos y otras temáticas del estado de Jalisco (Sus municipios, autores, monumentos históricos, economía, urbanismo, estadísticas, etcetera). En el edificio del contemporáneo se cuenta con aproximadamente 13,893 mil volúmenes y varias revistas editadas en Jalisco de 1961 a la fecha.
+                </Text>
+              </View>
+              <View style={styles.divider} />
+
+              <TouchableOpacity onPress={() => this.handleLogoPress('https://coljal.mx/')}>
+                <Image source={require('./fotos/Logo4.jpeg')} style={[styles.logoImage, { height: height * 0.08, width: width * 0.5 }]} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => this.handleLogoPress('https://www.jalisco.gob.mx/inicio')}>
+                <Image source={require('./fotos/Logo9.png')} style={[styles.logoImage, { height: height * 0.03, width: width * 0.4, marginTop:30}]} />
+              </TouchableOpacity>
+            </ScrollView>
           </View>
-
-          <Image source={require('./fotos/Logo4.jpeg')} style={{height: 60, width: 180, marginLeft: 20, marginTop: 20}} />
-          <Image source={require('./fotos/Logo9.png')} style={{height: 40, width: 160, marginLeft: 20, marginTop: 0}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -90,8 +99,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
     borderRadius: 10,
   },
   closeButton: {
@@ -105,17 +112,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
-    width: '95%',
+    height: '30%',
+    width: '90%',
     backgroundColor: '#353535',
     margin: 10,
     borderRadius: 10,
     justifyContent: 'center', 
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
-    width: '85%',
     borderRadius: 10,
   },
   viewButton: {
@@ -135,6 +140,45 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     backgroundColor: '#353535',
-    marginTop: -10
+    marginTop: -10,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    marginLeft: '5%',
+    marginTop: 10,
+  },
+  icon: {
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  descriptionText: {
+    color: 'black',
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logoImage: {
+    marginLeft: 20,
+    marginTop: 20,
   },
 });

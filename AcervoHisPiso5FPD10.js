@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window'); // Obtener dimensiones de la pantalla
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
@@ -47,36 +48,30 @@ export default class QuienesSom extends Component {
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.10 Felipe de la Rosa
-        </Text>
+            <Text style={styles.headerText}>Piso 5. Fondos Particulares</Text>
+            <Text style={styles.titleText}>5.4.10 Felipe de la Rosa</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={{ marginTop: 10 }}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationText}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Su Colección cuenta con 1,565 volúmenes con tema variados como psicología, ética, lógica, moral, literatura, historia y teatro, editarlos en París, Italia, Argentina, Inglaterra, Estados Unidos, España y México por mencionar algunos.
-            
-            
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Su Colección cuenta con 1,565 volúmenes con tema variados como psicología, ética, lógica, moral, literatura, historia y teatro, editarlos en París, Italia, Argentina, Inglaterra, Estados Unidos, España y México por mencionar algunos.
+                </Text>
+              </View>
+              <View style={styles.separator} />
+
+              <Image source={require('./fotos/Logo.png')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-          
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
-         
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -95,8 +90,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.4,
+    width: width * 0.8,
     borderRadius: 10,
   },
   closeButton: {
@@ -110,8 +105,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
-    width: '95%',
+    height: height * 0.35,
+    width: width * 0.95,
     backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
@@ -139,7 +134,56 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  headerText: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logo: {
+    height: 60,
+    width: '80%',
+    alignSelf: 'center',
+    marginTop: 20,
   },
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -19,13 +19,14 @@ export default class QuienesSom extends Component {
 
   render() {
     const { showImage } = this.state;
+    const { width, height } = Dimensions.get('window'); // Obtiene dimensiones de la pantalla
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/Antiguo21.png')} 
-            style={styles.imageBackground}
+            source={require('./fotos/Antiguo21.png')}
+            style={[styles.imageBackground, { height }]} // Ajusta al alto de la pantalla
             blurRadius={10}
           >
             <View style={styles.imageView}>
@@ -43,40 +44,37 @@ export default class QuienesSom extends Component {
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/Antiguo21.png')} 
-                style={styles.infoImage} 
+                style={[styles.infoImage, { height: height * 0.23, width: width * 0.7 }]}
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
             
+            <Text style={[styles.titleText, { fontSize: width * 0.06, marginLeft: width * 0.05 }]}>6.2. Acervo Especial. Piso 6</Text>
+            <Text style={[styles.subTitleText, { fontSize: width * 0.04, marginLeft: width * 0.05 }]}>6.2.6. Colección de Testigos.</Text>
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 24, marginLeft: 20, marginTop: 10 }}>6.2. Acervo Especial. Piso 6</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>6.2.6. Colección de Testigos. 
-        </Text>
+            <ScrollView style={{ marginTop: 10 }}>
+              <View style={[styles.divider, { width: width * 0.9, marginLeft: width * 0.05 }]} />
+              <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: width * 0.05, marginTop: 10 }} />
+              <Text style={[styles.sectionTitle, { fontSize: width * 0.04, marginLeft: width * 0.15 }]}>Presentación</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+              <View style={[styles.textContainer, { width: width * 0.9, marginLeft: width * 0.05 }]}>
+                <Text style={[styles.bodyText, { fontSize: width * 0.045, lineHeight: width * 0.06 }]}>
+                  Recopilación de fragmentos de manuscritos, cartas oficios religiosos, hojas con anotaciones manuscritas, recortes de periódicos, invitaciones, etc. Encontrados en las siguientes colecciones o acervos:
+                  {'\n'}
+                  {'\n'}-Manuscritos
+                  {'\n'}-Cedularios
+                  {'\n'}-Acervo General
+                </Text>
+                <View style={[styles.divider, { width: width * 0.9 }]} />
+              </View>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Recopilación de fragmentos de manuscritos, cartas oficios religiosos, hojas con anotaciones manuscritas, recortes de periódicos, invitaciones, etc. Encontrados en las siguientes colecciones o acervos:
-            {'\n'}
-            {'\n'}-Manuscritos
-            {'\n'}-Cedularios
-            {'\n'}-Acervo General
-            {'\n'}
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+              <Image source={require('./fotos/Logo3.jpg')} style={{ height: height * 0.1, width: width * 0.5, marginLeft: width * 0.05, marginTop: 20 }} />
+            </ScrollView>
           </View>
-
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -119,8 +117,6 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
   },
   infoImage: {
-    height: '65%', 
-    width: '85%',
     borderRadius: 10,
   },
   viewButton: {
@@ -140,6 +136,34 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     backgroundColor: '#353535',
-    marginTop: -10
+    marginTop: -10,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    marginTop: 10,
+  },
+  subTitleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    marginTop: 10,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    marginTop: 10,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    marginTop: -20,
+  },
+  textContainer: {
+    marginTop: 10,
+  },
+  bodyText: {
+    color: 'black',
+    textAlign: 'justify',
+    marginTop: 10,
   },
 });

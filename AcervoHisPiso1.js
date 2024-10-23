@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+const { width, height } = Dimensions.get('window');
+
 const MenuButton = ({ title, onPress, imageSource }) => (
-  <TouchableOpacity onPress={onPress} activeOpacity={1} style={styles.button}>
+  <TouchableOpacity onPress={onPress} activeOpacity={0.7} style={styles.button}>
     <Image source={imageSource} style={styles.buttonImage} />
     <Text style={styles.buttonText}>{title}</Text>
     <Image source={require('./fotos/ico1.png')} style={styles.iconImage} />
@@ -13,43 +15,26 @@ const MenuButton = ({ title, onPress, imageSource }) => (
 const App = () => {
   const navigation = useNavigation();
 
+  const menuItems = [
+    { title: "1.1 Archivo de la Real Audiencia de la Nueva Galicia", route: 'Piso1', image: require('./fotos/GaleriaHis3.png') },
+    { title: "1.2 Supremo Tribunal de Justicia del Estado de Jalisco", route: 'Ahp1A2', image: require('./fotos/Antiguo3.jpg') },
+    { title: "1.3 Dirección General de Instrucción Publica", route: 'Ahp1A3', image: require('./fotos/Antiguo4.jpg') },
+    { title: "1.4 Hospital", route: 'Ahp1A4', image: require('./fotos/Antiguo6.jpg') },
+    { title: "1.5 Archivos Particulares", route: 'Ahp1A5', image: require('./fotos/Antiguo5.jpg') },
+    { title: "1.6 Microfilmes", route: 'Ahp1A6', image: require('./fotos/micro.jpg') },
+    { title: "1.7 Mapoteca", route: 'Ahp1A7', image: require('./fotos/GaleriaHis5.png') },
+  ];
+
   return (
     <View style={styles.container}>
-      <MenuButton 
-        title="1.1 Archivo de la Real Audiencia de la Nueva Galicia" 
-        onPress={() => navigation.navigate('Piso1')} 
-        imageSource={require('./fotos/GaleriaHis3.png')}
-      />
-      <MenuButton 
-        title="1.2 Supremo Tribunal de Justicia del Estado de Jalisco" 
-        onPress={() => navigation.navigate('Ahp1A2')} 
-        imageSource={require('./fotos/Antiguo3.jpg')}
-      />
-      <MenuButton 
-        title="1.3 Dirección General de Instrucción Publica" 
-        onPress={() => navigation.navigate('Ahp1A3')} 
-        imageSource={require('./fotos/Antiguo4.jpg')}
-      />
-      <MenuButton 
-        title="1.4 Hospital" 
-        onPress={() => navigation.navigate('Ahp1A4')} 
-        imageSource={require('./fotos/Antiguo6.jpg')}
-      />
-      <MenuButton 
-        title="1.5 Archivos Particulares" 
-        onPress={() => navigation.navigate('Ahp1A5')} 
-        imageSource={require('./fotos/Antiguo5.jpg')}
-      />
-      <MenuButton 
-        title="1.6 Microfilmes" 
-        onPress={() => navigation.navigate('Ahp1A6')} 
-        imageSource={require('./fotos/micro.jpg')}
-      />
-      <MenuButton 
-        title="1.7 Mapoteca" 
-        onPress={() => navigation.navigate('Ahp1A7')} 
-        imageSource={require('./fotos/GaleriaHis5.png')}
-      />
+      {menuItems.map(item => (
+        <MenuButton 
+          key={item.route} 
+          title={item.title} 
+          onPress={() => navigation.navigate(item.route)} 
+          imageSource={item.image} 
+        />
+      ))}
     </View>
   );
 };
@@ -60,37 +45,37 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'gainsboro',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: height * 0.02,
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '95%',
-    height: 70,
+    height: height * 0.09,
     backgroundColor: 'white',
-    marginVertical: 10,
+    marginVertical: height * 0.015,
     borderRadius: 5,
     borderColor: 'gray',
     borderWidth: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: width * 0.02,
   },
   buttonImage: {
-    height: 50,
-    width: 50,
+    height: height * 0.065,
+    width: height * 0.065,
     borderRadius: 7,
   },
   buttonText: {
     flex: 1,
     color: 'darkred',
-    fontSize: 12.5,
+    fontSize: width * 0.035,
     fontWeight: 'bold',
-    marginLeft: 20,
+    marginLeft: width * 0.05,
     textAlign: 'left',
   },
   iconImage: {
-    width: 30,
-    height: 30,
+    width: width * 0.08,
+    height: width * 0.08,
   },
 });
 

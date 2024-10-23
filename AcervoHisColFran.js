@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,14 +20,13 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/cpi.png')} 
+            source={require('./fotos/cpi.png')}
             style={styles.imageBackground}
             blurRadius={10}
           >
@@ -40,68 +41,66 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.contentContainer}>
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/cpi.png')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Archivo Sonoro</Text>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: 20, marginTop: 10 }}>Francisco Navarro</Text>
+            <Text style={styles.title}>Archivo Sonoro</Text>
+            <Text style={styles.subtitle}>Francisco Navarro</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.sectionTitle}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>
-              Reúne un gigantesco acervo de discos de vinilo y CD con música de diferentes géneros (sones, danzones, huapangos, corridos, rancheras, cumbias,
-              salsa, trova, tangos, bandas, norteña, blues, rock, jazz y clásica) con grabaciones de principios y mediados del siglo XX. Ademas, integra esta
-              colección una biblioteca y un archivo documental sobre música. Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser 
-              consultada en el piso 4 de la Biblioteca Histórica (adicionalmente, parte de los acervos sonoros pueden consultarse desde la Mediateca Emilio
-              García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 20 }} />
+              <Text style={styles.description}>
+                Reúne un gigantesco acervo de discos de vinilo y CD con música de diferentes géneros (sones, danzones, huapangos, corridos, rancheras, cumbias,
+                salsa, trova, tangos, bandas, norteña, blues, rock, jazz y clásica) con grabaciones de principios y mediados del siglo XX. Ademas, integra esta
+                colección una biblioteca y un archivo documental sobre música. Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser 
+                consultada en el piso 4 de la Biblioteca Histórica (adicionalmente, parte de los acervos sonoros pueden consultarse desde la Mediateca Emilio
+                García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
+              </Text>
+              <View style={styles.separator} />
+
+              <View style={styles.section}>
+                <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+                <Text style={styles.sectionTitle}>Música Mexicana</Text>
+                <Text style={styles.subDescription}>
+                  {'\t'}{'\t'}• Boleros
+                  {'\n'}{'\t'}{'\t'}• Danzones 
+                  {'\n'}{'\t'}{'\t'}• Huapangos 
+                  {'\n'}{'\t'}{'\t'}• Corridos 
+                  {'\n'}{'\t'}{'\t'}• Rancheras 
+                  {'\n'}{'\t'}{'\t'}• Cumbias 
+                  {'\n'}{'\t'}{'\t'}• Salsa 
+                  {'\n'}{'\t'}{'\t'}• Trova 
+                  {'\n'}{'\t'}{'\t'}• Bandas y Norteña 
+                </Text>
+                
+              </View>
+              <View style={styles.separator} />
+              <View style={styles.section}>
+                <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+                <Text style={styles.sectionTitle}>Música Internacional</Text>
+                <Text style={styles.subDescription}>
+                  {'\t'}{'\t'}• Tangos 
+                  {'\n'}{'\t'}{'\t'}• Blues  
+                  {'\n'}{'\t'}{'\t'}• Rock and roll 
+                  {'\n'}{'\t'}{'\t'}• Jazz  
+                  {'\n'}{'\t'}{'\t'}• Clásica
+                </Text>
+              </View>
+            </ScrollView>
           </View>
-
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 20 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20 }}>Música Mexicana</Text>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 15 }}>
-            {'\t'}{'\t'}• Boleros
-            {'\n'}{'\t'}{'\t'}• Danzones 
-            {'\n'}{'\t'}{'\t'}• Huapangos 
-            {'\n'}{'\t'}{'\t'}• Corridos 
-            {'\n'}{'\t'}{'\t'}• Rancheras 
-            {'\n'}{'\t'}{'\t'}• Cumbias 
-            {'\n'}{'\t'}{'\t'}• Salsa 
-            {'\n'}{'\t'}{'\t'}• Trova 
-            {'\n'}{'\t'}{'\t'}• Bandas y Norteña 
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 20 }} />
-          </View>
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 20 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20 }}>Música Internacional</Text>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 15 }}>
-            {'\t'}{'\t'}• Tangos 
-            {'\n'}{'\t'}{'\t'}• Blues  
-            {'\n'}{'\t'}{'\t'}• Rock and roll 
-            {'\n'}{'\t'}{'\t'}• Jazz  
-            {'\n'}{'\t'}{'\t'}• Clásica
-            </Text>
-          </View>
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -120,8 +119,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.4,
+    width: width * 0.8,
     borderRadius: 10,
   },
   closeButton: {
@@ -133,6 +132,10 @@ const styles = StyleSheet.create({
   closeButtonText: {
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  contentContainer: {
+    flex: 1,
+    padding: 10,
   },
   infoContainer: {
     height: '35%',
@@ -149,11 +152,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
-    alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
     backgroundColor: '#454545',
@@ -164,7 +164,60 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#454545',
-    marginTop: -10
+  },
+  title: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: 15,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    marginVertical: 10,
+    marginLeft: '4%'
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  description: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginHorizontal: 20,
+  },
+  section: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  subDescription: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 15,
   },
 });

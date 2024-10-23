@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
+
+const { width, height } = Dimensions.get('window');
 
 const MenuButton = ({ title, onPress, imageSource }) => (
-  <TouchableOpacity onPress={onPress} activeOpacity={1} style={styles.button}>
+  <TouchableOpacity onPress={onPress} activeOpacity={0.7} style={styles.button}>
     <Image source={imageSource} style={styles.buttonImage} />
     <Text style={styles.buttonText}>{title}</Text>
     <Image source={require('./fotos/ico1.png')} style={styles.iconImage} />
@@ -16,14 +17,14 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={{height:'100%', width:'100%', marginLeft:20}}>
-      <MenuButton title="4.1 Fondo de Jalisco" onPress={() => navigation.navigate('Acp4d1')} imageSource={require('./fotos/fj.png')}/>
-      <MenuButton title="4.2 Colección Universidad de Guadalajara" onPress={() => navigation.navigate('Acp4d2')} imageSource={require('./fotos/udg.png')}/>
-      <MenuButton title="4.3 Biblioteca Ignacio L. Vallarta" onPress={() => navigation.navigate('Acp4d3')} imageSource={require('./fotos/biblioilv.png')}/>
-      <MenuButton title="4.4 Fondo Enrique Estrada Faudón" onPress={() => navigation.navigate('Acp4d4')} imageSource={require('./fotos/persona5.jpg')}/>
-      <MenuButton title="4.5 Fondo Biodiversidad Dr. Enrique Beltrán" onPress={() => navigation.navigate('Acp4d5')} imageSource={require('./fotos/persona6.jpg')}/>
-      <MenuButton title="4.6 Hemeroteca Especializada sobre la Universidad de Guadalajara" onPress={() => navigation.navigate('Acp4d6')} imageSource={require('./fotos/Logo17.png')}/>
-      <MenuButton title="4.7 Mediateca, Documentos Sonoros y Cine" onPress={() => navigation.navigate('Acp4d7')} imageSource={require('./fotos/persona7.jpg')}/>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <MenuButton title="4.1 Fondo de Jalisco" onPress={() => navigation.navigate('Acp4d1')} imageSource={require('./fotos/fj.png')} />
+        <MenuButton title="4.2 Colección Universidad de Guadalajara" onPress={() => navigation.navigate('Acp4d2')} imageSource={require('./fotos/udg.png')} />
+        <MenuButton title="4.3 Biblioteca Ignacio L. Vallarta" onPress={() => navigation.navigate('Acp4d3')} imageSource={require('./fotos/biblioilv.png')} />
+        <MenuButton title="4.4 Fondo Enrique Estrada Faudón" onPress={() => navigation.navigate('Acp4d4')} imageSource={require('./fotos/persona5.jpg')} />
+        <MenuButton title="4.5 Fondo Biodiversidad Dr. Enrique Beltrán" onPress={() => navigation.navigate('Acp4d5')} imageSource={require('./fotos/persona6.jpg')} />
+        <MenuButton title="4.6 Hemeroteca Especializada sobre la Universidad de Guadalajara" onPress={() => navigation.navigate('Acp4d6')} imageSource={require('./fotos/Logo17.png')} />
+        <MenuButton title="4.7 Mediateca, Documentos Sonoros y Cine" onPress={() => navigation.navigate('Acp4d7')} imageSource={require('./fotos/persona7.jpg')} />
       </ScrollView>
     </View>
   );
@@ -35,16 +36,20 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'gainsboro',
     alignItems: 'center',
-    paddingTop:20
+    paddingTop: 20,
+  },
+  scrollContainer: {
+    alignItems: 'center',
+    paddingBottom: 20,
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: '95%',
-    height: 70,
+    width: width * 0.95, // 95% of the screen width
+    height: height * 0.1, // Adjust height based on screen height
     backgroundColor: 'white',
-    marginVertical: 10,
+    marginVertical: 7,
     borderRadius: 5,
     borderColor: 'gray',
     borderWidth: 1,
@@ -70,3 +75,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+

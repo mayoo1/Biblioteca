@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,14 +18,13 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/Libro4.jpg')} 
+            source={require('./fotos/Libro4.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
@@ -40,39 +39,38 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.contentContainer}>
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/Libro4.jpg')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 24, marginLeft: 20, marginTop: 10 }}>6.1. Tesoros Bibliográficos. Piso 6</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10, width: '90%' }}>6.1.6. Obras Impresas en Europa en el Siglo XVI
-        </Text>
+            <Text style={styles.titleText}>6.1. Tesoros Bibliográficos. Piso 6</Text>
+            <Text style={styles.subtitleText}>6.1.6. Obras Impresas en Europa en el Siglo XVI</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationText}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Gran parte de estos libros llegaron con los conquistadores y evangelizadores españoles al Nuevo Mundo, en su mayoría son obras escritas en latín. {'\n'}
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Gran parte de estos libros llegaron con los conquistadores y evangelizadores españoles al Nuevo Mundo, en su mayoría son obras escritas en latín. {'\n'}
+                </Text>
+                
+              </View>
+              <View style={styles.separator} />
+
+              <Image source={require('./fotos/Logo3.jpg')} style={styles.logo} />
+            </ScrollView>
           </View>
-
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -105,6 +103,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  contentContainer: {
+    flex: 1,
+    padding: 0,
+  },
   infoContainer: {
     height: '35%',
     width: '95%',
@@ -120,11 +122,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
-    alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 20,
     backgroundColor: '#353535',
@@ -135,8 +134,62 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: '#353535',
-    marginTop: -10
+    marginTop: -10,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: 24,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+    width: '90%',
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    marginVertical: 10,
+    alignSelf: 'center',
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logo: {
+    height: 80,
+    width: 150,
+    marginLeft: 20,
+    marginTop: 20,
   },
 });
+
 

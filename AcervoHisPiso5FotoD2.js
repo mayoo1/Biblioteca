@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,20 +20,19 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('./fotos/Libro2.jpg')} 
+            source={require('./fotos/Libro2.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image 
-                source={require('./fotos/Libro2.jpg')} 
+                source={require('./fotos/Libro2.jpg')}
                 style={styles.fullImage}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -40,47 +41,45 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.contentContainer}>
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/Libro2.jpg')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: 20, marginTop: 10 }}>Piso 5. Acervo General, Fondos Particulares y Fototeca</Text>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: 20, marginTop: 10 }}>Colección Emilio García Riera (Sección Fotográfica)
-        </Text>
+            <Text style={styles.title}>Piso 5. Acervo General, Fondos Particulares y Fototeca</Text>
+            <Text style={styles.subtitle}>Colección Emilio García Riera (Sección Fotográfica)</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 20 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.sectionTitle}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              La sección fotográfica de la Colación Emilio Garcia Riera se resguarda en 9 archiveros con alrededor de 22,000 fotografías en blanco y negro, a color de películas, directores, actores y actrices del cine mexicano e Internacional.
-              {'\n'}
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 10 }} />
-            <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 0, marginTop: 20 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30, marginTop: -20 }}>Acervo</Text>
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  La sección fotográfica de la Colación Emilio Garcia Riera se resguarda en 9 archiveros con alrededor de 22,000 fotografías en blanco y negro, a color de películas, directores, actores y actrices del cine mexicano e Internacional.
+                </Text>
+                </View>
+                <View style={styles.separator} />
+              
+                <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+                <Text style={styles.sectionTitle}>Acervo</Text>
 
-          
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser consultada en el piso 5 de la Biblioteca Histórica (adicionalmente,
-              parte de los acervos audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).{'\n'}
-            </Text>
+                <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Esta colección, que forma parte de los Archivos Visuales y Sonoros, puede ser consultada en el piso 5 de la Biblioteca Histórica (adicionalmente, parte de los acervos audiovisuales pueden consultarse desde la Mediateca Emilio García Riera, ubicada en el piso 4 de la Biblioteca Contemporánea).
+                  {'\n'}
+                </Text>
+              </View>
+            </ScrollView>
           </View>
-        
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -99,8 +98,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.4, // 40% de la altura de la pantalla
+    width: width * 0.8, // 80% del ancho de la pantalla
     borderRadius: 10,
   },
   closeButton: {
@@ -113,23 +112,24 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  contentContainer: {
+    flex: 1,
+  },
   infoContainer: {
     height: '35%',
     width: '95%',
     backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   infoImage: {
-    height: '65%', 
+    height: '65%',
     width: '85%',
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
     alignSelf: 'center',
@@ -143,7 +143,54 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  title: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: width * 0.06, // Ajustar según el ancho de la pantalla
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: width * 0.05, // Ajustar según el ancho de la pantalla
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 20,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: width * 0.04,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '90%',
+    alignSelf: 'center',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: width * 0.05,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
   },
 });
+

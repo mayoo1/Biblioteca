@@ -1,6 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
+// Obtener el ancho de la pantalla
+const { width } = Dimensions.get('window');
 
 const MenuButton = ({ title, onPress, imageSource }) => (
   <TouchableOpacity onPress={onPress} activeOpacity={1} style={styles.button}>
@@ -52,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '95%',
-    height: 70,
+    height: width * 0.2,
     backgroundColor: 'white',
     marginVertical: 10,
     borderRadius: 5,
@@ -61,21 +64,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   buttonImage: {
-    height: 50,
-    width: 50,
+    height:'70%',
+    width:'15%',
     borderRadius: 7,
   },
   buttonText: {
     flex: 1,
     color: 'darkred',
-    fontSize: 12.5,
+    fontSize: width > 400 ? 16 : 14,
     fontWeight: 'bold',
     marginLeft: 20,
     textAlign: 'left',
   },
   iconImage: {
-    width: 30,
-    height: 30,
+    width: width * 0.075,
+    height: width * 0.075,
   },
 });
 

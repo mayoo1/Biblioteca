@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
@@ -40,44 +41,42 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.innerContainer}>
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/cpi.png')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop:5 }}>5 Colecciones Internacionales. Piso 5</Text>
-        <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 15 }} />
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Historia</Text>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            El área de colecciones internacionales cuenta también con material bibliográfico en alemán, portugués, gallego e italiano con temáticas diversas como tecnología, literatura, ciencias 
-            sociales, medicina, entre otros. Estas colecciones han sido donadas en diversas ediciones de la FIL por países invitados y por representantes de la industria editorial de diversas partes del mundo.
-            {'\n'}</Text>
+            <ScrollView style={styles.scrollView}>
+              <Text style={styles.collectionText}>5 Colecciones Internacionales. Piso 5</Text>
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.historyText}>Historia</Text>
+              <View style={styles.separator} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  El área de colecciones internacionales cuenta también con material bibliográfico en alemán, portugués, gallego e italiano con temáticas diversas como tecnología, literatura, ciencias sociales, medicina, entre otros. Estas colecciones han sido donadas en diversas ediciones de la FIL por países invitados y por representantes de la industria editorial de diversas partes del mundo.
+                </Text>
+              </View>
+
+              <View style={styles.separator} />
+              <View style={styles.logoRow}>
+                <Image source={require('./fotos/Logo34.png')} style={styles.logoSmall} />
+                <Image source={require('./fotos/Logo35.png')} style={styles.logoSmall} />
+              </View>
+              <View style={styles.logoRow}>
+                <Image source={require('./fotos/Logo36.png')} style={styles.logoLarge} />
+                <Image source={require('./fotos/Logo37.png')} style={styles.logoLarge} />
+              </View>
+            </ScrollView>
           </View>
-          
-          <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0, marginLeft:20 }} />
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
-            <Image source={require('./fotos/Logo34.png')} style={{ height: 50, width: 150, marginLeft:20 }} />
-            <Image source={require('./fotos/Logo35.png')} style={{ height: 50, width: 150, marginRight:30 }} />
-          </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
-            <Image source={require('./fotos/Logo36.png')} style={{ height: 80, width: 80, marginLeft:20 }} />
-            <Image source={require('./fotos/Logo37.png')} style={{ height: 80, width: 80, marginRight:170 }} />
-          </View>
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -96,8 +95,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.4,
+    width: width * 0.8,
     borderRadius: 10,
   },
   closeButton: {
@@ -109,6 +108,9 @@ const styles = StyleSheet.create({
   closeButtonText: {
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  innerContainer: {
+    flex: 1,
   },
   infoContainer: {
     height: '35%',
@@ -142,5 +144,60 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: 'darkred',
     marginTop: -10
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  collectionText: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginLeft: 20,
+    marginTop: 5,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 15,
+  },
+  historyText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  textContainer: {
+    width: '90%',
+    alignSelf: 'center',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logoRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    paddingHorizontal: 20,
+  },
+  logoSmall: {
+    height: 50,
+    width: 150,
+  },
+  logoLarge: {
+    height: 80,
+    width: 80,
   },
 });

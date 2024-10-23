@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -19,6 +19,8 @@ export default class QuienesSom extends Component {
 
   render() {
     const { showImage } = this.state;
+    const screenWidth = Dimensions.get('window').width;
+    const screenHeight = Dimensions.get('window').height;
 
     return (
       <View style={styles.container}>
@@ -31,7 +33,7 @@ export default class QuienesSom extends Component {
             <View style={styles.imageView}>
               <Image 
                 source={require('./fotos/musica.jpg')} 
-                style={styles.fullImage}
+                style={[styles.fullImage, { width: screenWidth * 0.8, height: screenHeight * 0.5 }]} // Responsivo
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -46,32 +48,30 @@ export default class QuienesSom extends Component {
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
             
+            <Text style={styles.titleText}>6.2. Acervo Especial. Piso 6</Text>
+            <Text style={styles.subtitleText}>6.2.5. Colección de Música.</Text>
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 24, marginLeft: 20, marginTop: 10 }}>6.2. Acervo Especial. Piso 6</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>6.2.5. Colección de Música. 
-        </Text>
+            <ScrollView style={{ marginTop: 10 }}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+              <Text style={styles.sectionTitle}>Presentación</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+              <View style={styles.textContainer}>
+                <Text style={styles.descriptionText}>
+                  Es esta colección podemos encontrar partituras de reconocidos músicos y compositores como el jalisciense Tomas Escobar, el compositor alemán Robert Schumann, Ludwig Van Beethoven, entre otros.
+                </Text>
+              </View>
+              <View style={styles.separator} />
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Es esta colección podemos encontrar partituras de reconocidos músicos y compositores como el jalisciense Tomas Escobar, el compositor alemán Robert Schumann, Ludwig Van Beethoven, entre otros.
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320,  marginTop: 0 }} />
+              <Image source={require('./fotos/Logo3.jpg')} style={styles.logoImage} />
+            </ScrollView>
           </View>
-
-          <Image source={require('./fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: 20, marginTop: 20}} />
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -90,8 +90,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
     borderRadius: 10,
   },
   closeButton: {
@@ -136,5 +134,56 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#353535',
     marginTop: -10
+  },
+  titleText: {
+    fontWeight: 'bold',
+    color: 'darkred',
+    fontSize: 24,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  subtitleText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  iconImage: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '86.5%',
+    marginLeft: '5%',
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logoImage: {
+    height: 80,
+    width: 150,
+    marginLeft: 20,
+    marginTop: 20,
   },
 });

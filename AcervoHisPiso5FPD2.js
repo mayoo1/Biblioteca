@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
@@ -40,41 +41,36 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={{ flex: 1 }}>
+          <View style={styles.contentContainer}>
             <View style={styles.infoContainer}>
               <Image 
                 source={require('./fotos/persona11.jpg')} 
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.2 Jorge Enciso Alatorre
-        </Text>
+            <Text style={styles.sectionTitle}>Piso 5. Fondos Particulares</Text>
+            <Text style={styles.subTitle}>5.4.2 Jorge Enciso Alatorre</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.presentationText}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-              Material con temática sobre agricultura, fitotecnica, tecnología, boletines y todo lo concerniente al cultivo y cuidado de la caña de azúcar.{'\n'}
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 10 }} />
+              <View style={styles.descriptionContainer}>
+                <Text style={styles.descriptionText}>
+                  Material con temática sobre agricultura, fitotécnica, tecnología, boletines y todo lo concerniente al cultivo y cuidado de la caña de azúcar.{'\n'}
+                </Text>
+              </View>
+              <View style={styles.separator} />
+              <Image source={require('./fotos/Logo.png')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-          
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
-         
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -93,8 +89,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: 400, // Proporcional a la altura de la pantalla
+    width: 300,  // Proporcional a la anchura de la pantalla
     borderRadius: 10,
   },
   closeButton: {
@@ -107,11 +103,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  contentContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
   infoContainer: {
-    height: '35%',
-    width: '95%',
+    height: '39%',
+    width: '100%',
     backgroundColor: 'black',
-    margin: 10,
+    marginVertical: 10,
     borderRadius: 10,
     justifyContent: 'center', 
     alignItems: 'center', 
@@ -122,8 +122,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
     alignSelf: 'center',
@@ -137,7 +135,59 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginTop: 10,
+  },
+  subTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginTop: 10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  separator: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '100%', // Ajustado a 100% del ancho
+    alignSelf: 'center',
+    marginVertical: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 0,
+    marginTop: 10,
+  },
+  presentationText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 30,
+    marginTop: -20,
+  },
+  descriptionContainer: {
+    width: '95%', // Proporcional al ancho de la pantalla
+    alignSelf: 'center',
+    marginLeft: '-4%'
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+    marginTop: 10,
+  },
+  logo: {
+    height: 60,
+    width: '95%', // Proporcional al ancho de la pantalla
+    alignSelf: 'center',
+    marginTop: 20,
   },
 });
+

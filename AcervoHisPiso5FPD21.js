@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window'); // Obtenemos el tamaño de la pantalla
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
@@ -47,34 +48,30 @@ export default class QuienesSom extends Component {
                 style={styles.infoImage} 
               />
               <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 15, marginLeft: 20, marginTop: 10 }}>Piso 5. Fondos Particulares</Text>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 17, marginLeft: 20, marginTop: 10 }}>5.4.21 Ignacio Igor Arreola Haro
-        </Text>
+            <Text style={styles.subTitle}>Piso 5. Fondos Particulares</Text>
+            <Text style={styles.title}>5.4.21 Ignacio Igor Arreola Haro</Text>
 
-        <ScrollView style={{ marginTop: 10 }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
-          <Image source={require('./fotos/ico3.png')} style={{ height: 25, width: 25, marginLeft: 20, marginTop: 10 }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 50, marginTop: -20 }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.divider} />
+              <Image source={require('./fotos/ico3.png')} style={styles.icon} />
+              <Text style={styles.sectionTitle}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', marginTop: 10 }}>
-            Considerado uno de los mejores dramaturgos de Jalisco, Ignacio Igor Arreola Haro, nació en Guadalajara, el 26 de enero de 1930. Fundo la compañía de teatro de la Universidad de Guadalajara en 1917, siendo maestro de la misma. Posteriormente fungió como director de la escuela de Teatro. En 1973 fundo el cine club de la misma Universidad, en el cual se desempeña como director hasta 1989.
-            </Text>
-            <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 0, marginTop: 20 }} />
+              <View style={styles.textContainer}>
+                <Text style={styles.description}>
+                  Considerado uno de los mejores dramaturgos de Jalisco, Ignacio Igor Arreola Haro, nació en Guadalajara, el 26 de enero de 1930. Fundó la compañía de teatro de la Universidad de Guadalajara en 1917, siendo maestro de la misma. Posteriormente fungió como director de la escuela de Teatro. En 1973 fundó el cine club de la misma Universidad, en el cual se desempeña como director hasta 1989.
+                </Text>
+                <View style={styles.divider} />
+              </View>
+
+              <Image source={require('./fotos/Logo.png')} style={styles.logo} />
+            </ScrollView>
           </View>
-        
-          
-          <Image source={require('./fotos/Logo.png')} style={{height: 60, width: 300, marginLeft: 20, marginTop: 20,borderWidth: 0, borderColor: 'gray' }} />
-         
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
@@ -93,8 +90,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: 400,
-    width: 300,
+    height: height * 0.5,
+    width: width * 0.8,
     borderRadius: 10,
   },
   closeButton: {
@@ -108,8 +105,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: '35%',
-    width: '95%',
+    height: height * 0.3,
+    width: width * 0.95,
     backgroundColor: 'black',
     margin: 10,
     borderRadius: 10,
@@ -123,7 +120,6 @@ const styles = StyleSheet.create({
   },
   viewButton: {
     borderWidth: 0,
-    borderColor: 'white',
     width: '30%',
     height: '7%',
     alignSelf: 'center',
@@ -137,7 +133,61 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10
+  },
+  subTitle: {
+    fontWeight: 'bold',
+    color: 'gray',
+    fontSize: 15,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  title: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  scrollView: {
+    marginTop: 10,
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: width * 0.9,
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginLeft: 20,
+    marginTop: 10,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 50,
+    marginTop: -20,
+  },
+  textContainer: {
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  description: {
+    color: 'black',
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: 'justify',
+  },
+  logo: {
+    height: 60,
+    width: width * 0.8,   // 80% del ancho de la pantalla
+    marginLeft: 20,
+    marginTop: 20,
+    borderWidth: 0,
+    borderColor: 'gray',
   },
 });

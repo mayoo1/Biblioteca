@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window'); // Obtenemos las dimensiones de la pantalla
 
 export default class AcervoHisPiso1A4 extends Component {
   constructor(props) {
@@ -31,7 +33,7 @@ export default class AcervoHisPiso1A4 extends Component {
             <View style={{ alignItems: 'center' }}>
               <Image 
                 source={require('./fotos/jesus.jpg')} 
-                style={{ height: 450, width: 300, borderRadius: 10 }}
+                style={{ height: height * 0.6, width: width * 0.8, borderRadius: 10 }} // Responsivo
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -40,34 +42,34 @@ export default class AcervoHisPiso1A4 extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: 20, marginTop: 10 }}>
+            <View style={styles.imageContainer}>
               <Image 
                 source={require('./fotos/jesus.jpg')} 
-                style={{ height: '70%', width: '60%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
+                style={styles.image} // Responsivo
               />
-              <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:20, height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
+              <TouchableOpacity style={styles.button} onPress={this.handleImagePress}>
+                <Text style={styles.buttonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: 10, marginHorizontal: 20, textAlign:'center' }}>1.5.3 Jesús Camarena</Text>
+            <Text style={styles.title}>1.5.3 Jesús Camarena</Text>
 
-            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: 10, marginLeft: 20 }}>
+            <View style={styles.rowContainer}>
               <Image 
                 source={require('./fotos/ico3.png')} 
-                style={{ height: 25, width: 25, marginRight: -30 }}
+                style={styles.icon}
               />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 40 }}>Presentación</Text>
+              <Text style={styles.headerText}>Presentación</Text>
             </View>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={styles.divider}></View>
 
-            <ScrollView style={{ borderWidth: 0, width: '90%', marginLeft: 15 }} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
-              <Text style={{ color: 'black', fontSize: 15, lineHeight: 20, textAlign: 'justify', lineHeight: 25}}>
-              Correspondencia personal y asuntos varios de su ejercicio en los cargos de Diputado del Congreso de la Unión, Gobernador Interino del Estado de Jalisco y Presidente del supremo Tribunal de Justicia del Estado de Jaleco, entre los años de 1840 y 1878.
+            <ScrollView style={styles.scrollView} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}>
+              <Text style={styles.descriptionText}>
+                Correspondencia personal y asuntos varios de su ejercicio en los cargos de Diputado del Congreso de la Unión, Gobernador Interino del Estado de Jalisco y Presidente del supremo Tribunal de Justicia del Estado de Jaleco, entre los años de 1840 y 1878.
               </Text>
             </ScrollView>
 
-            <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
+            <View style={styles.divider}></View>
 
             <Image source={require('./fotos/Logo3.jpg')} style={styles.logo} />
           </View>
@@ -78,10 +80,87 @@ export default class AcervoHisPiso1A4 extends Component {
 }
 
 const styles = {
-  logo: {
-    height: '10%',
+  imageContainer: {
+    height: height * 0.4, 
+    width: width * 0.9, 
+    backgroundColor: '#454545', 
+    borderRadius: 5, 
+    marginLeft: width * 0.05, 
+    marginTop: 10 
+  },
+  image: {
+    height: '70%',
+    width: '60%',
+    marginTop: '10%',
+    borderRadius: 5,
+    alignSelf: 'center',
+  },
+  button: {
+    borderWidth: 0,
+    borderColor: 'white',
+    width: '30%',
+    height: '7%',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    marginTop: 1,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 15,
+    textAlign: 'center',
+    marginTop: 20,
+    height: '100%',
+  },
+  title: {
+    color: 'white',
+    fontSize: 13,
+    borderRadius: 5,
+    backgroundColor: 'darkred',
+    marginTop: 10,
+    marginHorizontal: width * 0.05,
+    textAlign: 'center',
+  },
+  rowContainer: {
+    flexDirection: 'row',
     width: '40%',
-    marginLeft: 20,
+    alignItems: 'center',
+    marginTop: 10,
+    marginLeft: width * 0.05,
+  },
+  icon: {
+    height: 25,
+    width: 25,
+    marginRight: -30,
+  },
+  headerText: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 15,
+    marginLeft: 40,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: 'gray',
+    marginTop: 10,
+    marginHorizontal: width * 0.05,
+  },
+  scrollView: {
+    borderWidth: 0,
+    width: width * 0.9,
+    marginLeft: width * 0.05,
+  },
+  descriptionText: {
+    color: 'black',
+    fontSize: 15,
+    lineHeight: 20,
+    textAlign: 'justify',
+    lineHeight: 25,
+  },
+  logo: {
+    height: height * 0.1,
+    width: width * 0.4,
+    marginLeft: width * 0.05,
     marginTop: 10,
   },
   closeButton: {

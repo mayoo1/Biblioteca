@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -17,6 +17,10 @@ export default class QuienesSom extends Component {
 
   handleCloseImage = () => {
     this.setState({ showImage: false });
+  };
+
+  handleLogoPress = (url) => {
+    Linking.openURL(url);
   };
 
   render() {
@@ -67,8 +71,12 @@ export default class QuienesSom extends Component {
               </View>
               <View style={styles.separator} />
 
-              <Image source={require('./fotos/Logo22.png')} style={styles.logoImage} />
-              <Image source={require('./fotos/Logo23.png')} style={styles.logoImage} />
+              <TouchableOpacity onPress={() => this.handleLogoPress('https://www.gob.mx/semarnat')}>
+                <Image source={require('./fotos/Logo22.png')} style={styles.logoImage} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.handleLogoPress('https://psiquiatrasapm.org.mx/')}>
+                <Image source={require('./fotos/Logo23.png')} style={styles.logoImage} />
+              </TouchableOpacity>
             </ScrollView>
           </View>
         )}
@@ -91,8 +99,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fullImage: {
-    height: height * 0.5, // Adjusted for responsiveness
-    width: width * 0.8,   // Adjusted for responsiveness
+    height: height * 0.5,
+    width: width * 0.8,
     borderRadius: 10,
   },
   closeButton: {
@@ -106,7 +114,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   infoContainer: {
-    height: height * 0.35, // Adjusted for responsiveness
+    height: height * 0.35,
     width: '95%',
     backgroundColor: '#353535',
     margin: 10,
@@ -189,4 +197,3 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
-

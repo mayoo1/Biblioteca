@@ -79,7 +79,7 @@ export default class QuienesSom extends Component {
             </ScrollView>
 
             <View style={styles.separator} />
-            <TouchableOpacity onPress={() => this.openURL('https://idej.edu.mx/')}>
+            <TouchableOpacity onPress={() => this.openURL('https://hndm.iib.unam.mx/index.php/es/')}>
             <Image source={require('./fotos/Logo8.png')} style={styles.logo} />
             </TouchableOpacity>
           </View>

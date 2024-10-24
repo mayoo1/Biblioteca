@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking } from 'react-native';
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -15,6 +15,12 @@ export default class QuienesSom extends Component {
 
   handleCloseImage = () => {
     this.setState({ showImage: false });
+  };
+
+  // Agrega esta función para manejar la apertura de la URL
+  handleLogoPress = () => {
+    const url = 'https://tu-url-aqui.com'; // Reemplaza con la URL que desees
+    Linking.openURL(url).catch(err => console.error("No se pudo abrir la URL:", err));
   };
 
   render() {
@@ -63,13 +69,15 @@ export default class QuienesSom extends Component {
 
             <ScrollView style={{ borderWidth: 0, width: '95%', marginLeft: '2%' }} contentContainerStyle={{ paddingHorizontal: '6%', paddingTop: '3%' }}>
               <Text style={{ color: 'black', fontSize: 16, lineHeight: 20, textAlign: 'justify' }}>
-              De la prensa local, regional nacional existen diferentes títulos, que abordan temas de política, jurisprudencia, literatura, arte, variedades, educación, medicina y religion. Se resguardan títulos publicados desde 1809 hasta el año 2011.
+                De la prensa local, regional nacional existen diferentes títulos, que abordan temas de política, jurisprudencia, literatura, arte, variedades, educación, medicina y religion. Se resguardan títulos publicados desde 1809 hasta el año 2011.
               </Text>
             </ScrollView>
 
             <View style={{ height: 2, backgroundColor: 'gray', marginTop: '3%', marginHorizontal: '6%' }}></View>
 
-            <Image source={require('./fotos/Logo8.png')} style={styles.logo} />
+            <TouchableOpacity onPress={this.handleLogoPress}>
+              <Image source={require('./fotos/Logo8.png')} style={styles.logo} />
+            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -79,8 +87,8 @@ export default class QuienesSom extends Component {
 
 const styles = {
   logo: {
-    height: '10%',
-    width: '40%',
+    height: 80,
+    width:150,
     marginLeft: '6%',
     marginTop: '3%',
   },

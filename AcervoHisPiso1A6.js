@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Dimensions, Linking } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -15,6 +17,11 @@ export default class QuienesSom extends Component {
 
   handleCloseImage = () => {
     this.setState({ showImage: false });
+  };
+
+  handleLogoPress = () => {
+    const url = 'https://www.gob.mx/agn';
+    Linking.openURL(url).catch(err => console.error("Failed to open URL:", err));
   };
 
   render() {
@@ -108,10 +115,11 @@ export default class QuienesSom extends Component {
 
               <Text style={styles.descriptionText}>Archivo de la catedral de Durango, siglo XVII-XVIII, (2 Rollos)</Text>
               <Text>{'\n'}• Visita de Obispo{'\n'}• Matrimonios, Confirmaciones, etc.{'\n'}• Construcciones de Iglesia y Capillas{'\n'}• Autorización para petición de limosnas</Text>
-
             </ScrollView>
 
-            <Image source={require('./fotos/Logo3.jpg')} style={styles.logo} />
+            <TouchableOpacity onPress={this.handleLogoPress}>
+              <Image source={require('./fotos/Logo3.jpg')} style={styles.logo} />
+            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -171,8 +179,8 @@ const styles = {
     fontWeight: 'bold',
   },
   logo: {
-    height: '10%',
-    width: '40%',
+    height: height * 0.09,
+    width: width * 0.5,
     marginLeft: 20,
     marginTop: 10,
   },
@@ -184,7 +192,6 @@ const styles = {
   },
   closeButtonText: {
     color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
+    textAlign: 'center',
   },
 };

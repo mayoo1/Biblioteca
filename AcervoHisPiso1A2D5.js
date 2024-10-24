@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking } from 'react-native';
 
 export default class AcervoHisPiso1A4 extends Component {
   constructor(props) {
@@ -15,6 +15,10 @@ export default class AcervoHisPiso1A4 extends Component {
 
   handleCloseImage = () => {
     this.setState({ showImage: false });
+  };
+
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   };
 
   render() {
@@ -68,8 +72,9 @@ export default class AcervoHisPiso1A4 extends Component {
             </ScrollView>
 
             <View style={{ height: 1, backgroundColor: 'gray', marginTop: 10, marginHorizontal: 20 }}></View>
-
+            <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}>
             <Image source={require('./fotos/Logo3.jpg')} style={styles.logo} />
+            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -79,8 +84,8 @@ export default class AcervoHisPiso1A4 extends Component {
 
 const styles = {
   logo: {
-    height: '10%',
-    width: '40%',
+    height: 80,
+    width: 150,
     marginLeft: '5%',
     marginTop: '5%',
   },

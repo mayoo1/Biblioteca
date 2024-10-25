@@ -8,42 +8,43 @@ export default class QuienesSom extends Component {
         <View style={{ flex: 1 }}>
           <View style={styles.infoContainer}>
             <Image 
-              source={require('./fotos/persona3.jpg')} 
+              source={require('../fotos/persona1.jpg')} 
               style={styles.infoImage} 
             />
             
             <TouchableOpacity 
               style={{ width: '90%', marginTop: 25, marginLeft: -10 }} 
-              onPress={() => Linking.openURL('https://bpej.udg.mx/sites/default/files/2021-09/crisalida.mp3')}
+              onPress={() => Linking.openURL('https://bpej.udg.mx/sites/default/files/2021-09/2.-yo-no-lo-se-de-cierto.mp3')}
             >
-              <Text style={styles.viewButtonText}>Escuchar: "Crisálida"</Text>
+              <Text style={styles.viewButtonText}>Escuchar: "Yo no lo sé de cierto"</Text>
             </TouchableOpacity>
           </View>
 
           <Text style={styles.titleText}>Archivo Sonoro. Radio Universidad de Guadalajara. Piso 4</Text>
-          <Text style={styles.subtitleText}>Crisálida</Text>
+          <Text style={styles.subtitleText}>Jaime Sabines</Text>
 
           <ScrollView style={{ marginTop: 10 }}>
             <View style={styles.divider} />
             <Text style={styles.infoText}>
-              <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+              <Image source={require('../fotos/ico3.png')} style={styles.iconImage} />
               <Text style={styles.boldText}>Titulo de la obra: </Text>
-              <Text>Crisálida</Text>
+              <Text>Antología poética de Jaime Sabines</Text>
             </Text>
 
             <View style={styles.descriptionContainer}>
               <Text style={styles.descriptionText}>
-                {'\n'}Autor: Ray Bradbury
-                {'\n'}Género: Radio Novela
-                {'\n'}Adaptación a radio: Elena Castillo Rivera
-                {'\n'}Intérpretes: David Guerrero, Héctor Caro, Javier Vizcaíno y Víctor Manuel Espinoza.
-                {'\n'}Créditos: Dirección: Elena Castillo Rivera.
-                {'\n'}Operación técnica: Fortino Montaño.
-                {'\n'}Productor: Radio Universidad de Guadalajara
-                {'\n'}Año: 1998
-                {'\n'}Breve sinopsis:
-                {'\n'}Esta adaptación radiofónica del cuento Crisálida de Ray Bradbury, obtuvo el Primer Lugar de Radio Drama en la Segunda Bienal Latinoamericana de 
-                Radio en 1998{'\n'}
+                {'\n'}Serie: Voz Viva de México.
+                {'\n'}Editorial: Dirección de Literatura UNAM
+                {'\n'}Lectura a cargo de: Jaime Sabines
+                {'\n'}Estudio de grabación: Estudio 19
+                {'\n'}Dirección: Mauricio Molina / Lizbeth Suárez / Margarita Heredia.
+                {'\n'}Operación y postproducción: Rodolfo Sánchez Alvarado / Mauricio Molina / David Bojorges.
+                {'\n'}Año de grabación: 1964
+              </Text>
+              <Text style={styles.descriptionText}>
+                {'\n'}De la serie Voz Viva de México compartimos el disco de vinilo con poemas de Jaime Sabines leídos por él mismo. La cadencia de su lectura 
+                enaltecen estos maravillosos versos que hablan sobre el amor, la soledad y la muerte, y que gracias a su lenguaje sencillo y directo obtuvieron 
+                la aceptación no sólo de la academia sino de gran parte de los mexicanos.{'\n'}
               </Text>
             </View>
           </ScrollView>
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '70%',
+    width: '45%',
     borderRadius: 10,
   },
   viewButtonText: {

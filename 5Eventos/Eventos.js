@@ -6,7 +6,7 @@ export default class Noticias extends Component {
     super(props);
     this.state = {
       noticias: [],
-      pagina: 0, // Estado para almacenar la página actual
+      pagina: 0,
     };
   }
 

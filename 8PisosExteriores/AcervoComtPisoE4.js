@@ -7,18 +7,18 @@ export default class Piso2nove extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header} />
-        <Image source={require('./fotos/Libreria10.jpg')} style={styles.image} />
+        <Image source={require('../fotos/Libreria10.jpg')} style={styles.image} />
 
         <TouchableOpacity style={styles.button} activeOpacity={1}>
           <Text style={styles.buttonText}>Búsqueda en base de datos</Text>
           <Image
-            source={require('./fotos/ico2.png')}
+            source={require('../fotos/ico2.png')}
             style={{ height: 25, width: 25, marginTop: -25, marginLeft:'-10%'}}
           />
         </TouchableOpacity>
 
         <Image
-          source={require('./fotos/ico3.png')}
+          source={require('../fotos/ico3.png')}
           style={{ height: 25, width: 25, marginLeft: 40, marginTop: 0 }}
         />
         <Text style={styles.title}>Presentación</Text>
@@ -58,12 +58,12 @@ export default class Piso2nove extends Component {
             Sitios de interés
           </Text>
           <Image
-            source={require('./fotos/ico4.png')}
+            source={require('../fotos/ico4.png')}
             style={{ height: '60%', width: '15%', marginTop: -20 }}
           />
         </TouchableOpacity>
 
-        <Image source={require('./fotos/Logo4.jpeg')} style={styles.logo} />
+        <Image source={require('../fotos/Logo4.jpeg')} style={styles.logo} />
       </View>
     );
   }

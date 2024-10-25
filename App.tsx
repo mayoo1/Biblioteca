@@ -5,7 +5,7 @@ import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, V
 import {Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions} from 'react-native/Libraries/NewAppScreen';
 import { LogLevel, OneSignal } from 'react-native-onesignal';
 
-import Navegacion from './Navegacion';
+import Navegacion from './1Navegacion';
 
 type SectionProps = PropsWithChildren<{
   title: string;

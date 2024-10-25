@@ -4,7 +4,7 @@ import { View, Text, Image, TouchableOpacity, ScrollView, Linking } from 'react-
 const sections = [
   {
     title: 'Presentación',
-    icon: require('./fotos/ico3.png'),
+    icon: require('../fotos/ico3.png'),
     link: null
   }
 ];
@@ -36,7 +36,7 @@ const Piso2 = () => (
       <Text style={{ color: 'white', fontSize: 20, textAlign: 'center', marginTop: 10 }}>Presentación</Text>
     </View>
     <Image
-      source={require('./fotos/Libreria16.png')}
+      source={require('../fotos/Libreria16.png')}
       style={{
         height: '25%',
         width: '60%',
@@ -80,12 +80,12 @@ const Piso2 = () => (
     <View style={{ marginTop: 20 }}>
       <SectionItem
         title="Sitios de interés"
-        icon={require('./fotos/ico4.png')}
+        icon={require('../fotos/ico4.png')}
         link="https://www.gob.mx/agn"
       />
       
       <Image
-        source={require('./fotos/Logo3.jpg')}
+        source={require('../fotos/Logo3.jpg')}
         style={{ height: 50, width: 100, marginTop: 10, marginLeft:'5%' }}
       />
     </View>

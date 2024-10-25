@@ -16,17 +16,17 @@ export default class Piso5 extends Component {
         <View style={styles.header} />
 
         <Image
-          source={require('./fotos/Shangai.jpg')}
+          source={require('../fotos/Shangai.jpg')}
           style={[styles.image, { height: '20%', width: '60%', marginTop: '-55%', marginLeft:'20%', borderRadius:8}]}
         />
 
         <TouchableOpacity onPress={() => link && Linking.openURL(link)}>
           <Text style={styles.button}>Visita el website de Shanghai E-books</Text>
-          <Image source={require('./fotos/ico2.png')} style={styles.icon} />
+          <Image source={require('../fotos/ico2.png')} style={styles.icon} />
         </TouchableOpacity>
 
         <Image
-          source={require('./fotos/ico3.png')}
+          source={require('../fotos/ico3.png')}
           style={[styles.icon, { marginLeft: 40, marginTop: '5%' }]}
         />
 
@@ -48,7 +48,7 @@ export default class Piso5 extends Component {
             {'\n'}El programa académico-cultural "WINDOWS OF SHANGHAI" ayuda a introducir la historia y cultura china a la población Jalisciense por medio del intercambio de acervo literario. Se ha llevado a cabo este convenio entre la Biblioteca Pública del Estado de Jalisco “Juan José Arreola” y la Biblioteca de Shanghai desde el año 2011 y promueve el entendimiento entre los pueblos y las culturas mediante el intercambio de libros entre bibliotecas.
           </Text>
         </ScrollView>
-        <Image source={require('./fotos/Logo5.png')} style={styles.logo} />
+        <Image source={require('../fotos/Logo5.png')} style={styles.logo} />
       </View>
     );
   }

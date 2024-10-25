@@ -8,43 +8,42 @@ export default class QuienesSom extends Component {
         <View style={{ flex: 1 }}>
           <View style={styles.infoContainer}>
             <Image 
-              source={require('./fotos/persona2.jpg')} 
+              source={require('../fotos/persona3.jpg')} 
               style={styles.infoImage} 
             />
             
             <TouchableOpacity 
               style={{ width: '90%', marginTop: 25, marginLeft: -10 }} 
-              onPress={() => Linking.openURL('https://bpej.udg.mx/sites/default/files/2021-09/manuel-rodriguez-latinoamerica.mp3')}
+              onPress={() => Linking.openURL('https://bpej.udg.mx/sites/default/files/2021-09/crisalida.mp3')}
             >
-              <Text style={styles.viewButtonText}>Escuchar: "Manuel Rodríguez Latinoamérica"</Text>
+              <Text style={styles.viewButtonText}>Escuchar: "Crisálida"</Text>
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.titleText}>
-            Archivo Sonoro. Radio Universidad de Guadalajara. Piso 4
-          </Text>
-          <Text style={styles.subtitleText}>
-            Manuel R. Lapuente
-          </Text>
+          <Text style={styles.titleText}>Archivo Sonoro. Radio Universidad de Guadalajara. Piso 4</Text>
+          <Text style={styles.subtitleText}>Crisálida</Text>
 
           <ScrollView style={{ marginTop: 10 }}>
             <View style={styles.divider} />
             <Text style={styles.infoText}>
-              <Image source={require('./fotos/ico3.png')} style={styles.iconImage} />
+              <Image source={require('../fotos/ico3.png')} style={styles.iconImage} />
               <Text style={styles.boldText}>Titulo de la obra: </Text>
-              <Text>Dr. Manuel Rodríguez Lapuente</Text>
+              <Text>Crisálida</Text>
             </Text>
 
             <View style={styles.descriptionContainer}>
               <Text style={styles.descriptionText}>
-                {'\n'}Serie: Latinoamérica en el mundo.
-                {'\n'}Género: Programa radiofónico
-                {'\n'}Intérpretes: Dr. Manuel Rodríguez Lapuente
-                {'\n'}Año: 1989
+                {'\n'}Autor: Ray Bradbury
+                {'\n'}Género: Radio Novela
+                {'\n'}Adaptación a radio: Elena Castillo Rivera
+                {'\n'}Intérpretes: David Guerrero, Héctor Caro, Javier Vizcaíno y Víctor Manuel Espinoza.
+                {'\n'}Créditos: Dirección: Elena Castillo Rivera.
+                {'\n'}Operación técnica: Fortino Montaño.
+                {'\n'}Productor: Radio Universidad de Guadalajara
+                {'\n'}Año: 1998
                 {'\n'}Breve sinopsis:
-                {'\n'}Serie radiofónica producida y conducida por el Dr. Manuel Rodríguez Lapuente. Reproducimos la emisión del sábado 14 de marzo de 1989, en el que el doctor hace un análisis del 
-                Encuentro de cancilleres del grupo de los ocho, en Guayana, Puerto Ordaz, Venezuela. El Dr. Manuel Rodríguez Lapuente fue un reconocido humanista, político, autor de libros, maestro, director
-                de la Revista de la Universidad de Guadalajara y director de Estudios Sociales y de la Facultad de Filosofía y Letras.
+                {'\n'}Esta adaptación radiofónica del cuento Crisálida de Ray Bradbury, obtuvo el Primer Lugar de Radio Drama en la Segunda Bienal Latinoamericana de 
+                Radio en 1998{'\n'}
               </Text>
             </View>
           </ScrollView>
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
   },
   infoImage: {
     height: '65%', 
-    width: '85%',
+    width: '70%',
     borderRadius: 10,
   },
   viewButtonText: {

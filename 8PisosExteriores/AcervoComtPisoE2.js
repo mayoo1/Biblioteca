@@ -96,14 +96,14 @@ export default class Piso2nove extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header} />
-        <Image source={require('./fotos/Coleccion2.jpg')} style={styles.logo} />
+        <Image source={require('../fotos/Coleccion2.jpg')} style={styles.logo} />
         
         <TouchableOpacity activeOpacity={1} onPress={() => Linking.openURL('https://google.com')}>
           <Text style={styles.button}>Búsqueda en base de datos</Text>
-          <Image source={require('./fotos/ico2.png')} style={styles.buttonIcon} />
+          <Image source={require('../fotos/ico2.png')} style={styles.buttonIcon} />
         </TouchableOpacity>
 
-        <Image source={require('./fotos/ico3.png')} style={{ borderColor: 'red', borderWidth: 0, height: 25, width: 25, marginLeft: 40, marginTop: 50 }} />
+        <Image source={require('../fotos/ico3.png')} style={{ borderColor: 'red', borderWidth: 0, height: 25, width: 25, marginLeft: 40, marginTop: 50 }} />
         <Text style={styles.sectionTitle}>Presentación</Text>
         
         <View style={styles.separator} />
@@ -119,10 +119,10 @@ export default class Piso2nove extends Component {
 
         <TouchableOpacity activeOpacity={1} onPress={() => Linking.openURL('https://google.com')} style={styles.interestSite}>
           <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30 }}>Sitio de interés</Text>
-          <Image source={require('./fotos/ico4.png')} style={{ borderColor: 'red', borderWidth: 0, height: '100%', width: '10%', marginTop: -20 }} />
+          <Image source={require('../fotos/ico4.png')} style={{ borderColor: 'red', borderWidth: 0, height: '100%', width: '10%', marginTop: -20 }} />
         </TouchableOpacity>
 
-        <Image source={require('./fotos/Logo.png')} style={styles.logoImage} />
+        <Image source={require('../fotos/Logo.png')} style={styles.logoImage} />
       </View>
     );
   }

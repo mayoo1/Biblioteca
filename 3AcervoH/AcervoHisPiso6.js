@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styles from '../Diseno';
+import styles from '../3Diseno';
 
 const { width, height } = Dimensions.get('window');
 

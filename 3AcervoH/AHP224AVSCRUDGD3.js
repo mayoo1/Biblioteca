@@ -29,7 +29,7 @@ export default class QuienesSom extends Component {
           <ScrollView style={{ marginTop: 10 }}>
             <View style={{ borderWidth: 1, borderColor: 'gray', width: 320, marginLeft: 20, marginTop: 10 }} />
             <Text style={{ fontSize: 15, marginLeft: 20, lineHeight: 25, borderWidth: 0, width: '86%' }}>
-              <Image source={require('./fotos/ico3.png')} style={{ height: 20, width: 20, marginTop: 10 }} />
+              <Image source={require('../fotos/ico3.png')} style={{ height: 20, width: 20, marginTop: 10 }} />
               <Text style={{ fontWeight: 'bold', color: 'black', marginTop: -20 }}>Titulo de la obra: </Text>
               <Text style={{ color: 'black', marginTop: -20 }}>Lo que le pasó a Joe y a su chica</Text>
             </Text>

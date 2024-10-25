@@ -4,8 +4,8 @@ import { createDrawerNavigator, DrawerToggleButton, DrawerContentScrollView, Dra
 import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import PORTADA from './Portada';
-import PRINCIPAL from './Principal'; 
+import PORTADA from './2PatallaInicio';
+import PRINCIPAL from './4Principal'; 
 import QS from './1QuienesS/QuienesSom'; 
 import QSAB from './1QuienesS/QuienesSomAB'; 
 import QSABH from './1QuienesS/QuienesSomABHis'; 
@@ -89,17 +89,17 @@ import AHP6SALD2 from './3AcervoH/AcervoHisPiso6SalD2';
 import AHP6SALD3 from './3AcervoH/AcervoHisPiso6SalD3';
 import AHP6SALD4 from './3AcervoH/AcervoHisPiso6SalD4';
 
-import PISO1 from './Piso1';
+import PISO1 from './8PisosExteriores/AcervoHisPisoE1';
 
-import DOC1 from './8PisosIndi/Documento';
-import DOC2 from './8PisosIndi/Documento2';
-import DOC3 from './8PisosIndi/Documento3';
-import DOC4 from './8PisosIndi/Documento4';
-import DOC5 from './8PisosIndi/Documento5';
-import DOC6 from './8PisosIndi/Documento6';
+import DOC1 from './8PisosExteriores/AcervoHisPisoE1D1';
+import DOC2 from './8PisosExteriores/AcervoHisPisoE1D2';
+import DOC3 from './8PisosExteriores/AcervoHisPisoE1D3';
+import DOC4 from './8PisosExteriores/AcervoHisPisoE1D4';
+import DOC5 from './8PisosExteriores/AcervoHisPisoE3D1';
+import DOC6 from './8PisosExteriores/AcervoHisPisoE3D2';
 
-import PISO2 from './Piso2';
-import PISO3 from './Piso3';
+import PISO2 from './8PisosExteriores/AcervoHisPisoE2';
+import PISO3 from './8PisosExteriores/AcervoHisPisoE3';
 import AC from './4AcervoC/AcervoComt';
 import ACP1 from './4AcervoC/AcervoComtPiso1';
 import ACP2 from './4AcervoC/AcervoComtPiso2';
@@ -124,9 +124,9 @@ import ACP5D5 from './4AcervoC/AcervoComtPiso5D5';
 import ACRE from './4AcervoC/AcervoComtRecursos';
 import ACRED1 from './4AcervoC/AcervoComtRecursosD1';
 import ACRED3 from './4AcervoC/AcervoComtRecursosD3';
-import PISO2NOVE from './Piso2nove';
-import PISO4 from './Piso4';
-import PISO5 from './Piso5'; 
+import PISO2NOVE from './8PisosExteriores/AcervoComtPisoE2';
+import PISO4 from './8PisosExteriores/AcervoComtPisoE4';
+import PISO5 from './8PisosExteriores/AcervoComtPisoE5'; 
 
 import AHP41 from './3AcervoH/AcervoHis4-1';
 import AHCFN from './3AcervoH/AcervoHisColFran';
@@ -146,13 +146,13 @@ import AHP1A6 from './3AcervoH/AcervoHisPiso1A6';
 import AHP1A7 from './3AcervoH/AcervoHisPiso1A7';
 import AHP2AVS from './3AcervoH/AcervoHisPiso2ArcVisSon'; 
 import AHP2AVSCRUDG from './3AcervoH/AHP224AVSCRUDG'; 
-import P2UDG from './PISO2UDG';
-import P2UDG2 from './PISO2UDG2';
-import P2UDG3 from './PISO2UDG3';
-import P2UDG4 from './PISO2UDG4'; 
-import EVNTS from './Eventos';
-import GH from './GaleriaHis';
-import NTAS from './Noticias';
+import P2UDG from './3AcervoH/AHP224AVSCRUDGD1';
+import P2UDG2 from './3AcervoH/AHP224AVSCRUDGD2';
+import P2UDG3 from './3AcervoH/AHP224AVSCRUDGD3';
+import P2UDG4 from './3AcervoH/AHP224AVSCRUDGD4'; 
+import EVNTS from './5Eventos/Eventos';
+import GH from './6GaleriaH/GaleriaHis';
+import NTAS from './7Noticias/Noticias';
 import ico6 from './fotos/ico6.png';
 import ico9 from './fotos/ico9.png';
 import AHP1A2D1 from './3AcervoH/AcervoHisPiso1A2D1';
@@ -162,9 +162,6 @@ import AHP1A2D4 from './3AcervoH/AcervoHisPiso1A2D4';
 import AHP1A2D5 from './3AcervoH/AcervoHisPiso1A2D5'; 
 import ACP2D1 from './4AcervoC/AcervoComtPiso2D1';
 import ACP2D2 from './4AcervoC/AcervoComtPiso2D2';
-import BD from './BaseDatos';
-
-
 
 function ImageDrawerContent(navigation ) {
   return (

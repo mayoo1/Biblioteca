@@ -23,12 +23,12 @@ const App = () => {
   return (
     <View style={styles.containerM}>
       <ScrollView contentContainerStyle={styles.scrollM}>
-        <MenuButton title="Atención a Usuarios" onPress={() => navigation.navigate('Sa')} imageSource={require('../fotos/Atencion.jpeg')} />
+        <MenuButton title="Atención a Usuarios" onPress={() => navigation.navigate('Sa')} imageSource={require('../fotos/Atencion.jpeg')}/>
         <MenuButton title="Biblioteca Virtual" onPress={() => this.openURL('http://virtual.bpej.udg.mx/')} imageSource={require('../fotos/BibliotecaVirtual.jpg')} />
-        <MenuButton title="Listado de Servicios" onPress={() => navigation.navigate('Sl')} imageSource={require('../fotos/Auditorio.png')} />
-        <MenuButton title="Catálogo en Línea" onPress={() => navigation.navigate('Sc')} imageSource={require('../fotos/Libreria4.jpg')} />
-        <MenuButton title="Recursos Libres en Internet" onPress={() => navigation.navigate('Sr')} imageSource={require('../fotos/Libros2.png')} />
-        <MenuButton title="Formato de Registro Biblioteca Histórica Para Investigadores" onPress={() => this.openURL('http://virtual.bpej.udg.mx/')} />
+        <MenuButton title="Listado de Servicios" onPress={() => navigation.navigate('Sl')} imageSource={require('../fotos/Auditorio.png')}/>
+        <MenuButton title="Catálogo en Línea" onPress={() => navigation.navigate('Sc')} imageSource={require('../fotos/Libreria4.jpg')}/>
+        <MenuButton title="Recursos Libres en Internet" onPress={() => navigation.navigate('Sr')} imageSource={require('../fotos/Libros2.png')}/>
+        <MenuButton title="Formato de Registro Biblioteca Histórica Para Investigadores" onPress={() => this.openURL('http://virtual.bpej.udg.mx/')} imageSource={require('../fotos/Registro.png')}/>
       </ScrollView>
     </View>
   );

@@ -24,7 +24,6 @@ export default class QuienesSom extends Component {
     Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   };
 
-
   render() {
     const { showImage } = this.state;
 
@@ -32,13 +31,13 @@ export default class QuienesSom extends Component {
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('../fotos/Libreria10.jpg')}
+            source={require('../fotos/persona26.jpg')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
               <Image
-                source={require('../fotos/Libreria10.jpg')}
+                source={require('../fotos/persona26.jpg')}
                 style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
@@ -50,16 +49,16 @@ export default class QuienesSom extends Component {
           <View style={{ flex: 1 }}>
             <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
               <Image
-                source={require('../fotos/Libreria10.jpg')}
-                style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
+                source={require('../fotos/persona26.jpg')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.35}]}
               />
               <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
                 <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.titleText}>Piso 4. Publicaciones Seriadas</Text>
-            <Text style={styles.subtitleText}>4.1. Publicaciones Seriadas del estado de Jalisco</Text>
+            <Text style={styles.titleText}>Piso 5.4. Fondos Particulares</Text>
+            <Text style={styles.subtitleText}>5.4.23 Colección Federico Solórzano Barreto (1922-2015)</Text>
 
             <ScrollView style={styles.scrollView}>
               <View style={styles.separator} />
@@ -68,14 +67,17 @@ export default class QuienesSom extends Component {
 
               <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
                 <Text style={styles.descriptionText}>
-                Este acervo se compone de las revistas y folletos publicados de manera periódica en el estado y en otras regiones del país. 
-                Se resguardan ediciones de diversas áreas del conocimiento publicadas durante los siglos XIX y XX.{'\n'}              
+                Maestro Emérito y Doctor Honoris Causa de la Universidad de Guadalajara también un gran paleontólogo, cuya investigación científica en Jalisco sentó 
+                precedente para las nuevas generaciones. De hecho, 
+                recuperó más de 10 mil fósiles, una de las colecciones más importantes de Latinoamérica. Formó más de 50 colecciones a lo largo de 70 años.{'\n'}  
+                Publicó diversos estudios sobre la prehistoria en el Occidente de México y fue autor de los primeros capítulos de la serie Historia de Jalisco, publicada por el gobierno del Estado. Fue socio fundador de
+                 las sociedades de Geología y Mineralogía, y de Ciencias Naturales de Jalisco, y miembro de las sociedades Mexicana de Geografía y Estadística, y de Paleontología.{'\n'}
                 </Text>
               </View>
               
               <View style={styles.separator} />
-              <TouchableOpacity onPress={() => this.openURL('https://hndm.iib.unam.mx/index.php/es/')}style={{ height: width * 0.30, width: width * 0.5 }}>
-              <Image source={require('../fotos/Logo8.png')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
+              <TouchableOpacity onPress={() => this.openURL('https://bpej.udg.mx/')}style={{ height: width * 0.2, width: width * 0.85 }}>
+              <Image source={require('../fotos/Logo.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.85, marginLeft: '6%'}]} />
               </TouchableOpacity>
             </ScrollView>
           </View>

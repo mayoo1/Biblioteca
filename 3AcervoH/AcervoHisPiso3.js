@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -17,27 +20,25 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
-  // Agrega esta función para manejar la apertura de la URL
-  handleLogoPress = () => {
-    const url = 'https://tu-url-aqui.com'; // Reemplaza con la URL que desees
-    Linking.openURL(url).catch(err => console.error("No se pudo abrir la URL:", err));
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   };
 
   render() {
     const { showImage } = this.state;
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
+      <View style={styles.container}>
         {showImage ? (
           <ImageBackground
             source={require('../fotos/Antiguo1.jpg')}
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+            style={styles.imageBackground}
             blurRadius={10}
           >
-            <View style={{ alignItems: 'center' }}>
-              <Image 
-                source={require('../fotos/Antiguo1.jpg')} 
-                style={{ height: 450, width: 300, borderRadius: 10 }}
+            <View style={styles.imageView}>
+              <Image
+                source={require('../fotos/Antiguo1.jpg')}
+                style={[styles.fullImage, {height: width * 0.55, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -46,38 +47,36 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={{ height: '50%', width: '90%', backgroundColor: '#454545', borderRadius: 5, marginLeft: '6%', marginTop: '3%' }}>
-              <Image 
-                source={require('../fotos/Antiguo1.jpg')} 
-                style={{ height: '70%', width: '60%', marginTop: '10%', borderRadius: 5, alignSelf: 'center' }}
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/Antiguo1.jpg')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
               />
-              <TouchableOpacity style={{ borderWidth: 0, borderColor: 'white', width: '30%', height: '7%', alignSelf: 'center', justifyContent: 'center', marginTop: 1 }} onPress={this.handleImagePress}>
-                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15, textAlign: 'center', marginTop:'6%', height:'100%', borderColor:'red', borderWidth:0}}>Ver Imagen</Text>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
-            <Text style={{color:'white', fontSize:13, borderRadius: 5, backgroundColor: 'darkred', marginTop: '3%', marginHorizontal: '6%', textAlign:'center' }}>Piso 3. Hemeroteca Histórica</Text>
 
-            <View style={{ flexDirection: 'row', width: '40%', alignItems: 'center', marginTop: '3%', marginLeft: '6%' }}>
-              <Image 
-                source={require('../fotos/ico3.png')} 
-                style={{ height: '95%', width: '15%', marginRight: '-25%' }}
-              />
-              <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '30%' }}>Presentación</Text>
-            </View>
+            <Text style={styles.titleText}>Piso 3 Periódicos</Text>
+            <Text style={styles.subtitleText}>3.1. Periódicos</Text>
 
-            <View style={{ height: 2, backgroundColor: 'gray', marginTop: '3%', marginHorizontal: '6%' }}></View>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-            <ScrollView style={{ borderWidth: 0, width: '95%', marginLeft: '2%' }} contentContainerStyle={{ paddingHorizontal: '6%', paddingTop: '3%' }}>
-              <Text style={{ color: 'black', fontSize: 16, lineHeight: 20, textAlign: 'justify' }}>
-                De la prensa local, regional nacional existen diferentes títulos, que abordan temas de política, jurisprudencia, literatura, arte, variedades, educación, medicina y religion. Se resguardan títulos publicados desde 1809 hasta el año 2011.
-              </Text>
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                De la prensa local, regional y nacional existen diferentes títulos, que abordan temas de política, jurisprudencia, literatura, 
+                arte, variedades, educación, medicina y religión. Se resguardan títulos publicados desde 1809 hasta el año 2011.            
+                </Text>
+              </View>
+              
+              <View style={styles.separator} />
+              <TouchableOpacity onPress={() => this.openURL('https://hndm.iib.unam.mx/index.php/es/')}style={{ height: width * 0.30, width: width * 0.5 }}>
+              <Image source={require('../fotos/Logo8.png')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
+              </TouchableOpacity>
             </ScrollView>
-
-            <View style={{ height: 2, backgroundColor: 'gray', marginTop: '3%', marginHorizontal: '6%' }}></View>
-
-            <TouchableOpacity onPress={this.handleLogoPress}>
-              <Image source={require('../fotos/Logo8.png')} style={styles.logo} />
-            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -85,22 +84,4 @@ export default class QuienesSom extends Component {
   }
 }
 
-const styles = {
-  logo: {
-    height: 80,
-    width:150,
-    marginLeft: '6%',
-    marginTop: '3%',
-  },
-  closeButton: {
-    marginTop: '6%',
-    padding: '3%',
-    backgroundColor: '#444',
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-};
+

@@ -19,7 +19,8 @@ const App = () => {
   return (
     <View style={styles.containerM}>
       <ScrollView contentContainerStyle={styles.scrollM}>
-        <MenuButton title="4.1 Publicaciones Seriadas de Jalisco (Del S.XIX hasta 1982)" onPress={() => navigation.navigate('Ahp41')} imageSource={require('../fotos/Libreria10.jpg')}/>
+        <MenuButton title="4.1 Publicaciones Seriadas de Jalisco (Del S.XIX hasta 1982)" 
+        onPress={() => navigation.navigate('Ahp41')} imageSource={require('../fotos/Libreria10.jpg')}/>
         <MenuButton title="Colección Francisco Navarro" onPress={() => navigation.navigate('Ahcfn')} imageSource={require('../fotos/cpi.png')}/>
       </ScrollView>
     </View>

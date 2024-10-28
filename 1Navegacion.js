@@ -50,7 +50,6 @@ import AHP5FPD10 from "./3AcervoH/AcervoHisPiso5FPD10";
 import AHP5FPD11 from "./3AcervoH/AcervoHisPiso5FPD11";
 import AHP5FPD12 from "./3AcervoH/AcervoHisPiso5FPD12";
 import AHP5FPD13 from "./3AcervoH/AcervoHisPiso5FPD13";
-import AHP5FPD14 from "./3AcervoH/AcervoHisPiso5FPD14";
 import AHP5FPD15 from "./3AcervoH/AcervoHisPiso5FPD15";
 import AHP5FPD16 from "./3AcervoH/AcervoHisPiso5FPD16";
 import AHP5FPD17 from "./3AcervoH/AcervoHisPiso5FPD17";
@@ -58,6 +57,9 @@ import AHP5FPD18 from "./3AcervoH/AcervoHisPiso5FPD18";
 import AHP5FPD19 from "./3AcervoH/AcervoHisPiso5FPD19";
 import AHP5FPD20 from "./3AcervoH/AcervoHisPiso5FPD20";
 import AHP5FPD21 from "./3AcervoH/AcervoHisPiso5FPD21";
+import AHP5FPD22 from "./3AcervoH/AcervoHisPiso5FPD22";
+import AHP5FPD23 from "./3AcervoH/AcervoHisPiso5FPD23";
+import AHP5FPD24 from "./3AcervoH/AcervoHisPiso5FPD24";
 import AHP5FO from "./3AcervoH/AcervoHisPiso5Foto"; 
 import AHP5FOD1 from "./3AcervoH/AcervoHisPiso5FotoD1"; 
 import AHP5FOD2 from "./3AcervoH/AcervoHisPiso5FotoD2"; 
@@ -336,7 +338,6 @@ const Navegacion = () => {
         <Drawer.Screen name="Ahp5fpd11" component={AHP5FPD11} options={{ ...defaultScreenOptions('5.4.11 Antonio Peñafiel'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd12" component={AHP5FPD12} options={{ ...defaultScreenOptions('5.4.12 Araceli Ibarra Bellon'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd13" component={AHP5FPD13} options={{ ...defaultScreenOptions('5.4.13 Phil Weigand Moore'), drawerItemStyle: { display: 'none' } }} />
-        <Drawer.Screen name="Ahp5fpd14" component={AHP5FPD14} options={{ ...defaultScreenOptions('5.4.14 Fondo Preparatoria de Jalisco'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd15" component={AHP5FPD15} options={{ ...defaultScreenOptions('5.4.15 Arturo Rivas Sainz'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd16" component={AHP5FPD16} options={{ ...defaultScreenOptions('5.4.16 Colecciones Editoriales'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd17" component={AHP5FPD17} options={{ ...defaultScreenOptions('5.4.17 Colección Alfonso L. Fots Díaz'), drawerItemStyle: { display: 'none' } }} />
@@ -344,6 +345,10 @@ const Navegacion = () => {
         <Drawer.Screen name="Ahp5fpd19" component={AHP5FPD19} options={{ ...defaultScreenOptions('5.4.19 Colección Ignacio Retes'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd20" component={AHP5FPD20} options={{ ...defaultScreenOptions('5.4.20 Gabriel Retes Balzaretti'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fpd21" component={AHP5FPD21} options={{ ...defaultScreenOptions('5.4.21 Ignacio Igor Arriola Haro'), drawerItemStyle: { display: 'none' } }} />
+        <Drawer.Screen name="Ahp5fpd22" component={AHP5FPD22} options={{ ...defaultScreenOptions('5.4.22 Fondo Preparatoria de Jalisco'), drawerItemStyle: { display: 'none' } }} />
+        <Drawer.Screen name="Ahp5fpd23" component={AHP5FPD23} options={{ ...defaultScreenOptions('5.4.23  Colección Federico Solórzano Barreto'), drawerItemStyle: { display: 'none' } }} />
+        <Drawer.Screen name="Ahp5fpd24" component={AHP5FPD24} options={{ ...defaultScreenOptions('5.4.24 Colección Álvaro Matute y  Evelia Trejo'), drawerItemStyle: { display: 'none' } }} />
+        
         <Drawer.Screen name="Ahp5fo" component={AHP5FO} options={{ ...defaultScreenOptions('5.6 Fototeca de Jalisco'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fod1" component={AHP5FOD1} options={{ ...defaultScreenOptions('Colección Alberto Gómez Barbosa'), drawerItemStyle: { display: 'none' } }} />
         <Drawer.Screen name="Ahp5fod2" component={AHP5FOD2} options={{ ...defaultScreenOptions('Colección Emilio Garcia Riera (Sección Fotográfica)'), drawerItemStyle: { display: 'none' } }} />

@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       marginLeft: '5%',
       marginTop: '3%',
+      width: '90%'
     },
     scrollView: {
       marginTop: '2%',
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
       marginTop: '3%',
     },
     logoImage: {
-      marginLeft: '5%',
+      marginLeft: '11%',
       marginTop: '4%',
     },
 
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: '3%',
         textAlign: 'left',
-      },
+      },      
   });
   
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
 import styles from '../3Diseno';
 
 const { width } = Dimensions.get('window');
@@ -18,6 +18,10 @@ export default class QuienesSom extends Component {
 
   handleCloseImage = () => {
     this.setState({ showImage: false });
+  };
+
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   };
 
   render() {
@@ -91,7 +95,9 @@ export default class QuienesSom extends Component {
                 </Text>
               </View>
               <View style={styles.separator} />
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}style={{ height: width * 0.30, width: width * 0.45 }}>
               <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.45}]} />
+              </TouchableOpacity>
             </ScrollView>
           </View>
         )}

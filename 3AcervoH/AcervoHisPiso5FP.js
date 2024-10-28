@@ -32,7 +32,6 @@ const App = () => {
         <MenuButton title="5.4.11 Antonio Peñafiel" onPress={() => navigation.navigate('Ahp5fpd11')} imageSource={require('../fotos/persona20.jpg')} />
         <MenuButton title="5.4.12 Araceli Ibarra Bellon" onPress={() => navigation.navigate('Ahp5fpd12')} imageSource={require('../fotos/anonima.jpg')} />
         <MenuButton title="5.4.13 Phil Weigand Moore" onPress={() => navigation.navigate('Ahp5fpd13')} imageSource={require('../fotos/persona21.jpg')} />
-        <MenuButton title="5.4.14 Fondo Preparatoria de Jalisco" onPress={() => navigation.navigate('Ahp5fpd14')} imageSource={require('../fotos/prepa.png')} />
         <MenuButton title="5.4.15 Arturo Rivas Sainz" onPress={() => navigation.navigate('Ahp5fpd15')} imageSource={require('../fotos/persona22.jpg')} />
         <MenuButton title="5.4.16 Colecciones Editoriales" onPress={() => navigation.navigate('Ahp5fpd16')} imageSource={require('../fotos/Libros6.jpg')} />
         <MenuButton title="5.4.17 Colección Alfonso L. Fots Díaz" onPress={() => navigation.navigate('Ahp5fpd17')} imageSource={require('../fotos/pintura.jpg')} />
@@ -40,6 +39,10 @@ const App = () => {
         <MenuButton title="5.4.19 Colección Ignacio Retes" onPress={() => navigation.navigate('Ahp5fpd19')} imageSource={require('../fotos/persona23.jpg')} />
         <MenuButton title="5.4.20 Gabriel Retes Balzaretti" onPress={() => navigation.navigate('Ahp5fpd20')} imageSource={require('../fotos/persona24.jpg')} />
         <MenuButton title="5.4.21 Ignacio Igor Arreola Haro" onPress={() => navigation.navigate('Ahp5fpd21')} imageSource={require('../fotos/persona25.jpg')} />
+        <MenuButton title="5.4.22 Fondo Preparatoria de Jalisco" onPress={() => navigation.navigate('Ahp5fpd22')} imageSource={require('../fotos/prepa.png')} />
+        <MenuButton title="5.4.23 Colección Federico Solórzano Barreto" onPress={() => navigation.navigate('Ahp5fpd23')} imageSource={require('../fotos/persona26.jpg')} />
+        <MenuButton title="5.4.24 Colección Álvaro Matute y  Evelia Trejo" onPress={() => navigation.navigate('Ahp5fpd24')} imageSource={require('../fotos/persona27.jpg')} />
+        
       </ScrollView>
     </View>
   );

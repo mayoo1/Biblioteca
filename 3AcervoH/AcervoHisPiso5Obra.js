@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -17,6 +20,10 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
+
   render() {
     const { showImage } = this.state;
 
@@ -31,7 +38,7 @@ export default class QuienesSom extends Component {
             <View style={styles.imageView}>
               <Image
                 source={require('../fotos/Antiguo19.png')}
-                style={styles.fullImage}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -40,34 +47,35 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={styles.infoContainer}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
               <Image
                 source={require('../fotos/Antiguo19.png')}
-                style={styles.infoImage}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.35}]}
               />
-              <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
                 <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.titleText}>Piso 5. Acervo General, Fondos Particulares y Fototeca</Text>
-            <Text style={styles.subtitleText}>5.1 Obras Bibliográficas editadas entre los Siglos XVII y XX</Text>
+            <Text style={styles.titleText}>Piso 5 Acervo General, Fondos Particulares</Text>
+            <Text style={styles.subtitleText}>5.1. Obras Bibliográficas Editadas entre los Siglos XVII y XX</Text>
 
             <ScrollView style={styles.scrollView}>
               <View style={styles.separator} />
-              <Image source={require('../fotos/ico3.png')} style={styles.icon} />
-              <Text style={styles.presentationText}>Presentación</Text>
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-              <View style={styles.contentContainer}>
-                <Text style={styles.contentText}>
-                  Textos desde el siglo XVII hasta mediados del XX, de diversa temática; historia, contabilidad,
-                  geografía, artes, literatura, lógica, ética, filosofía, psicología, moral, matemáticas, ciencias,
-                  química, física, medicina, arte, etc.
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                Textos desde el siglo XVII hasta mediados del XX, de diversa temática; historia, contabilidad, geografía, artes, literatura, lógica, ética, 
+                filosofía, psicología, moral, matemáticas, ciencias, química, física, medicina, arte, etc.{'\n'}             
                 </Text>
               </View>
+              
               <View style={styles.separator} />
-
-              <Image source={require('../fotos/Logo3.jpg')} style={styles.logo} />
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}style={{ height: width * 0.30, width: width * 0.45 }}>
+              <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.45}]} />
+              </TouchableOpacity>
             </ScrollView>
           </View>
         )}
@@ -75,119 +83,3 @@ export default class QuienesSom extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageView: {
-    alignItems: 'center',
-  },
-  fullImage: {
-    height: 400,
-    width: 300,
-    borderRadius: 10,
-  },
-  closeButton: {
-    marginTop: 20,
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  infoContainer: {
-    height: '35%',
-    width: '95%',
-    backgroundColor: 'black',
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  infoImage: {
-    height: '70%',
-    width: '40%',
-    borderRadius: 10,
-  },
-  viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
-    width: '40%',
-    height: '7%',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-    backgroundColor: 'black',
-    borderRadius: 5,
-  },
-  viewButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
-  },
-  titleText: {
-    fontWeight: 'bold',
-    color: 'darkred',
-    fontSize: 22,
-    marginLeft: '5%',
-    marginTop: 10,
-  },
-  subtitleText: {
-    fontWeight: 'bold',
-    color: 'gray',
-    fontSize: 16,
-    marginLeft: '5%',
-    marginTop: 10,
-    width: '90%',
-  },
-  scrollView: {
-    marginTop: 10,
-  },
-  separator: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    width: '90%',
-    marginLeft: '5%',
-    marginTop: 10,
-  },
-  icon: {
-    height: 25,
-    width: 25,
-    marginLeft: '5%',
-    marginTop: 10,
-  },
-  presentationText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
-    marginLeft: '12.5%',
-    marginTop: -20,
-  },
-  contentContainer: {
-    width: '90%',
-    marginLeft: '5%',
-  },
-  contentText: {
-    color: 'black',
-    fontSize: 18,
-    lineHeight: 25,
-    textAlign: 'justify',
-    marginTop: 10,
-  },
-  logo: {
-    height: 80,
-    width: 150,
-    marginLeft: '5%',
-    marginTop: 20,
-  },
-});

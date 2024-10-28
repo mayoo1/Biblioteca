@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Dimensions, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
 
-// Obtenemos las dimensiones de la pantalla
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-export default class AcervoHisPiso1A4 extends Component {
+export default class QuienesSom extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,158 +27,58 @@ export default class AcervoHisPiso1A4 extends Component {
   render() {
     const { showImage } = this.state;
 
-    return (
-      <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
-        {showImage ? (
-          <ImageBackground
-            source={require('../fotos/Antiguo6.jpg')}
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-            blurRadius={10}
-          >
-            <View style={{ alignItems: 'center' }}>
-              <Image 
-                source={require('../fotos/Antiguo6.jpg')} 
-                style={{ height: height * 0.6, width: width * 0.8, borderRadius: 10 }}
-              />
-              <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
-                <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
-        ) : (
-          <View style={{ flex: 1 }}>
-            <View style={styles.imageContainer}>
-              <Image 
-                source={require('../fotos/Antiguo6.jpg')} 
-                style={styles.responsiveImage}
-              />
-              <TouchableOpacity style={styles.imageButton} onPress={this.handleImagePress}>
-                <Text style={styles.imageButtonText}>Ver Imagen</Text>
-              </TouchableOpacity>
-            </View>
-            <Text style={styles.descriptionText}>Piso 1.4 Archivos y Mapoteca</Text>
-
-            <View style={styles.presentationContainer}>
-              <Image 
-                source={require('../fotos/ico3.png')} 
-                style={styles.icon}
-              />
-              <Text style={styles.presentationText}>Presentación</Text>
-            </View>
-
-            <View style={styles.separator}></View>
-
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
-              <Text style={styles.scrollText}>
-              Incluyen más de siglo y medio de procesos, sentencias, cuadrantes, actas, entradas y salidas de presos, conocimientos ejecutorias, turnos, minutas, de contabilidad: libros mayores, diarios, de caja, etc.
-              </Text>
-            </ScrollView>
-
-            <View style={styles.separator}></View>
-            <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}>
-            <Image source={require('../fotos/Logo3.jpg')} style={styles.logo} />
+  return (
+    <View style={styles.container}>
+      {showImage ? (
+        <ImageBackground
+          source={require('../fotos/Antiguo6.jpg')}
+          style={styles.imageBackground}
+          blurRadius={10}
+        >
+          <View style={styles.imageView}>
+            <Image
+              source={require('../fotos/Antiguo6.jpg')}
+              style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
+            />
+            <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
+              <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
             </TouchableOpacity>
           </View>
-        )}
-      </View>
-    );
-  }
-}
+        </ImageBackground>
+      ) : (
+        <View style={{ flex: 1 }}>
+          <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+            <Image
+              source={require('../fotos/Antiguo6.jpg')}
+              style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
+            />
+            <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+              <Text style={styles.viewButtonText}>Ver Imagen</Text>
+            </TouchableOpacity>
+          </View>
 
-const styles = {
-  imageContainer: {
-    height: height * 0.5, 
-    width: '90%', 
-    backgroundColor: '#454545', 
-    borderRadius: 5, 
-    marginLeft: '5%', 
-    marginTop: 10,
-  },
-  responsiveImage: {
-    height: '70%', 
-    width: '60%', 
-    marginTop: '10%', 
-    borderRadius: 5, 
-    alignSelf: 'center',
-  },
-  imageButton: {
-    borderWidth: 0, 
-    borderColor: 'white', 
-    width: '30%', 
-    height: '7%', 
-    alignSelf: 'center', 
-    justifyContent: 'center', 
-    marginTop: 10,
-  },
-  imageButtonText: {
-    color: 'white', 
-    fontWeight: 'bold', 
-    fontSize: 15, 
-    textAlign: 'center',
-  },
-  descriptionText: {
-    color: 'white', 
-    fontSize: 13, 
-    borderRadius: 5, 
-    backgroundColor: 'darkred', 
-    marginTop: 10, 
-    marginHorizontal: '5%', 
-    textAlign: 'center',
-  },
-  presentationContainer: {
-    flexDirection: 'row', 
-    width: '40%', 
-    alignItems: 'center', 
-    marginTop: 10, 
-    marginLeft: '5%',
-  },
-  icon: {
-    height: 25, 
-    width: 25, 
-    marginRight: -30,
-  },
-  presentationText: {
-    fontWeight: 'bold', 
-    color: 'black', 
-    fontSize: 15, 
-    marginLeft: 40,
-  },
-  separator: {
-    height: 1, 
-    backgroundColor: 'gray', 
-    marginTop: 10, 
-    marginHorizontal: '5%',
-  },
-  scrollView: {
-    borderWidth: 0, 
-    width: '90%', 
-    marginLeft: '5%',
-  },
-  scrollContent: {
-    paddingHorizontal: 20, 
-    paddingTop: 10,
-  },
-  scrollText: {
-    color: 'black', 
-    fontSize: 15, 
-    textAlign: 'justify', 
-    lineHeight: 25,
-  },
-  logo: {
-    height: height * 0.1,
-    width: width * 0.4,
-    marginLeft: '5%',
-    marginTop: 10,
-  },
-  closeButton: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: '#444',
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-};
+          <Text style={styles.titleText}>Piso 1 Archivos y Mapoteca</Text>
+          <Text style={styles.subtitleText}>1.4. Hospital</Text>
+          <ScrollView style={styles.scrollView}>
+            <View style={styles.separator} />
+            <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+            <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
+
+            <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+              <Text style={styles.descriptionText}>
+              Contiene documentación del Hospital de San Miguel de Belén, después llamado Hospital Civil de Guadalajara, comprende los años de 1826 a 1944. 
+              Incluye un documento del Hospicio Cabañas (1948) y un libro del Hospital de San Juan de Dios (1839-1847). (54 registros){'\n'}
+              </Text>
+            </View>
+            
+            <View style={styles.separator} />
+            <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')} style={{ height: width * 0.30, width: width * 0.5 }}>
+            <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
+      )}
+    </View>
+  );
+  }
+  }

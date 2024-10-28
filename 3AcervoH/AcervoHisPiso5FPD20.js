@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -17,10 +20,12 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
+
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
-    const { width, height } = Dimensions.get('window');
 
     return (
       <View style={styles.container}>
@@ -31,9 +36,9 @@ export default class QuienesSom extends Component {
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('../fotos/persona24.jpg')} 
-                style={[styles.fullImage, { height: height * 0.5, width: width * 0.8 }]}
+              <Image
+                source={require('../fotos/persona24.jpg')}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -42,32 +47,36 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={styles.infoContainer}>
-              <Image 
-                source={require('../fotos/persona24.jpg')} 
-                style={[styles.infoImage, { width: width * 0.5, height: height * 0.2 }]}
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/persona24.jpg')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.35}]}
               />
-              <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
                 <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
 
-            <Text style={[styles.subTitle, { fontSize: width * 0.04 }]}>Piso 5. Fondos Particulares</Text>
-            <Text style={[styles.title, { fontSize: width * 0.045 }]}>5.4.20 Gabriel Retes Balzaretti</Text>
+            <Text style={styles.titleText}>Piso 5.4. Fondos Particulares</Text>
+            <Text style={styles.subtitleText}>5.4.20 Gabriel Retes Balzaretti</Text>
 
-            <ScrollView style={{ marginTop: 10 }}>
-              <View style={[styles.divider, { width: width * 0.9 }]} />
-              <Image source={require('../fotos/ico3.png')} style={[styles.icon, { width: width * 0.07, height: width * 0.07 }]} />
-              <Text style={[styles.presentation, { fontSize: width * 0.04 }]}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-              <View style={{ width: '90%', marginLeft: '5%' }}>
-                <Text style={[styles.text, { fontSize: width * 0.045 }]}>
-                  Hijo de los actores Ignacio Retes Y Lucila Balzaretti, desde los trece años empezó a trabajar en puestas en escena de varias obras dramáticas. Salto a la industria fílmica mexicana gracias a la creación de empresas estatales de producción en los setentas. Sus obras mas reconocidas son Chin Chin el teporocho, Nuevo Mundo y Flores de Papel.
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                Hijo de los actores Ignacio Retes y Lucila Balzaretti, desde los trece años empezó a trabajar en puestas en escena de varias obras dramáticas. 
+                Saltó a la industria fílmica mexicana gracias a la creación de empresas estatales de producción en los setentas. 
+                Sus obras más reconocidas son Chin Chin el teporocho, Nuevo Mundo y Flores de Papel.{'\n'}             
                 </Text>
               </View>
-              <View style={[styles.divider, { width: width * 0.9 }]} />
-
-              <Image source={require('../fotos/Logo.png')} style={[styles.logo, { width: width * 0.8 }]} />
+              
+              <View style={styles.separator} />
+              <TouchableOpacity onPress={() => this.openURL('https://bpej.udg.mx/')}style={{ height: width * 0.2, width: width * 0.85 }}>
+              <Image source={require('../fotos/Logo.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.85, marginLeft: '6%'}]} />
+              </TouchableOpacity>
             </ScrollView>
           </View>
         )}
@@ -75,103 +84,3 @@ export default class QuienesSom extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageView: {
-    alignItems: 'center',
-  },
-  fullImage: {
-    borderRadius: 10,
-  },
-  closeButton: {
-    marginTop: 20,
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  infoContainer: {
-    height: '35%',
-    width: '95%',
-    backgroundColor: 'black',
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  infoImage: {
-    borderRadius: 10,
-  },
-  viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
-    width: '30%',
-    height: '7%',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-    backgroundColor: 'black',
-    borderRadius: 5,
-  },
-  viewButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
-    backgroundColor: 'black',
-    marginTop: -10,
-  },
-  subTitle: {
-    fontWeight: 'bold',
-    color: 'gray',
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  title: {
-    fontWeight: 'bold',
-    color: 'black',
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  divider: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    marginLeft: 10,
-    marginTop: 10,
-  },
-  icon: {
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  presentation: {
-    fontWeight: 'bold',
-    color: 'black',
-    marginLeft: 50,
-    marginTop: -20,
-  },
-  text: {
-    color: 'black',
-    lineHeight: 25,
-    textAlign: 'justify',
-    marginTop: 10,
-  },
-  logo: {
-    height: 60,
-    marginLeft: 20,
-    marginTop: 20,
-    borderWidth: 0,
-    borderColor: 'gray',
-  },
-});

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Linking  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -22,21 +25,20 @@ export default class QuienesSom extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
     const { showImage } = this.state;
 
     return (
       <View style={styles.container}>
         {showImage ? (
           <ImageBackground
-            source={require('../fotos/Libreria13.png')} 
+            source={require('../fotos/Libreria13.png')}
             style={styles.imageBackground}
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('../fotos/Libreria13.png')} 
-                style={styles.fullImage}
+              <Image
+                source={require('../fotos/Libreria13.png')}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -45,102 +47,38 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={styles.infoContainer}>
-              <Image 
-                source={require('../fotos/Libreria13.png')} 
-                style={styles.infoImage} 
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/Libreria13.png')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
               />
-              <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
-              <Text style={styles.viewButtonText}>Ver Imagen</Text>
-            </TouchableOpacity>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
             </View>
-            
 
-        <Text style={{ fontWeight: 'bold', color: 'darkred', fontSize: 22, marginLeft: '6%', marginTop: '3%', width: '86.5%'}}>Piso 2 Biblioteca Álvarez del Castillo</Text>
-        <Text style={{ fontWeight: 'bold', color: 'gray', fontSize: 17, marginLeft: '6%', marginTop: '3%' }}>2.1 Acervo General.</Text>
+            <Text style={styles.titleText}>Piso 2. Biblioteca Álvarez del Castillo</Text>
+            <Text style={styles.subtitleText}>2.1. Acervo General</Text>
 
-        <ScrollView style={{ marginTop: '3%' }}>
-        <View style={{ borderWidth: 1, borderColor: 'gray', width: '88%', marginLeft: '5%', marginTop: '3%' }} />
-          <Image source={require('../fotos/ico3.png')} style={{ height: '8%', width: '5%', marginLeft: '6%', marginTop: '3%' }} />
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '13%', marginTop: '-5%' }}>Presentación</Text>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-          <View style={{ width: '86.5%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify' }}>
-              Resguarda libro impresos durante los Siglos XIX y XX, se compone por más de 80,000 volúmenes.
-            </Text>
-            
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                Resguarda libros impresos durante los Siglos XIX y XX, se compone por más de 80,000 volúmenes.{'\n'}              
+                </Text>
+              </View>
+              
+              <View style={styles.separator} />
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}style={{ height: width * 0.30, width: width * 0.5 }}>
+              <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
+              </TouchableOpacity>
+            </ScrollView>
           </View>
-          <View style={{ borderWidth: 1, borderColor: 'gray', width: '88%',  marginTop: '3%',marginLeft: '5%' }} />
-          <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}>
-          <Image source={require('../fotos/Logo3.jpg')} style={{height: 80, width: 150, marginLeft: '6%', marginTop: '6%'}} />
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
         )}
-        </View>
+      </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageView: {
-    alignItems: 'center',
-  },
-  fullImage: {
-    height: 400,
-    width: 300,
-    borderRadius: 10,
-  },
-  closeButton: {
-    marginTop: '6%',
-    backgroundColor: 'white',
-    padding: '3%',
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  infoContainer: {
-    height: '35%',
-    width: '95%',
-    backgroundColor: 'darkred',
-    margin: '3%',
-    borderRadius: '3%',
-    justifyContent: 'center', 
-    alignItems: 'center', 
-  },
-  infoImage: {
-    height: '65%', 
-    width: '85%',
-    borderRadius: 10,
-  },
-  viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
-    width: '30%',
-    height: '7%',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: '6%',
-    backgroundColor: 'darkred',
-    borderRadius: 5,
-  },
-  viewButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
-    backgroundColor: 'darkred',
-    marginTop: '-2%'
-  },
-});

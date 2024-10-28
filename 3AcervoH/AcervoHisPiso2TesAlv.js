@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
 
 const { width } = Dimensions.get('window');
 
@@ -19,6 +20,10 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
+
   render() {
     const { showImage } = this.state;
 
@@ -33,7 +38,7 @@ export default class QuienesSom extends Component {
             <View style={styles.imageView}>
               <Image
                 source={require('../fotos/Libreria14.png')}
-                style={styles.fullImage}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -42,34 +47,37 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={styles.infoContainer}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
               <Image
                 source={require('../fotos/Libreria14.png')}
-                style={styles.infoImage}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
               />
-              <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
                 <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
 
             <Text style={styles.titleText}>Piso 2 Biblioteca Álvarez del Castillo</Text>
-            <Text style={styles.subtitleText}>2.3 Tesoro.</Text>
+            <Text style={styles.subtitleText}>2.3 Tesoro</Text>
 
             <ScrollView style={styles.scrollView}>
               <View style={styles.separator} />
-              <Image source={require('../fotos/ico3.png')} style={styles.iconImage} />
-              <Text style={styles.presentationText}>Presentación</Text>
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-              <View style={styles.descriptionContainer}>
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
                 <Text style={styles.descriptionText}>
-                  Dentro de la Colección privada se ha conformado el Tesoro de la Biblioteca Álvarez del Castillo. Entre ellas se incluyen las siguientes colecciones: 
-                  Hemeroteca, Manuscritos, Impresos Europeos, Impresos Mexicanos, Impresos Jaliscienses, Lenguas Indígenas, Misceláneas, Códices Facsimilares y el 
-                  Fondo Reservado.
+                Dentro de la Colección privada se ha conformado el Tesoro de la Biblioteca Álvarez del Castillo.
+                Entre ellas se incluyen las siguientes colecciones: 
+                Hemeroteca, Manuscritos, Impresos europeos, Impresos Mexicanos, Impresos Jaliscienses, Lenguas 
+                Indígenas, Misceláneas, Códices Facsimilares y el Fondo Reservado.{'\n'}              
                 </Text>
-                
               </View>
+              
               <View style={styles.separator} />
-              <Image source={require('../fotos/Logo3.jpg')} style={styles.logoImage} />
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}style={{ height: width * 0.30, width: width * 0.5 }}>
+              <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
+              </TouchableOpacity>
             </ScrollView>
           </View>
         )}
@@ -77,116 +85,3 @@ export default class QuienesSom extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageView: {
-    alignItems: 'center',
-  },
-  fullImage: {
-    height: width * 0.6, // Proporcional al ancho de la pantalla
-    width: width * 0.8,
-    borderRadius: 10,
-  },
-  closeButton: {
-    marginTop: 20,
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  infoContainer: {
-    height: '35%',
-    width: '95%',
-    backgroundColor: 'darkred',
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  infoImage: {
-    height: '65%',
-    width: '85%',
-    borderRadius: 10,
-  },
-  viewButton: {
-    width: '30%',
-    height: '7%',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-    backgroundColor: 'darkred',
-    borderRadius: 5,
-  },
-  viewButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
-  },
-  titleText: {
-    fontWeight: 'bold',
-    color: 'darkred',
-    fontSize: 22,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  subtitleText: {
-    fontWeight: 'bold',
-    color: 'gray',
-    fontSize: 17,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  scrollView: {
-    marginTop: 10,
-  },
-  separator: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    width: '90%',
-    marginLeft: '5%',
-    marginTop: 10,
-  },
-  iconImage: {
-    height: 25,
-    width: 25,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  presentationText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
-    marginLeft: 50,
-    marginTop: -20,
-  },
-  descriptionContainer: {
-    width: '86.5%',
-    marginLeft: '5%',
-  },
-  descriptionText: {
-    color: 'black',
-    fontSize: 18,
-    lineHeight: 25,
-    textAlign: 'justify',
-    marginTop: 10,
-  },
-  logoImage: {
-    height: 80,
-    width: 150,
-    marginLeft: 20,
-    marginTop: 20,
-  },
-});

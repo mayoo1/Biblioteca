@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
+import styles from '../3Diseno';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -17,6 +20,10 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
+
   render() {
     const { showImage } = this.state;
 
@@ -29,9 +36,9 @@ export default class QuienesSom extends Component {
             blurRadius={10}
           >
             <View style={styles.imageView}>
-              <Image 
-                source={require('../fotos/Libro4.jpg')} 
-                style={styles.fullImage}
+              <Image
+                source={require('../fotos/Libro4.jpg')}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -39,34 +46,35 @@ export default class QuienesSom extends Component {
             </View>
           </ImageBackground>
         ) : (
-          <View style={styles.contentContainer}>
-            <View style={styles.infoContainer}>
-              <Image 
-                source={require('../fotos/Libro4.jpg')} 
-                style={styles.infoImage} 
+          <View style={{ flex: 1 }}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/Libro4.jpg')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.35}]}
               />
-              <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
                 <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.titleText}>6.1. Tesoros Bibliográficos. Piso 6</Text>
-            <Text style={styles.subtitleText}>6.1.6. Obras Impresas en Europa en el Siglo XVI</Text>
+            <Text style={styles.titleText}>6.1. Tesoros Bibliográficos</Text>
+            <Text style={styles.subtitleText}>6.1.6. Obras impresas en Europa durante el Siglo XVI</Text>
 
             <ScrollView style={styles.scrollView}>
               <View style={styles.separator} />
-              <Image source={require('../fotos/ico3.png')} style={styles.icon} />
-              <Text style={styles.presentationText}>Presentación</Text>
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-              <View style={styles.textContainer}>
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
                 <Text style={styles.descriptionText}>
-                  Gran parte de estos libros llegaron con los conquistadores y evangelizadores españoles al Nuevo Mundo, en su mayoría son obras escritas en latín. {'\n'}
+                Gran parte de estos libros llegaron con los conquistadores y evangelizadores españoles al Nuevo Mundo, en su mayoría son obras escritas en latín.
                 </Text>
-                
               </View>
+              
               <View style={styles.separator} />
-
-              <Image source={require('../fotos/Logo3.jpg')} style={styles.logo} />
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}style={{ height: width * 0.30, width: width * 0.45 }}>
+              <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.45}]} />
+              </TouchableOpacity>
             </ScrollView>
           </View>
         )}
@@ -74,122 +82,3 @@ export default class QuienesSom extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageView: {
-    alignItems: 'center',
-  },
-  fullImage: {
-    height: 400,
-    width: 300,
-    borderRadius: 10,
-  },
-  closeButton: {
-    marginTop: 20,
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  contentContainer: {
-    flex: 1,
-    padding: 0,
-  },
-  infoContainer: {
-    height: '35%',
-    width: '95%',
-    backgroundColor: '#353535',
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: 'center', 
-    alignItems: 'center', 
-  },
-  infoImage: {
-    height: '65%', 
-    width: '85%',
-    borderRadius: 10,
-  },
-  viewButton: {
-    width: '30%',
-    height: '7%',
-    justifyContent: 'center',
-    marginTop: 20,
-    backgroundColor: '#353535',
-    borderRadius: 5,
-  },
-  viewButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
-    marginTop: -10,
-  },
-  titleText: {
-    fontWeight: 'bold',
-    color: 'darkred',
-    fontSize: 24,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  subtitleText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 17,
-    marginLeft: 20,
-    marginTop: 10,
-    width: '90%',
-  },
-  scrollView: {
-    marginTop: 10,
-  },
-  separator: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    width: '90%',
-    marginVertical: 10,
-    alignSelf: 'center',
-  },
-  icon: {
-    height: 25,
-    width: 25,
-    marginLeft: 20,
-  },
-  presentationText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
-    marginLeft: 50,
-    marginTop: -20,
-  },
-  textContainer: {
-    width: '86.5%',
-    marginLeft: '5%',
-  },
-  descriptionText: {
-    color: 'black',
-    fontSize: 18,
-    lineHeight: 25,
-    textAlign: 'justify',
-    marginTop: 10,
-  },
-  logo: {
-    height: 80,
-    width: 150,
-    marginLeft: 20,
-    marginTop: 20,
-  },
-});
-
-

@@ -74,9 +74,11 @@ export default class QuienesSom extends Component {
             </View>
             
             <View style={styles.separator} />
+            
             <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')} style={{ height: width * 0.30, width: width * 0.5 }}>
             <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
             </TouchableOpacity>
+
           </ScrollView>
         </View>
       )}

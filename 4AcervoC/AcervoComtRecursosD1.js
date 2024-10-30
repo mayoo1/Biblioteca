@@ -1,118 +1,83 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, Linking, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
+import styles from '../3Diseno';
+
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showImage: false,
+    };
   }
 
-  handleLinkPress = () => {
-    Linking.openURL('http://virtual.bpej.udg.mx');
+  handleImagePress = () => {
+    this.setState({ showImage: true });
+  };
+
+  handleCloseImage = () => {
+    this.setState({ showImage: false });
+  };
+
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   };
 
   render() {
+    const { showImage } = this.state;
+
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Image source={require('../fotos/Antiguo17.jpg')} style={styles.headerImage} />
-          <TouchableOpacity style={styles.intranetButton} activeOpacity={0.7} onPress={this.handleLinkPress}>
-            <Text style={styles.buttonText}>Intranet</Text>
-            <Image source={require('../fotos/ico2.png')} style={styles.buttonIcon} />
-          </TouchableOpacity>
-        </View>
+        {showImage ? (
+          <ImageBackground
+            source={require('../fotos/Antiguo17.jpg')}
+            style={styles.imageBackground}
+            blurRadius={10}
+          >
+            <View style={styles.imageView}>
+              <Image
+                source={require('../fotos/Antiguo17.jpg')}
+                style={[styles.fullImage, {height: width * 0.9, width: width * 0.9}]}
+              />
+              <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
+                <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
+              </TouchableOpacity>
+            </View>
+          </ImageBackground>
+        ) : (
+          <View style={{ flex: 1 }}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/Antiguo17.jpg')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.80}]}
+              />
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
+            </View>
 
-        <View style={styles.presentationContainer}>
-          <Image source={require('../fotos/ico3.png')} style={styles.icon} />
-          <Text style={styles.presentationText}>Presentación</Text>
-          
-        </View>
-        <View style={styles.separator} />
+            <Text style={styles.titleText}>Recursos Electrónicos</Text>
 
-        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-          <Text style={styles.descriptionText}>
-            Dentro de nuestras instalaciones puede usted consultar a texto completo y de alta calidad muchas de las colecciones con su respectiva base de datos con el fin de ayudarle con su tarea de investigación.
-          </Text>
-          <Image source={require('../fotos/Logo.png')} style={styles.logoImage} />
-        </ScrollView>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
+
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                Dentro de nuestras instalaciones puede usted consultar a texto completo y de alta calidad muchas de las colecciones con su respectiva base de datos con el fin de ayudarle con su tarea de investigación.
+                </Text>
+              </View>
+              
+              <View style={styles.separator} />
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')}style={{ height: width * 0.30, width: width * 0.45 }}>
+              <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.45}]} />
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        )}
       </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  header: {
-    height: '35%',
-    width: '95%',
-    backgroundColor: '#7b0000',
-    margin: 10,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  headerImage: {
-    borderRadius: 10,
-    height: '65%',
-    width: '80%',
-    marginTop: '10%',
-  },
-  intranetButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    marginLeft: 10,
-  },
-  buttonIcon: {
-    height: 25,
-    width: 25,
-    marginLeft: 10,
-  },
-  presentationContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  icon: {
-    height: 25,
-    width: 25,
-    marginLeft: 20,
-  },
-  presentationText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
-    marginLeft: 10,
-  },
-  separator: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    width: '90%',
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  scrollViewContainer: {
-    alignItems: 'center',
-    paddingHorizontal: '5%',
-  },
-  descriptionText: {
-    color: 'black',
-    fontSize: 18,
-    lineHeight: 25,
-    textAlign: 'justify',
-    width: '100%',
-  },
-  logoImage: {
-    height: 50,
-    width: 250,
-    marginTop: 10,
-    marginRight: '30%'
-  },
-});
+  }

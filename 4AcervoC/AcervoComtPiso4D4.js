@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, StyleSheet, Dimensions, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 export default class QuienesSom extends Component {
   constructor(props) {
@@ -19,9 +20,10 @@ export default class QuienesSom extends Component {
     this.setState({ showImage: false });
   };
 
-  handleLogoPress = (url) => {
-    Linking.openURL(url);
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   };
+
 
   render() {
     const { showImage } = this.state;
@@ -37,7 +39,7 @@ export default class QuienesSom extends Component {
             <View style={styles.imageView}>
               <Image
                 source={require('../fotos/persona5.jpg')}
-                style={styles.fullImage}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
               />
               <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
                 <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
@@ -46,37 +48,44 @@ export default class QuienesSom extends Component {
           </ImageBackground>
         ) : (
           <View style={{ flex: 1 }}>
-            <View style={styles.infoContainer}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
               <Image
                 source={require('../fotos/persona5.jpg')}
-                style={styles.infoImage}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.35}]}
               />
-              <TouchableOpacity style={styles.viewButton} onPress={this.handleImagePress}>
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
                 <Text style={styles.viewButtonText}>Ver Imagen</Text>
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.titleText}>Piso 4. Colecciones Especiales Nacionales</Text>
+            <Text style={styles.titleText}>Piso 4. Colecciones Especiales Nacionales y Mediateca</Text>
             <Text style={styles.subtitleText}>4.4 Fondo Enrique Estrada Faudón</Text>
 
-            <ScrollView style={{ marginTop: 10 }}>
+            <ScrollView style={styles.scrollView}>
               <View style={styles.separator} />
-              <Image source={require('../fotos/ico3.png')} style={styles.iconImage} />
-              <Text style={styles.presentacionText}>Presentación</Text>
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-              <View style={styles.textContainer}>
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
                 <Text style={styles.descriptionText}>
-                  Biblioteca particular de un distinguido jalisciense, médico, especializado en psiquiatría, amante de las ciencias naturales y uno de los fundadores de la sociedad de ciencias naturales de Jalisco. Dirigió la Benemérita sociedad de Geografía y Estadística del Estado de Jalisco, A.C.; perteneció también a la sociedad Mexicana de Geografía y estadística, además, estuvo a cargo de la dirección de ecología y vegetación urbana, así como un amplio estudio sobre recursos naturales de la costa de Jalisco. Es considerado como el investigador más importante del occidente de México por sus aportaciones a las ciencias naturales. Su Biblioteca particular consta de 8,500 volúmenes, publicaciones periódicas, así como su archivo personal de documentos.
+                Biblioteca particular de un distinguido jalisciense, médico, especializado en psiquiatría, amante de las ciencias naturales y uno de los fundadores de 
+                la Sociedad de Ciencias Naturales de Jalisco. Dirigió la Benemérita Sociedad de Geografía y Estadística del Estado de Jalisco, A. C.; 
+                perteneció también a la Sociedad Mexicana de Geografía y Estadística y estuvo a cargo de la Dirección de Ecología y forestación del Ayuntamiento de Zapopan.{'\n'} 
+                Realizó trabajos sobre ecología y vegetación urbana, así como un amplio estudio sobre recursos naturales de la costa de Jalisco. 
+                Es considerado como el investigador más importante del occidente de México por sus aportaciones a las ciencias naturales.{'\n'} 
+                Su biblioteca particular consta de 8,500 volúmenes, publicaciones periódicas, así como su archivo personal de documentos.{'\n'}              
                 </Text>
               </View>
+              
               <View style={styles.separator} />
-
-              <TouchableOpacity onPress={() => this.handleLogoPress('https://www.gob.mx/semarnat')}>
-                <Image source={require('../fotos/Logo22.png')} style={styles.logoImage} />
+              <View style={styles.logoContainer}>
+              <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/semarnat')}style={{ height: width * 0.25, width: width * 0.45 }}>
+              <Image source={require('../fotos/Logo22.png')} style={[styles.logoImage,{height: width * 0.20, width: width * 0.4}]} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => this.handleLogoPress('https://psiquiatrasapm.org.mx/')}>
-                <Image source={require('../fotos/Logo23.png')} style={styles.logoImage} />
+              <TouchableOpacity onPress={() => this.openURL('https://psiquiatrasapm.org.mx/')}style={{ height: width * 0.25, width: width * 0.45, marginRight: '15%' }}>
+              <Image source={require('../fotos/Logo23.png')} style={[styles.logoImage,{height: width * 0.2, width: width * 0.4}]} />
               </TouchableOpacity>
+              </View>
             </ScrollView>
           </View>
         )}
@@ -84,116 +93,3 @@ export default class QuienesSom extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eeeeee',
-  },
-  imageBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  imageView: {
-    alignItems: 'center',
-  },
-  fullImage: {
-    height: height * 0.5,
-    width: width * 0.8,
-    borderRadius: 10,
-  },
-  closeButton: {
-    marginTop: 20,
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 5,
-  },
-  closeButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  infoContainer: {
-    height: height * 0.35,
-    width: '95%',
-    backgroundColor: '#353535',
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  infoImage: {
-    height: '65%',
-    width: '45%',
-    borderRadius: 10,
-  },
-  viewButton: {
-    borderWidth: 0,
-    borderColor: 'white',
-    width: '30%',
-    height: '7%',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-    backgroundColor: '#353535',
-    borderRadius: 5,
-  },
-  viewButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
-  },
-  titleText: {
-    fontWeight: 'bold',
-    color: 'darkred',
-    fontSize: 22,
-    marginLeft: 20,
-    marginTop: 10,
-    width: '86.5%',
-  },
-  subtitleText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 19,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  separator: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    width: '86.5%',
-    marginLeft: '5%',
-    marginTop: 10,
-  },
-  iconImage: {
-    height: 25,
-    width: 25,
-    marginLeft: 20,
-    marginTop: 10,
-  },
-  presentacionText: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
-    marginLeft: 50,
-    marginTop: -20,
-  },
-  textContainer: {
-    width: '86.5%',
-    marginLeft: '5%',
-  },
-  descriptionText: {
-    color: 'black',
-    fontSize: 18,
-    lineHeight: 25,
-    textAlign: 'justify',
-    marginTop: 10,
-  },
-  logoImage: {
-    height: 70,
-    width: 150,
-    marginLeft: 20,
-    marginTop: 20,
-  },
-});

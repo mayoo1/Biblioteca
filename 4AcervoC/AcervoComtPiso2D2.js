@@ -1,35 +1,87 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
 
-export default class AcervoComtPiso2D2 extends Component {
+const { width } = Dimensions.get('window');
+
+export default class QuienesSom extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showImage: false,
+    };
   }
 
-  render() {
-    const { navigation } = this.props;
-    return (
-      <View style={{ height: '100%', width: '100%', borderColor: 'red', borderWidth: 0, backgroundColor: '#eeeeee' }}>
-        <View style={{ height: '35%', width: '95%', borderColor: '#9b0000', borderWidth: 2, backgroundColor: '#7b0000', marginLeft: '3%', marginTop: '3%', borderRadius: 10 }}></View>
-        <Image source={require('../fotos/novedades.png')} style={{ borderColor: 'gray', borderWidth: 0, height: '25%', width: '70%', marginTop: '-60%', borderRadius: 10, marginLeft: '15%' }}></Image>
-      
-        <Image source={require('../fotos/ico3.png')} style={{ borderColor: 'red', borderWidth: 0, height: '4%', width: '8%', marginLeft: '6%', marginTop: '15%' }}></Image>
-        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: '17%', borderColor: 'red', borderWidth: 0, width: '50%', height: '3%', marginTop: '-7%' }}>Presentación</Text>
+  handleImagePress = () => {
+    this.setState({ showImage: true });
+  };
 
-        <View style={{ borderWidth: 1, borderColor: 'gray', flexDirection: 'row', alignItems: 'center', flex: 0.0001, width: '86.5%', marginLeft: '6%', marginTop: '5%' }}></View>
-        
-        <ScrollView>
-          <View style={{ height: '100%', width: '86.5%', borderColor: 'red', borderWidth: 0, marginTop: '3%', marginLeft: '5%' }}>
-            <Text style={{ color: 'black', fontSize: 18, lineHeight: 25, textAlign: 'justify', height: '100%', width: '100%' }}>
-                Incluye las más recientes adquisiciones de libros, periódicos y revistas de circulación nacional e internacional, además de las donaciones realizadas por parte de cámaras editoriales y consulados participantes en la Feria Internacional del Libro en Guadalajara (FIL).
-                En este espacio encontrarás un laboratorio de cómputo y acceso a internet inalámbrico, juegos de mesa y un aula de trabajo. Se ubica en la Planta baja.
-            </Text>
+  handleCloseImage = () => {
+    this.setState({ showImage: false });
+  };
+
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
+
+
+  render() {
+    const { showImage } = this.state;
+
+    return (
+      <View style={styles.container}>
+        {showImage ? (
+          <ImageBackground
+            source={require('../fotos/novedades.png')}
+            style={styles.imageBackground}
+            blurRadius={10}
+          >
+            <View style={styles.imageView}>
+              <Image
+                source={require('../fotos/novedades.png')}
+                style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
+              />
+              <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
+                <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
+              </TouchableOpacity>
+            </View>
+          </ImageBackground>
+        ) : (
+          <View style={{ flex: 1 }}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/novedades.png')}
+                style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
+              />
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
+            </View>
+
+            <Text style={styles.titleText}>Piso 2. Acervo General Contemporáneo</Text>
+            <Text style={styles.subtitleText}>2.2. Novedades</Text>
+
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator} />
+              <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+              <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
+
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                Incluye las más recientes adquisiciones de libros, periódicos y revistas de circulación nacional e internacional, además de las donaciones realizadas 
+                por parte de cámaras editoriales y consulados participantes en la Feria Internacional del Libro de Guadalajara (FIL).{'\n'} 
+                En este espacio encontrarás un laboratorio de cómputo y acceso a internet inalámbrico, juegos de mesa y un aula de trabajo.{'\n'} 
+                Se ubica en la Planta baja.{'\n'}              
+                </Text>
+              </View>
+              
+              <View style={styles.separator} />
+              <TouchableOpacity onPress={() => this.openURL('https://bpej.udg.mx/')}style={{ height: width * 0.20, width: width * 0.5 }}>
+              <Image source={require('../fotos/Logo.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.8}]} />
+              </TouchableOpacity>
+            </ScrollView>
           </View>
-        </ScrollView>
-        <TouchableOpacity onPress={() => Linking.openURL('https://bpej.udg.mx/')}>
-          <Image source={require('../fotos/Logo.png')} style={{height: 50, width: 250, marginLeft: 20, marginTop: 20}} />
-        </TouchableOpacity>
+        )}
       </View>
     );
   }

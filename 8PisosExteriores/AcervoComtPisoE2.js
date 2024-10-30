@@ -1,129 +1,85 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, Linking} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
 
-export default class Piso2nove extends Component {
+const { width } = Dimensions.get('window');
+
+export default class QuienesSom extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showImage: false,
+    };
   }
 
-  render() {
-    const styles = {
-      container: {
-        height: '100%',
-        width: '100%',
-        backgroundColor: '#eeeeee',
-      },
-      header: {
-        height: 200,
-        width: 370,
-        backgroundColor: '#7b0000',
-        marginLeft: 10,
-        marginTop: 10,
-      },
-      logo: {
-        borderColor: 'white',
-        borderWidth: 0,
-        height: 100,
-        width: 150,
-        marginTop: -170,
-        borderRadius: 7,
-        marginLeft: 120,
-      },
-      button: {
-        color: 'white',
-        textDecorationLine: 'underline',
-        fontWeight: 'bold',
-        fontSize: 15,
-        marginLeft: 100,
-        width: 220,
-        height: 25,
-        marginTop: 15,
-      },
-      buttonIcon: {
-        borderColor: 'white',
-        borderWidth: 0,
-        height: 25,
-        width: 25,
-        marginLeft: 75,
-        marginTop: -25,
-      },
-      sectionTitle: {
-        fontWeight: 'bold',
-        color: 'black',
-        fontSize: 15,
-        marginLeft: 70,
-        width: 150,
-        height: 20,
-        marginTop: -20,
-      },
-      textContent: {
-        color: 'black',
-        fontSize: 15,
-        lineHeight: 25,
-        textAlign: 'justify',
-        height: '100%',
-        width: '100%',
-      },
-      interestSite: {
-        borderColor: 'blue',
-        borderWidth: 0,
-        height: '3%',
-        width: '60%',
-        marginLeft: '5%',
-        marginTop: 15,
-      },
-      logoImage: {
-        borderColor: 'red',
-        borderWidth: 0,
-        height: '10%',
-        width: '60%',
-        marginLeft: '5%',
-        marginTop: '4%',
-      },
-      separator: {
-        borderWidth: 1,
-        borderColor: 'gray',
-        flexDirection: 'row',
-        alignItems: 'center',
-        width: 340,
-        marginLeft: 20,
-        marginTop: 20,
-      },
-    };
+  handleImagePress = () => {
+    this.setState({ showImage: true });
+  };
 
-    return (
-      <View style={styles.container}>
-        <View style={styles.header} />
-        <Image source={require('../fotos/Coleccion2.jpg')} style={styles.logo} />
-        
-        <TouchableOpacity activeOpacity={1} onPress={() => Linking.openURL('https://google.com')}>
-          <Text style={styles.button}>Búsqueda en base de datos</Text>
-          <Image source={require('../fotos/ico2.png')} style={styles.buttonIcon} />
-        </TouchableOpacity>
+  handleCloseImage = () => {
+    this.setState({ showImage: false });
+  };
 
-        <Image source={require('../fotos/ico3.png')} style={{ borderColor: 'red', borderWidth: 0, height: 25, width: 25, marginLeft: 40, marginTop: 50 }} />
-        <Text style={styles.sectionTitle}>Presentación</Text>
-        
-        <View style={styles.separator} />
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
 
-        <View style={{ height: '32%', width: '86.5%', marginTop: 10, marginLeft: '5%' }}>
-          <Text style={styles.textContent}>
-            Incluye las más recientes adquisiciones de libros, periódicos y revistas de circulación nacional e internacional, además donaciones realizadas por parte de cámaras editoriales y consulados participantes en la Feria Internacional del Libro de Guadalajara (FIL).
-            laboratorio de cómputo y acceso a internet inalámbrico, juegos de mesa y un aula de trabajo. Se ubica en la Planta baja.
-          </Text>
+render() {
+  const { showImage } = this.state;
+
+return (
+  <View style={styles.container}>
+    {showImage ? (
+      <ImageBackground
+        source={require('../fotos/Coleccion2.jpg')}
+        style={styles.imageBackground}
+        blurRadius={10}
+      >
+        <View style={styles.imageView}>
+          <Image
+            source={require('../fotos/Coleccion2.jpg')}
+            style={[styles.fullImage, {height: width * 1.2, width: width * 0.8}]}
+          />
+          <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
+            <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+    ) : (
+      <View style={{ flex: 1 }}>
+        <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+          <Image
+            source={require('../fotos/Coleccion2.jpg')}
+            style={[styles.infoImage, {height: width * 0.45, width: width * 0.75}]}
+          />
+          <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+            <Text style={styles.viewButtonText}>Ver Imagen</Text>
+          </TouchableOpacity>
         </View>
 
-        <View style={styles.separator} />
+        <Text style={styles.titleText}>Piso 2. Acervo General Contemporáneo</Text>
+        <Text style={styles.subtitleText}>2.2. Novedades</Text>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.separator} />
+          <Image source={require('../fotos/ico3.png')} style={[styles.iconImage, {height: width * 0.07, width: width * 0.07}]} />
+          <Text style={[styles.sectionTitle, {width: width * 0.5}]}>Presentación</Text>
 
-        <TouchableOpacity activeOpacity={1} onPress={() => Linking.openURL('https://google.com')} style={styles.interestSite}>
-          <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 15, marginLeft: 30 }}>Sitio de interés</Text>
-          <Image source={require('../fotos/ico4.png')} style={{ borderColor: 'red', borderWidth: 0, height: '100%', width: '10%', marginTop: -20 }} />
-        </TouchableOpacity>
-
-        <Image source={require('../fotos/Logo.png')} style={styles.logoImage} />
+          <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+            <Text style={styles.descriptionText}>
+            Incluye las más recientes adquisiciones de libros, periódicos y revistas de circulación nacional e internacional, además donaciones realizadas por parte de cámaras editoriales y consulados participantes en la Feria Internacional del Libro de Guadalajara (FIL).{'\n'}{'\n'}
+            laboratorio de cómputo y acceso a internet inalámbrico, juegos de mesa y un aula de trabajo.{'\n'}{'\n'}
+            Se ubica en la Planta baja.
+            </Text>
+          </View>
+          
+          <View style={styles.separator} />
+          <TouchableOpacity onPress={() => this.openURL('https://www.gob.mx/agn')} style={{ height: width * 0.30, width: width * 0.5 }}>
+          <Image source={require('../fotos/Logo3.jpg')} style={[styles.logoImage,{height: width * 0.25, width: width * 0.5}]} />
+          </TouchableOpacity>
+        </ScrollView>
       </View>
-    );
-  }
+    )}
+  </View>
+);
+}
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, ScrollView, Dimensions, Linking} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from '../3Diseno';
 

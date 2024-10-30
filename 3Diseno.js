@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
       borderColor:'black',
       margin: '2.5%',
       borderRadius: 5,
-      borderWidth:1,
+      borderWidth:0,
       justifyContent: 'center',
       alignItems: 'center',
     },
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       justifyContent: 'center',
       marginTop: '5%',
-      backgroundColor: '#242424',
+
       borderRadius: 5,
     },
     viewButtonText: {
@@ -106,6 +106,12 @@ const styles = StyleSheet.create({
     logoImage: {
       marginLeft: '11%',
       marginTop: '4%',
+    },
+    // PONER DOS LOGOS JUNTOS
+    logoContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginTop: '2%',
     },
 
     //**************************************************************** ESTILO DEL MENU *******************************************************************//

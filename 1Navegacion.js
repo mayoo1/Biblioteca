@@ -156,7 +156,7 @@ import EVNTS from './5Eventos/Eventos';
 import GH from './6GaleriaH/GaleriaHis';
 import NTAS from './7Noticias/Noticias';
 import ico6 from './fotos/ico6.png';
-import ico9 from './fotos/ico9.png';
+import ico0 from './fotos/ico0.png';
 import AHP1A2D1 from './3AcervoH/AcervoHisPiso1A2D1';
 import AHP1A2D2 from './3AcervoH/AcervoHisPiso1A2D2';
 import AHP1A2D3 from './3AcervoH/AcervoHisPiso1A2D3';
@@ -220,6 +220,11 @@ const sections = [
     icon: require('./fotos/YT.png'),
     link: 'https://www.youtube.com/@bibliotecapublicadelestado384'
   },
+  {
+    title: 'Butaca',
+    icon: require('./fotos/Butaca.png'),
+    link: 'https://play.google.com/store/apps/details?id=mx.udg.cgsait.butaca&hl=en-US'
+  },
 ];
 
 const SocialMediaLinks = () => (
@@ -253,7 +258,7 @@ const Navegacion = () => {
               style={{ borderWidth: 0, borderColor: '#FF5800', padding: 4, borderLeftWidth: 10}} 
                 >
                   <Image 
-                    source={ico9} 
+                    source={ico0} 
                     style={{ width: 20, height: 50 }} 
                     resizeMode="contain" 
                   />

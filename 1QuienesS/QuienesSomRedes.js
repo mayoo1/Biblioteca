@@ -1,125 +1,95 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground, Linking, StyleSheet, Dimensions } from 'react-native';
+import styles from '../3Diseno';
 
-const sections = [
-  {
-    title: 'Biblioteca Publica del Estado de Jalisco',
-    icon: require('../fotos/ico3,2.png'),
-    link: 'https://www.ejemplo.com'
-  },
-  {
-    title: 'Facebook',
-    icon: require('../fotos/Fb.png'),
-    link: 'https://www.facebook.com/bibliojalisco'
-  },
-  {
-    title: 'Twitter',
-    icon: require('../fotos/Tw.png'),
-    link: 'https://x.com/BiblioJalisco'
-  },
-  {
-    title: 'Instagram',
-    icon: require('../fotos/Ins.png'),
-    link: 'https://www.instagram.com/biblio_jalisco/?hl=es-la'
-  },
-  {
-    title: 'YouTube',
-    icon: require('../fotos/YT.png'),
-    link: 'https://www.youtube.com/@bibliotecapublicadelestado384'
-  },
-];
+const { width } = Dimensions.get('window');
 
-const SectionItem = ({ title, icon, link }) => (
-  <TouchableOpacity
-    activeOpacity={0.8}
-    onPress={() => link && Linking.openURL(link)}
-    style={{
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingVertical: 10,
-      paddingHorizontal: 10,
-      margin: 5,
-      backgroundColor: '#fff',
-      borderRadius: 5,
-      flex: 1,
-    }}
-  >
-    <Image
-      source={icon}
-      style={{ width: 30, height: 30, marginRight: 10 }}
-    />
-    <Text style={{ color: '#333', fontSize: 15, fontWeight: 'bold' }}>
-      {title}
-    </Text>
-  </TouchableOpacity>
-);
+export default class QuienesSom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showImage: false,
+    };
+  }
 
-const Piso2 = () => (
-  <View style={{ flex: 1, backgroundColor: '#eeeeee' }}>
-    <View style={{ height: '35%',width:'95%', backgroundColor: '#7b0000', margin: -20, borderRadius: 5, marginLeft:10, borderRadius:10, marginTop:10}} />
-    <Image
-      source={require('../fotos/Biblioteca2.jpg')}
-      style={{
-        height: '20%',
-        width: '80%',
-        borderRadius: 7,
-        position: 'absolute',
-        top: 40,
-        left: '10%'
-      }}
-    />
-    <Text style={{
-      color: 'white',
-      fontSize: 14,
-      fontWeight: 'bold',
-      height: '5%',
-      width: '80%',
-      marginLeft: '15%',
-      marginTop: -40
-    }}>
-      Biblioteca Pública del Estado de Jalisco:
-    </Text>
-    <Text style={{
-      color: 'white',
-      fontSize: 14,
-      fontWeight: 'bold',
-      height: '3%',
-      width: '80%',
-      marginTop: -20,
-      marginLeft: '32%'
-    }}>
-      "Juan Jose Arreola"
-    </Text>
+  handleImagePress = () => {
+    this.setState({ showImage: true });
+  };
 
-    <Text style={{
-      color: 'black',
-      fontSize: 17,
-      fontWeight: 'bold',
-      marginLeft: '6%',
-      marginTop: 30,
-      width: '90%'
-    }}>
-      Conoce más de nosotros en nuestras redes sociales
-    </Text>
+  handleCloseImage = () => {
+    this.setState({ showImage: false });
+  };
 
-    <View style={{ padding: 25, marginTop:0}}>
-      <Text style={{ fontSize: 20, lineHeight: 25, textAlign: 'justify', color: 'black' }}>
-        Dentro de nuestras instalaciones puede usted consultar a texto completo y de alta calidad muchas de las colecciones
-        con su respectiva base de datos con el fin de ayudarle con su tarea de investigación.
-      </Text>
-    </View>
+  openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  };
 
-    <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 50 }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20 }}>
-        <SectionItem title={sections[1].title} icon={sections[1].icon} link={sections[1].link} />
-        <SectionItem title={sections[2].title} icon={sections[2].icon} link={sections[2].link} />
+  render() {
+    const { showImage } = this.state;
+
+    return (
+      <View style={styles.container}>
+        {showImage ? (
+          <ImageBackground
+            source={require('../fotos/portada.jpg')}
+            style={styles.imageBackground}
+            blurRadius={10}
+          >
+            <View style={styles.imageView}>
+              <Image
+                source={require('../fotos/portada.jpg')}
+                style={[styles.fullImage, {height: width * 1.0, width: width * 0.9}]}
+              />
+              <TouchableOpacity onPress={this.handleCloseImage} style={styles.closeButton}>
+                <Text style={styles.closeButtonText}>Cerrar Imagen</Text>
+              </TouchableOpacity>
+            </View>
+          </ImageBackground>
+        ) : (
+          <View style={{ flex: 1 }}>
+            <View style={[styles.infoContainer, {height: width * 0.70, width: width * 0.95}]}>
+              <Image
+                source={require('../fotos/portada.jpg')}
+                style={[styles.infoImage, {height: width * 0.50, width: width * 0.8}]}
+              />
+              <TouchableOpacity style={[styles.viewButton, {height: width * 0.08, width: width * 0.3}]} onPress={this.handleImagePress}>
+                <Text style={styles.viewButtonText}>Ver Imagen</Text>
+              </TouchableOpacity>
+            </View>
+
+            <Text style={styles.titleText}>Biblioteca Pública del Estado de Jalisco:</Text>
+            <Text style={styles.subtitleText}>"Juan Jose Arreola"</Text>
+
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.separator}/>
+              <Text style={[styles.sectionTitle, {width: width * 1, marginTop:'2%', marginLeft:'5%', fontSize:14}]}>Conoce más de nosotros en nuestras redes sociales</Text>
+
+              <View style={[styles.descriptionContainer, {width: width * 0.85}]}>
+                <Text style={styles.descriptionText}>
+                Dentro de nuestras instalaciones puede usted consultar a texto completo y de alta calidad muchas de las colecciones
+                con su respectiva base de datos con el fin de ayudarle con su tarea de investigación.
+                </Text>
+              </View>
+              
+              <View style={styles.separator}/>
+
+              <TouchableOpacity onPress={() => this.openURL('https://www.facebook.com/bibliojalisco')}style={{ height: width * 0.20, width: width * 0.20, marginLeft: '5%', marginTop:'5%'}}>
+              <Image source={require('../fotos/Fb.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.15, marginLeft: '5%', marginTop:'-2%'}]} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.openURL('https://www.youtube.com/@bibliotecapublicadelestado384')}style={{ height: width * 0.20, width: width * 0.20, marginLeft: '27%',marginTop:'-20%'}}>
+              <Image source={require('../fotos/YT.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.15, marginLeft: '10%', marginTop:'-2%'}]} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.openURL('https://www.instagram.com/biblio_jalisco/')}style={{ height: width * 0.20, width: width * 0.20, marginLeft: '51%', marginTop:'-20%'}}>
+              <Image source={require('../fotos/Ins.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.15, marginLeft: '20%', marginTop:'-2%'}]} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.openURL('https://x.com/BiblioJalisco')}style={{ height: width * 0.20, width: width * 0.20, marginLeft: '75%', marginTop:'-20%'}}>
+              <Image source={require('../fotos/Tw.png')} style={[styles.logoImage,{height: width * 0.15, width: width * 0.15, marginLeft: '20%', marginTop:'-2%'}]} />
+              </TouchableOpacity>
+
+            </ScrollView>
+          </View>
+        )}
       </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20, marginTop: 10 }}>
-        <SectionItem title={sections[3].title} icon={sections[3].icon} link={sections[3].link} />
-        <SectionItem title={sections[4].title} icon={sections[4].icon} link={sections[4].link} />
-      </View>
-    </View>
-  </View>
-);
-
-export default Piso2;
+    );
+  }
+  }

@@ -147,9 +147,41 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: '3%',
         textAlign: 'left',
-      },      
-  });
-  
+      },   
+      
+      
+//**************************************************************** ESTILO DEL SERV *******************************************************************//
 
-  
+      boldTitle: {
+        fontWeight: 'bold',
+        color: 'darkred',
+      },
+      phoneText: {
+        color: '#ce2307',
+        fontWeight: 'bold',
+      }, 
+      mailText: {
+        color: 'darkred',
+        fontWeight: 'bold',
+      },
+      title: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#000',
+        marginTop: 10,
+      },
+      subtitle: {
+        fontSize: 14,
+        color: '#888',
+        marginBottom: 10,
+      },
+      link: {
+        fontSize: 14,
+        color: 'darkred',
+        textDecorationLine: 'underline',
+        marginBottom: 15,
+      },
+      
+
+});
 export default styles;

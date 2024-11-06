@@ -106,7 +106,7 @@ const App = () => {
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
         renderItem={({ item }) => (
-          <Image source={item} style={{ width: screenWidth, height: 250 }} />
+          <Image source={item} style={{ width: screenWidth, height: 250}} />
         )}
         keyExtractor={(item, index) => index.toString()}
       />

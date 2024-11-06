@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerToggleButton, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
-import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext} from 'react-native';
+import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext, Dimensions} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import PORTADA from './2PatallaInicio';
@@ -176,6 +176,7 @@ function ImageDrawerContent(navigation ) {
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+const { width } = Dimensions.get('window');
 
 
 
@@ -183,7 +184,7 @@ const LogoHeader = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'left', backgroundColor: 'white' }}>
   <Image
     source={require('./fotos/Logo.png')}
-    style={{ height: '130%', width: '55%' }} 
+    style={{ height: '100%', width: '60%', marginTop:'2%'}} 
     resizeMode="contain"
   />
 </View>
@@ -259,8 +260,9 @@ const Navegacion = () => {
                 >
                   <Image 
                     source={ico0} 
-                    style={{ width: 20, height: 50 }} 
-                    resizeMode="contain" 
+                    style={{height: width * 0.135, width: width * 0.1}} 
+                    resizeMode="contain"
+                   
                   />
                 </TouchableOpacity>
             );

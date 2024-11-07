@@ -260,9 +260,8 @@ const Navegacion = () => {
                 >
                   <Image 
                     source={ico0} 
-                    style={{height: width * 0.135, width: width * 0.1}} 
+                    style={{height: Platform.select({ios:width * 0.09, android: width * 0.135 }) , width: Platform.select({ios:width * 0.07, android: width * 0.08 })}} 
                     resizeMode="contain"
-                   
                   />
                 </TouchableOpacity>
             );

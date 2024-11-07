@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerToggleButton, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
-import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext, Dimensions} from 'react-native';
+import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext, Dimensions, Platform} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import PORTADA from './2PatallaInicio';
@@ -184,7 +184,7 @@ const LogoHeader = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'left', backgroundColor: 'white' }}>
   <Image
     source={require('./fotos/Logo.png')}
-    style={{ height: '100%', width: '60%', marginTop:'2%'}} 
+    style={{ height: '100%', width: '60%', marginTop:Platform.OS == 'ios'? '5%' : '0%'}} 
     resizeMode="contain"
   />
 </View>

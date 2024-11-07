@@ -72,9 +72,9 @@ const App = () => {
       >
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Image source={item.icon} style={{ height: 40, width: 40, marginRight: 10, borderRadius: 5 }} />
-          <Text style={{ color: item.color, fontSize: screenWidth < 375 ? 15 : 20, fontWeight: 'bold' }}>{item.title}</Text>
+          <Text style={{ color: item.color, fontSize: screenWidth < 375 ? 15 : 15, fontWeight: 'bold' }}>{item.title}</Text>
         </View>
-        {showVerMas && <Text style={{ color: item.color, fontSize: screenWidth < 375 ? 10 : 15}}>VER +</Text>}
+        {showVerMas && <Text style={{ color: item.color, fontSize: screenWidth < 375 ? 10 : 10}}>VER +</Text>}
       </TouchableOpacity>
     );
   };

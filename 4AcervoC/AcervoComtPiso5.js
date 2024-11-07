@@ -22,7 +22,7 @@ const App = () => {
         <MenuButton title="5.1 Biblioteca Paul Rivel del CCC-IFAL" onPress={() => navigation.navigate('Acp5d1')} imageSource={require('../fotos/novedades.png')} />
         <MenuButton title="5.2 Biblioteca Benjamin Franklin" onPress={() => navigation.navigate('Acp5d2')} imageSource={require('../fotos/bibliobf.png')} />
         <MenuButton title="5.3 Biblioteca Josep Maria Muria I Romani" onPress={() => navigation.navigate('Acp5d3')} imageSource={require('../fotos/biblioj.png')} />
-        <MenuButton title="5.4 Ventana de Shanghai" onPress={() => navigation.navigate('Piso5')} imageSource={require('../fotos/shangai.png')} />
+        <MenuButton title="5.4 Ventana de Shanghai" onPress={() => navigation.navigate('Piso5')} imageSource={require('../fotos/shangai2.png')} />
         <MenuButton title="5.5 Otras Colecciones" onPress={() => navigation.navigate('Acp5d5')} imageSource={require('../fotos/cpi.png')} />
       </ScrollView>
     </View>

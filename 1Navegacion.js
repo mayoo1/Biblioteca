@@ -184,7 +184,7 @@ const LogoHeader = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'left', backgroundColor: 'white' }}>
   <Image
     source={require('./fotos/Logo.png')}
-    style={{ height: '100%', width: '60%', marginTop:Platform.OS == 'ios'? '5%' : '0%'}} 
+    style={{ height: '100%', width: '60%', marginTop:Platform.OS == 'ios'? '9%' : '0%'}} 
     resizeMode="contain"
   />
 </View>

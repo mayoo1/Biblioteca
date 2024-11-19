@@ -37,8 +37,27 @@ const resources = [
   {
     section: 'Equipo de desarrollo',
     items: [
-      { Nombre: 'Joaquin Esau Mendoza Fajardo', Puesto: ''},
-      { Nombre: 'Andrea Elizabeth Cortes Garcia', Puesto: '' },  
+      { Nombre: 'Joaquin Esau Mendoza Fajardo'},
+      { Nombre: 'Andrea Elizabeth Cortes Garcia\n'},
+
+
+
+
+
+
+
+
+
+      
+      { Nombre: 'Juan Carlos Bernal López'},
+      { Nombre: 'Oscar Santiago Gonzales Flores'},
+      { Nombre: 'Alan Francisco Guevara Ramirez'},
+      { Nombre: 'Jhordan Ricardo Luna Rodriguez'},
+      { Nombre: 'Francisco Alejandro Moreno Famoso'},
+      { Nombre: 'Luis David Reyes Torres'},
+      { Nombre: 'Jose Luis Rivera Puga'},
+      { Nombre: 'Angel Salvador Sanchez Gallegos'},
+      { Nombre: 'Ramón Velázquez López'},
     ],
   }
 ];

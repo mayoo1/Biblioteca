@@ -224,7 +224,10 @@ const sections = [
   {
     title: 'Butaca',
     icon: require('./fotos/Butaca.png'),
-    link: 'https://play.google.com/store/apps/details?id=mx.udg.cgsait.butaca&hl=en-US'
+    link: Platform.select({
+      ios: 'https://apps.apple.com/mx/app/butaca-udg/id1668466888',
+      android: 'https://play.google.com/store/apps/details?id=mx.udg.cgsait.butaca&hl=es_MX&pli=1',
+    }),
   },
 ];
 

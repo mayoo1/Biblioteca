@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Linking, Alert } from 'react-native';
 
 const resources = [
   {
@@ -38,17 +38,7 @@ const resources = [
     section: 'Equipo de desarrollo',
     items: [
       { Nombre: 'Joaquin Esau Mendoza Fajardo'},
-      { Nombre: 'Andrea Elizabeth Cortes Garcia\n'},
-
-
-
-
-
-
-
-
-
-      
+      { Nombre: 'Andrea Elizabeth Cortes Garcia\n'},  
       { Nombre: 'Juan Carlos Bernal López'},
       { Nombre: 'Oscar Santiago Gonzales Flores'},
       { Nombre: 'Alan Francisco Guevara Ramirez'},
@@ -67,7 +57,18 @@ export default class ServRecur extends Component {
     super(props);
     this.state = {
       resources,
+      clickCounts: {
+        'Joaquin Esau Mendoza Fajardo': 0,
+        'Andrea Elizabeth Cortes Garcia\n': 0,
+      },
     };
+  }
+
+  componentWillUnmount() {
+    // Reiniciar los contadores de clics cuando el componente se desmonte
+    this.setState({
+      clickCounts: {}
+    });
   }
 
   handlePress = (type, value) => {
@@ -80,25 +81,88 @@ export default class ServRecur extends Component {
     Linking.openURL(url).catch(err => console.error('Error al abrir URL:', err));
   };
 
-  renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      {item.Nombre && <Text style={styles.nombre}>{item.Nombre}</Text>}
-      {item.Puesto && <Text style={styles.puesto}>{item.Puesto}</Text>}
-      {item.Direccion && <Text style={styles.direccion}>{item.Direccion}</Text>}
+  handleButtonPress = (name) => {
+    // Solo mostrar alertas para Esau y Andrea
+    if (name === 'Joaquin Esau Mendoza Fajardo' || name === 'Andrea Elizabeth Cortes Garcia\n') {
+      this.setState((prevState) => {
+        const updatedClickCounts = { ...prevState.clickCounts };
+        updatedClickCounts[name] = (updatedClickCounts[name] || 0) + 1;
 
-      {item.Telefono ? (
-        <TouchableOpacity onPress={() => this.handlePress('phone', item.Telefono)}>
-          <Text style={styles.phone}>Teléfono: {item.Telefono}</Text>
-        </TouchableOpacity>
-      ) : null}
+        // Si se presionó 5 veces, mostrar un enlace
+        if (updatedClickCounts[name] === 5) {
+          Alert.alert(`¡Has presionado 5 veces el nombre de ${name}!`);
+        }
 
-      {item.Correo ? (
-        <TouchableOpacity onPress={() => this.handlePress('email', item.Correo)}>
-          <Text style={styles.email}>Correo: {item.Correo}</Text>
-        </TouchableOpacity>
-      ) : null}
-    </View>
-  );
+        return { clickCounts: updatedClickCounts };
+      });
+    }
+  };
+
+  openLinkEsau = () => {
+    // Abrir el enlace para Esau
+    Linking.openURL('https://www.instagram.com/reel/DCCTIehN9g4/?igsh=OWZlam85NTQ2ZWoz').finally(() => {
+      this.resetClickCount('Joaquin Esau Mendoza Fajardo');
+    });
+  };
+
+  openLinkAndrea = () => {
+    // Abrir el enlace para Andrea
+    Linking.openURL('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sXdhNqV8WU4oK2inq1VMTT7cHOx5-PQ8RQ&s').finally(() => {
+      this.resetClickCount('Andrea Elizabeth Cortes Garcia\n');
+    });
+  };
+
+  resetClickCount = (name) => {
+    this.setState((prevState) => {
+      const updatedClickCounts = { ...prevState.clickCounts };
+      updatedClickCounts[name] = 0; // Resetear contador de clics a 0
+      return { clickCounts: updatedClickCounts };
+    });
+  };
+
+  renderItem = ({ item }) => {
+    const { clickCounts } = this.state;
+    const { Nombre } = item;
+
+    // Verificar si el contador de clics para este nombre ha alcanzado 5
+    const shouldDisplayLinkEsau = Nombre === 'Joaquin Esau Mendoza Fajardo' && clickCounts[Nombre] >= 5;
+    const shouldDisplayLinkAndrea = Nombre === 'Andrea Elizabeth Cortes Garcia\n' && clickCounts[Nombre] >= 5;
+
+    return (
+      <View style={styles.itemContainer}>
+        {shouldDisplayLinkEsau ? (
+          <TouchableOpacity onPress={this.openLinkEsau}>
+            <Text style={styles.enlace}>{`Haz clic aquí para más información sobre Esau`}</Text>
+          </TouchableOpacity>
+        ) : shouldDisplayLinkAndrea ? (
+          <TouchableOpacity onPress={this.openLinkAndrea}>
+            <Text style={styles.enlace}>{`Haz clic aquí para más información sobre Andrea`}</Text>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={() => {
+            this.handleButtonPress(Nombre);
+          }}>
+            <Text style={styles.nombreBoton}>{Nombre}</Text>
+          </TouchableOpacity>
+        )}
+
+        {item.Puesto && <Text style={styles.puesto}>{item.Puesto}</Text>}
+        {item.Direccion && <Text style={styles.direccion}>{item.Direccion}</Text>}
+
+        {item.Telefono ? (
+          <TouchableOpacity onPress={() => this.handlePress('phone', item.Telefono)}>
+            <Text style={styles.phone}>Teléfono: {item.Telefono}</Text>
+          </TouchableOpacity>
+        ) : null}
+
+        {item.Correo ? (
+          <TouchableOpacity onPress={() => this.handlePress('email', item.Correo)}>
+            <Text style={styles.email}>Correo: {item.Correo}</Text>
+          </TouchableOpacity>
+        ) : null}
+      </View>
+    );
+  };
 
   render() {
     return (
@@ -140,8 +204,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 2,
-    borderColor:'gainsboro',
-    borderWidth:2
+    borderColor: 'gainsboro',
+    borderWidth: 2
   },
   innerList: {
     paddingLeft: 10,
@@ -158,11 +222,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 10
   },
-  nombre: {
+  nombreBoton: {
     fontSize: 15,
     fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 5,
+  },
+  enlace: {
+    fontSize: 15,
+    color: 'blue',
+    marginTop: 10,
+    textDecorationLine: 'underline',
   },
   puesto: {
     fontSize: 14,

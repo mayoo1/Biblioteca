@@ -20,7 +20,7 @@ const App = () => {
     <View style={styles.containerM}>
       <MenuButton title="Acerca de la Biblioteca" onPress={() => navigation.navigate('Qsab')} imageSource={require('../fotos/Libros1.jpg')}/>
       <MenuButton title="Historia" onPress={() => navigation.navigate('Qsh')} imageSource={require('../fotos/Historia.jpg')}/>
-      <MenuButton title="Directorio" onPress={() => this.openURL('http://localhost/Directorio.php')} imageSource={require('../fotos/Logo2.png')}/>
+      <MenuButton title="Directorio" onPress={() => this.openURL('http://148.202.217.8/Directorio.php')} imageSource={require('../fotos/Logo2.png')}/>
       <MenuButton title="Ubicación" onPress={() => navigation.navigate('Qsu')} imageSource={require('../fotos/Mapa.png')}/>
       <MenuButton title="Conoce la Biblioteca" onPress={() => navigation.navigate('Qscb')} imageSource={require('../fotos/Biblioteca1.jpg')}/>
       <MenuButton title="La Biblioteca en Redes Sociales" onPress={() => navigation.navigate('Qsr')} imageSource={require('../fotos/Redes.png')}/>

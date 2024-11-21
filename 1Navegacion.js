@@ -4,6 +4,8 @@ import { createDrawerNavigator, DrawerToggleButton, DrawerContentScrollView, Dra
 import { Image, TouchableOpacity, View, SectionItem, Linking, Text, Button, useContext, Dimensions, Platform} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//Hola
+
 import PORTADA from './2PatallaInicio';
 import PRINCIPAL from './4Principal'; 
 import QS from './1QuienesS/QuienesSom'; 
